@@ -13,12 +13,17 @@ indent_size = 2
 # courses on speed reading back up this requirement.
 # https://www.codereadability.com/maximum-line-length/
 max_line_length = 80
+quote_type = double
 
 [*.md]
 # markdown files may be formatted with specific whitespace
 trim_trailing_whitespace = false
 
-[{Makefile,**.mk}]
+[{Makefile,makefile,**.mk}]
 # Use tabs for indentation (Makefiles require tabs)
 indent_style = tab
 indent_size = 4
+
+[*.js]
+# quotes: some types of projects may have specific settings
+quote_type = single
