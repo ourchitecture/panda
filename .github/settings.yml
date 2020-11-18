@@ -53,16 +53,19 @@ repository:
 # Labels: define labels for Issues and Pull Requests
 labels:
   - name: bug
-    color: '#d73a4a'
+    color: "#d73a4a"
     description: 🐛 something is not working properly
+    oldname: bug
 
   - name: documentation
-    color: '#0075ca'
+    color: "#0075ca"
     description: 📄 helpful information
+    oldname: documentation
 
   - name: enhancement
-    color: '#a2eeef'
+    color: "#a2eeef"
     description: ✨ a new feature or request
+    oldname: enhancement
 
 # Milestones: define milestones for Issues and Pull Requests
 milestones:
