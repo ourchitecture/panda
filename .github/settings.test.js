@@ -54,21 +54,18 @@ test('github settings: labels', async () => {
     name: 'bug',
     color: '#d73a4a',
     description: '🐛 something is not working properly',
-    oldname: 'bug',
   });
 
   expect(settings.labels).toContainEqual({
     name: 'documentation',
     color: '#0075ca',
     description: '📄 helpful information',
-    oldname: 'documentation',
   });
 
   expect(settings.labels).toContainEqual({
     name: 'enhancement',
     color: '#a2eeef',
     description: '✨ a new feature or request',
-    oldname: 'enhancement',
   });
 });
 
