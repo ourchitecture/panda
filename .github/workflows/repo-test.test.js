@@ -28,7 +28,7 @@ test('workflow', async () => {
         'runs-on': 'ubuntu-latest',
         steps: [
           { name: 'Checkout', uses: 'actions/checkout@v2' },
-          { name: 'Build', run: 'make init test' },
+          { name: 'Build', run: 'make init lint test' },
         ],
       },
     },
