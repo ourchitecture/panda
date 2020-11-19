@@ -10,13 +10,24 @@ jobs:
       CI: true
     strategy:
       matrix:
-        # Windows: sorry, for now. We'd have to install
-        #          Chocolatey + Cygwin or something to
-        #          be able to use `make` and engineers
-        #          may choose alternatives like running
-        #          a *nix system as a container or
-        #          virtual with `make` already installed.
-        os: [ubuntu-latest, macos-latest]
+        # macos-latest: sorry, for now.
+        # "Unfortuately the docker community licensing is such that we are
+        #  not able to install the docker for mac on our hosted runners.
+        #  We have had some discussions with Docker about doing this but they
+        #  have held firm on their request that using Docker on a service
+        #  requires an enterprise license and docker enterprise is not at all
+        #  supported on macOS."
+        # We'd have to install docker desktop community edition ourselves.
+
+        # windows-latest: sorry, for now.
+        # We'd have to install Chocolatey + Cygwin or something to be able to
+        # use `make` and engineers may choose alternatives like running a *nix
+        # system as a container or virtual with `make` already installed.
+
+        # ubuntu-latest: why is this a strategy matrix for just one option?
+        # We hope to support onboarding testing for the other platforms.
+        # This is an explicit placeholder for that intention.
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
