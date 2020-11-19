@@ -1,5 +1,7 @@
+docker_node=node:lts-alpine3.11
+
 init:
-	yarn
+	docker run --rm -v $(shell pwd):/app -w /app $(docker_node) yarn
 
 test:
-	yarn test
+	docker run --rm -v $(shell pwd):/app -w /app $(docker_node) yarn test
