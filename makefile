@@ -40,7 +40,7 @@ commit-all:
 
 git-commit-all:
 	@git add .
-	git commit -m "${m}"
+	@git commit -m "${m}"
 
 sync:
 	# git-town sync
