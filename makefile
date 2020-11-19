@@ -31,6 +31,9 @@ test:
 		$(docker_node) \
 		yarn jest
 
+commit:
+	yarn commit
+
 new-pr-feat:
 	gh pr create -l enhancement -f -w
 
