@@ -30,3 +30,9 @@ test:
 		-w /app \
 		$(docker_node) \
 		yarn jest
+
+new-pr-feat:
+	gh pr create -l enhancement -f -w
+
+new-pr-bug:
+	gh pr create -l bug -f -w
