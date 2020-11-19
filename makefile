@@ -7,5 +7,8 @@ init:
 commitlint:
 	@docker run --rm -t -v $(shell pwd):/app -w /app $(docker_commitlint) commitlint --from HEAD~${commit-count} --to HEAD
 
+lint:
+	@docker run --rm -t -v $(shell pwd):/app -w /app $(docker_node) yarn prettier --check --ignore-unknown .
+
 test:
-	@docker run --rm -t -v $(shell pwd):/app -w /app $(docker_node) yarn test
+	@docker run --rm -t -v $(shell pwd):/app -w /app $(docker_node) yarn jest
