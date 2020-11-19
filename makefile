@@ -38,6 +38,10 @@ commit-all:
 	@git add .
 	@yarn commit
 
+git-commit-all:
+	@git add .
+	git commit -m "${m}"
+
 sync:
 	# git-town sync
 	@git sync
