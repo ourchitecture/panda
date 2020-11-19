@@ -1,0 +1,44 @@
+# Maintainers
+* @ourchitecture/patterns-and-tutorials-admins @ourchitecture/patterns-and-tutorials-maintainers
+
+##################################################
+# ADMIN: changes that trigger admin review
+##################################################
+
+# workflows
+./.github/workflows/repo-test.* @ourchitecture/patterns-and-tutorials-admins
+./.github/workflows/commitlint.* @ourchitecture/patterns-and-tutorials-admins
+
+# github
+./.github/settings.* @ourchitecture/patterns-and-tutorials-admins
+./.github/CODEOWNERS @ourchitecture/patterns-and-tutorials-admins
+
+# editor
+./.vscode/extensions.* @ourchitecture/patterns-and-tutorials-admins
+./.vscode/settings.* @ourchitecture/patterns-and-tutorials-admins
+./.editorconfig @ourchitecture/patterns-and-tutorials-admins
+./.editorconfig.* @ourchitecture/patterns-and-tutorials-admins
+
+# git
+./.gitignore @ourchitecture/patterns-and-tutorials-admins
+./.gitignore.* @ourchitecture/patterns-and-tutorials-admins
+
+# code formatting
+./.prettierignore @ourchitecture/patterns-and-tutorials-admins
+./.prettierrc.json @ourchitecture/patterns-and-tutorials-admins
+
+# conventional commits
+./commitlint.* @ourchitecture/patterns-and-tutorials-admins
+
+# testing
+./jest.* @ourchitecture/patterns-and-tutorials-admins
+
+# licensing
+./LICENSE.* @ourchitecture/patterns-and-tutorials-admins
+
+# tasks
+./makefile @ourchitecture/patterns-and-tutorials-admins
+./package.* @ourchitecture/patterns-and-tutorials-admins
+./.yarn/ @ourchitecture/patterns-and-tutorials-admins
+./.yarnrc @ourchitecture/patterns-and-tutorials-admins
+./yarn.lock
