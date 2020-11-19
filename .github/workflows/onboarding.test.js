@@ -33,7 +33,7 @@ test('workflow', async () => {
         },
         strategy: {
           matrix: {
-            os: ['ubuntu-latest', 'macos-latest'],
+            os: ['ubuntu-latest'],
           },
         },
         'runs-on': '${{ matrix.os }}',
