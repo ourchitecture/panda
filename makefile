@@ -32,10 +32,18 @@ test:
 		yarn jest
 
 commit:
-	yarn commit
+	@yarn commit
+
+commit-all:
+	@git add .
+	@yarn commit
+
+sync:
+	# git-town sync
+	@git sync
 
 new-pr-feat:
-	gh pr create -l enhancement -f -w
+	@gh pr create -l enhancement -f -w
 
 new-pr-bug:
-	gh pr create -l bug -f -w
+	@gh pr create -l bug -f -w
