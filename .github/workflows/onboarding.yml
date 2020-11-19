@@ -1,0 +1,28 @@
+name: "Onboarding"
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  nix-build:
+    env:
+      CI: true
+    strategy:
+      matrix:
+        # Windows: sorry, for now. We'd have to install
+        #          Chocolatey + Cygwin or something to
+        #          be able to use `make` and engineers
+        #          may choose alternatives like running
+        #          a *nix system as a container or
+        #          virtual with `make` already installed.
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: make init lint test
