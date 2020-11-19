@@ -30,3 +30,24 @@ test:
 		-w /app \
 		$(docker_node) \
 		yarn jest
+
+commit:
+	@yarn commit
+
+commit-all:
+	@git add .
+	@yarn commit
+
+git-commit-all:
+	@git add .
+	@git commit -m "${m}"
+
+sync:
+	# git-town sync
+	@git sync
+
+new-pr-feat:
+	@gh pr create -l enhancement -f -w
+
+new-pr-bug:
+	@gh pr create -l bug -f -w
