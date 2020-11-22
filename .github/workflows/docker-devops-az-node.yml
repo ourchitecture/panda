@@ -1,6 +1,12 @@
 name: Docker Azure Node Developer
 
-on: push
+on:
+  push:
+    paths:
+      # run this build when this file changes
+      - ".github/workflows/docker-devops-az-node.yml"
+      # run this build when the source code changes
+      - "src/docker/devops/az-node/**"
 
 jobs:
   push_to_registry:
