@@ -23,4 +23,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
         run: make test
