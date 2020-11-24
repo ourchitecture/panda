@@ -6,6 +6,12 @@
 
 This ["monorepo"][monorepo] repository hopes to serve as a central reference for simple, end-to-end examples that you can scale from rapid prototyping out to resilient, multi-cloud, multi-region, autoscaling deployments. This is a big goal. As a result, examples will be kept as simple as possible, like "hello world"; although, we realize simplicity can be subjective.
 
+## Tutorials
+
+- [![Terraform Azure Resource Group][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
+- [![Terraform Azure AppService Plan][badge-tutorials-terraform-azure-appservice-plan]][tutorials-terraform-azure-appservice-plan]
+- [![Node.js on Azure][badge-tutorials-node-azure]][tutorials-node-azure]
+
 ## Contributing
 
 Read more about [how to contribute][contributing]. Also, see our [code of conduct][code-of-conduct].
@@ -19,3 +25,9 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [devops-repo]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3A%22Repo+tests%22
 [badge-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/commitlint/badge.svg
 [devops-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3Acommitlint
+[tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/README.md
+[badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20Resource%20Group/badge.svg
+[tutorials-terraform-azure-appservice-plan]: ./src/tutorials/terraform/azure/resource-group/README.md
+[badge-tutorials-terraform-azure-appservice-plan]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20AppService%20Plan/badge.svg
+[tutorials-node-azure]: ./src/tutorials/node-hello-azure/README.md
+[badge-tutorials-node-azure]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Node.js%20on%20Azure/badge.svg
