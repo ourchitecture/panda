@@ -1,0 +1,26 @@
+name: "Tutorial: Terraform Azure AppService Plan"
+
+on:
+  push:
+    paths:
+      # run this build when this file changes
+      - ".github/workflows/tutorials-terraform-azure-appservice-plan.yml"
+      # run this build when the source code changes
+      - "src/tutorials/terraform/azure/appservice-plan/**"
+
+jobs:
+  test:
+    name: Test Terraform
+
+    env:
+      CI: true
+      PROJECT_PATH: ./src/tutorials/terraform/azure/appservice-plan
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: make test
