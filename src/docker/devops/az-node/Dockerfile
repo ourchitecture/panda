@@ -1,6 +1,4 @@
-ARG OS_VERSION="20.04"
-
-FROM ubuntu:${OS_VERSION}
+FROM docker.pkg.github.com/ourchitecture/patterns-and-tutorials/devops-ubuntu:latest
 
 ARG NODE_MAJOR_VERSION="14"
 
