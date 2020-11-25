@@ -7,6 +7,9 @@ on:
       - ".github/workflows/docker-devops-az-node.yml"
       # run this build when the source code changes
       - "src/docker/devops/az-node/**"
+      # run when the base image changes
+      - ".github/workflows/docker-devops-ubuntu.yml"
+      - "src/docker/devops/ubuntu/**"
 
 jobs:
   push_to_registry:
