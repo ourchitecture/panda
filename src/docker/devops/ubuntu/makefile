@@ -1,4 +1,4 @@
-docker_name=our-devops-az-node
+docker_name=our-devops-ubuntu
 
 build:
 	@docker build -t $(docker_name) .

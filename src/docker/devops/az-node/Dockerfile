@@ -1,6 +1,4 @@
-ARG OS_VERSION="20.04"
-
-FROM ubuntu:${OS_VERSION}
+FROM docker.pkg.github.com/ourchitecture/patterns-and-tutorials/devops-ubuntu:latest
 
 ARG NODE_MAJOR_VERSION="14"
 
@@ -16,11 +14,14 @@ WORKDIR /tmp
 # update and install general packages
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
-      apt-get install -y --no-install-recommends \
-        software-properties-common \
-        apt-transport-https \
-        gnupg2 \
-        curl \
+        apt-get install -y --no-install-recommends \
+            software-properties-common \
+            apt-transport-https \
+            gnupg2 \
+            git-all \
+            curl \
+            # build-essential includes `make`
+            build-essential \
     # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
     && rm -rf /var/lib/apt/lists/*
 
@@ -33,20 +34,20 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
     && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list' \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
-      apt-get install -y --no-install-recommends \
-        azure-functions-core-tools-3 \
+        apt-get install -y --no-install-recommends \
+            azure-functions-core-tools-3 \
     # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
     && rm -rf /var/lib/apt/lists/*
 
 # install node
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - \
-  && apt-get update \
-  && DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y --no-install-recommends \
-      nodejs \
-  # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
-  && rm -rf /var/lib/apt/lists/* \
-  && npm install -g npm@latest
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive \
+        apt-get install -y --no-install-recommends \
+            nodejs \
+    # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g npm@latest
 
 # return to previous working directory
 WORKDIR /
