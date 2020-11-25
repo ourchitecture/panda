@@ -1,0 +1,32 @@
+name: Docker Azure Terraform Developer
+
+on:
+  push:
+    paths:
+      # run this build when this file changes
+      - ".github/workflows/docker-devops-az-terraform.yml"
+      # run this build when the source code changes
+      - "src/docker/devops/az-terraform/**"
+
+jobs:
+  push_to_registry:
+    name: Push Docker image to GitHub Packages
+
+    env:
+      PROJECT_PATH: ./src/docker/devops/az-terraform
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.CR_USERNAME }}
+          password: ${{ secrets.CR_PAT }}
+          registry: docker.pkg.github.com
+          repository: ourchitecture/patterns-and-tutorials/devops-az-terraform
+          tags: latest
+          path: ${{env.PROJECT_PATH}}
+          dockerfile: ${{env.PROJECT_PATH}}/Dockerfile
