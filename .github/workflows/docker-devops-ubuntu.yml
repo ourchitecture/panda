@@ -20,13 +20,20 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          username: ${{ secrets.CR_USERNAME }}
-          password: ${{ secrets.CR_PAT }}
-          registry: docker.pkg.github.com
-          repository: ourchitecture/patterns-and-tutorials/devops-ubuntu
-          tags: latest
-          path: ${{env.PROJECT_PATH}}
-          dockerfile: ${{env.PROJECT_PATH}}/Dockerfile
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PAT }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{env.PROJECT_PATH}}
+          file: ${{env.PROJECT_PATH}}/Dockerfile
+          push: true
+          tags: ourchitecture/devops-ubuntu:latest

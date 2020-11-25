@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/ourchitecture/patterns-and-tutorials/devops-ubuntu:latest
+FROM ourchitecture/devops-ubuntu:latest
 
 WORKDIR /tmp
 
