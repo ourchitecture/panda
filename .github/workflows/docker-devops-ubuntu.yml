@@ -36,4 +36,4 @@ jobs:
           context: ${{env.PROJECT_PATH}}
           file: ${{env.PROJECT_PATH}}/Dockerfile
           push: true
-          tags: ourchitecture/devops-az-terraform:latest
+          tags: ourchitecture/devops-ubuntu:latest
