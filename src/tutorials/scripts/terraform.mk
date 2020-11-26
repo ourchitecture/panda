@@ -1,6 +1,15 @@
 # https://hub.docker.com/r/zenika/terraform-azure-cli/tags
 docker_az_terraform=zenika/terraform-azure-cli:release-5.0_terraform-0.13.5_azcli-2.13.0
 
+# initialize terraform
+init:
+	@docker run --rm -t \
+		--name our-terraform-make-init \
+		-v $(shell pwd):/app \
+		-w /app \
+		$(docker_az_terraform) \
+		terraform init
+
 # test the terraform scripts
 # note: "Error 3" likely indicates a `terraform fmt` error
 #       To fix, run `terraform fmt -recursive` and re-check.

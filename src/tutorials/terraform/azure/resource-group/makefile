@@ -7,9 +7,9 @@ scripts_relative_dir=../../../scripts/
 # the terraform variable file
 var-file="./tutorial.tfvars"
 
-include ../../../scripts/git-docker.mk
-include ../../../scripts/docker.mk
-include ../../../scripts/azure.mk
-include ../../../scripts/terraform.mk
+include $(scripts_relative_dir)git-docker.mk
+include $(scripts_relative_dir)docker.mk
+include $(scripts_relative_dir)azure.mk
+include $(scripts_relative_dir)terraform.mk
 
 clean: clean-terraform
