@@ -5,8 +5,8 @@ set -e
 
 # run the azure login script
 # see: "./src/tutorials/scripts/*"
-source /usr/local/bin/our-tutorial-scripts/azure/login.sh
+source /usr/local/bin/our-scripts/azure/login.sh
 
 # run the terraform destroy script
 # see: "./src/tutorials/scripts/*"
-source /usr/local/bin/our-tutorial-scripts/terraform/destroy.sh
+source /usr/local/bin/our-scripts/terraform/destroy.sh

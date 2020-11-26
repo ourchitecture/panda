@@ -1,14 +1,16 @@
 docker_node=node:lts-alpine3.11
 docker_commitlint=ourchitecture/git-commitlint
 
-all: init commitlint lint test
+# the prefix to use on running docker containers
+docker_name_prefix=our-patterns-tutorials
 
-init:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn
+# the relative path to "./src/tutorials/scripts"
+scripts_relative_dir=./src/tutorials/scripts/
+
+include $(scripts_relative_dir)node.mk
+include $(scripts_relative_dir)yarn.mk
+
+all: init commitlint lint test
 
 commitlint:
 	@docker run --rm -t \
