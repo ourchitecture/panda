@@ -1,4 +1,4 @@
-linux_scripts_path=/usr/local/bin/our-tutorial-scripts
+linux_scripts_path=/usr/local/bin/our-scripts
 
 docker-stop:
 	@docker stop $(docker_name_prefix)-$(name)
