@@ -12,6 +12,7 @@ include $(scripts_relative_dir)yarn.mk
 
 all: init commitlint lint test
 
+.PHONY: commitlint
 commitlint:
 	@docker run --rm -t \
 		-v $(shell pwd):/app \
@@ -19,6 +20,7 @@ commitlint:
 		$(docker_commitlint) \
 		commitlint --from HEAD~${commit-count} --to HEAD
 
+.PHONY: lint
 lint:
 	@docker run --rm -t \
 		-v $(shell pwd):/app \
@@ -26,6 +28,7 @@ lint:
 		$(docker_node) \
 		yarn prettier --check --ignore-unknown .
 
+.PHONY: test
 test:
 	@docker run --rm -t \
 		-v $(shell pwd):/app \
@@ -33,23 +36,31 @@ test:
 		$(docker_node) \
 		yarn jest
 
+check: commitlint lint test
+
+.PHONY: commit
 commit:
 	@yarn commit
 
+.PHONY: commit-all
 commit-all:
 	@git add .
 	@yarn commit
 
+.PHONY: git-commit-all
 git-commit-all:
 	@git add .
 	@git commit -m "${m}"
 
+.PHONY: sync
 sync:
 	# git-town sync
 	@git sync
 
-new-pr-feat:
+.PHONY: pr-feat
+pr-feat:
 	@gh pr create -l enhancement -f -w
 
-new-pr-bug:
+.PHONY: pr-bug
+pr-bug:
 	@gh pr create -l bug -f -w
