@@ -9,9 +9,9 @@ Create a new [resource group][az-resource-group] in Azure using open-source [Ter
 The following prerequisites are required in order to follow the steps in this tutorial:
 
 - A [Microsoft Azure account][azure-account] with permission to create Resource Groups
-- [git]
-- [make]
-- [docker]
+- [git][git]
+- [make][make]
+- [docker][docker]
 
 ## Build and run
 
