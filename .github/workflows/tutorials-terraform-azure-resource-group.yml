@@ -25,4 +25,4 @@ jobs:
       - name: Build
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
-        run: make test
+        run: make prerequisites check

@@ -30,10 +30,12 @@ fmt_exit_code=$?
 if [ "$fmt_exit_code" -eq "3" ]; then
   echo "Invalid terraform formatting."
   echo "To fix, try running: terraform fmt -recursive"
+  echo "Or, simply run: make format"
   exit $fmt_exit_code
 elif [ "$fmt_exit_code" -ne "0" ]; then
   echo "Unknown terraform formatting error"
   echo "To fix, try running: terraform fmt -recursive"
+  echo "Or, simply run: make format"
   exit $fmt_exit_code
 fi
 

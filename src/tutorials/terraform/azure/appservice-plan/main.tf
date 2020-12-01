@@ -11,22 +11,22 @@ locals {
   tutorial_tags = var.tags
 }
 
-data "azurerm_client_config" "current" {}
-
 data "azurerm_resource_group" "rg" {
-  name = var.rg_name
+  name = var.resource_group_name
 }
 
-resource "azurerm_app_service_plan" "plan" {
-  name                = var.plan_name
-  resource_group_name = data.azurerm_resource_group.rg.name
-  location            = data.azurerm_resource_group.rg.location
-  kind                = var.plan_kind
-  reserved            = var.plan_is_reserved
-  tags                = local.tutorial_tags
+module "appservice-plan" {
+  source = "/our/terraform/azure/modules/appservice-plan"
 
-  sku {
-    tier = var.plan_sku_tier
-    size = var.plan_sku_size
-  }
+  resource_group_name = var.resource_group_name
+  plan_name           = var.plan_name
+  plan_kind           = var.plan_kind
+  plan_is_reserved    = var.plan_is_reserved
+  plan_sku_tier       = var.plan_sku_tier
+  plan_sku_size       = var.plan_sku_size
+  tags                = var.tags
+}
+
+output "appservice-plan" {
+  value = module.appservice-plan
 }
