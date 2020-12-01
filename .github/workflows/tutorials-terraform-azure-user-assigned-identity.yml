@@ -1,12 +1,12 @@
-name: "Tutorial: Terraform Azure AppService Plan"
+name: "Tutorial: Terraform Azure User-Assigned Identity"
 
 on:
   push:
     paths:
       # run this build when this file changes
-      - ".github/workflows/tutorials-terraform-azure-appservice-plan.yml"
+      - ".github/workflows/tutorials-terraform-azure-user-assigned-identity.yml"
       # run this build when the source code changes
-      - "src/tutorials/terraform/azure/appservice-plan/**"
+      - "src/tutorials/terraform/azure/user-assigned-identity/**"
 
 jobs:
   test:
@@ -14,7 +14,7 @@ jobs:
 
     env:
       CI: true
-      PROJECT_PATH: ./src/tutorials/terraform/azure/appservice-plan
+      PROJECT_PATH: ./src/tutorials/terraform/azure/user-assigned-identity
 
     runs-on: ubuntu-latest
 
