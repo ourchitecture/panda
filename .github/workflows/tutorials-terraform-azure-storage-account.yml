@@ -1,12 +1,12 @@
-name: "Tutorial: Terraform Azure AppService Plan"
+name: "Tutorial: Terraform Azure Storage Account"
 
 on:
   push:
     paths:
       # run this build when this file changes
-      - ".github/workflows/tutorials-terraform-azure-appservice-plan.yml"
+      - ".github/workflows/tutorials-terraform-azure-storage-account.yml"
       # run this build when the source code changes
-      - "src/tutorials/terraform/azure/appservice-plan/**"
+      - "src/tutorials/terraform/azure/storage-account/**"
 
 jobs:
   test:
@@ -14,7 +14,7 @@ jobs:
 
     env:
       CI: true
-      PROJECT_PATH: ./src/tutorials/terraform/azure/appservice-plan
+      PROJECT_PATH: ./src/tutorials/terraform/azure/storage-account
 
     runs-on: ubuntu-latest
 

@@ -33,14 +33,25 @@ In this section, you will clone the tutorial and execute it:
 
    ```shell
    make prerequisites
-    Git 2.20 or later is required. You have:
-    git version 2.25.1
+       GNU Make 4 or later is required. You have:
+       ------------------------------------------
+       GNU Make 4.2.1
+       Built for x86_64-pc-linux-gnu
+       Copyright (C) 1988-2016 Free Software Foundation, Inc.
+       License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+       This is free software: you are free to change and redistribute it.
+       There is NO WARRANTY, to the extent permitted by law.
 
-    Docker 19.03.0 or later is required. You have:
-    Docker version 19.03.13, build 4484c46d9d
+       Git 2.20 or later is required. You have:
+       ----------------------------------------
+       git version 2.25.1
+
+       Docker 19.03.0 or later is required. You have:
+       ----------------------------------------------
+       Docker version 19.03.13, build 4484c46d9d
    ```
 
-6. Test the terraform setup by typing `make test`. You should see output similar to the below.
+6. Test the terraform setup by typing `make test`. You should see output similar to the below:
 
    ```shell
    make test
@@ -64,11 +75,11 @@ In this section, you will clone the tutorial and execute it:
 
 7. Review the target name and location that will be used to create the resource group by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should not already be used in your Azure account. To get a list of existing resource groups type `make list-resource-groups`. Refer to the [Azure geographies][azure-geo] or type `make list-locations` for a list of possible locations.
 
-8. Create the resource group by typing `make create`. If you want to see what will be created prior to executing this command, type `make plan-create`. If you receive output containing the error "AuthorizationFailed", please contact your Azure administrator to check the permissions for your account.
+8. Create the resource group by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`. If you receive output containing the error "AuthorizationFailed", please contact your Azure administrator to check the permissions for your account.
 
 9. Verify the resource has been created by typing `make list-resource-groups` and checking if the name you assigned to the variable "rg_name" in the "tutorial.tfvars" file exists in the list.
 
-10. To remove the new resource group, type `make destroy`. If you want to see what will be destroyed prior to executing this command, type `make plan-destroy`.
+10. To remove the new resource group, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
 [az-resource-group]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group
 [terraform]: https://www.terraform.io/intro/index.html

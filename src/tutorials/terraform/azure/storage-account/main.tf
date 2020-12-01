@@ -16,9 +16,6 @@ resource "random_id" "random_short" {
   byte_length = 2
 }
 
-# get information from client configuration (e.g. az CLI)
-data "azurerm_client_config" "current" {}
-
 data "azurerm_resource_group" "rg" {
   name = var.rg_name
 }
