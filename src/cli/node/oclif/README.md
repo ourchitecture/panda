@@ -9,6 +9,7 @@ Ourchitecture CLI
 
 <!-- toc -->
 
+- [@ourchitecture/oclif-cli](#ourchitectureoclif-cli)
 - [Usage](#usage)
 - [Commands](#commands)
 <!-- tocstop -->
@@ -22,7 +23,7 @@ $ npm install -g @ourchitecture/oclif-cli
 $ our COMMAND
 running command...
 $ our (-v|--version|version)
-@ourchitecture/oclif-cli/0.0.1 linux-x64 node-v14.4.0
+@ourchitecture/oclif-cli/0.0.1 linux-x64 node-v14.15.1
 $ our --help [COMMAND]
 USAGE
   $ our COMMAND

@@ -27,6 +27,6 @@ trim_trailing_whitespace = false
 indent_style = tab
 indent_size = 4
 
-[*.js]
+[{*.js,*.ts}]
 # quotes: some types of projects may have specific settings
 quote_type = single
