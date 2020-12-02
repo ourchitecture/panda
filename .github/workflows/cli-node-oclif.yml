@@ -1,4 +1,4 @@
-name: "Tutorial: Node.js on Azure"
+name: "CLI"
 
 on:
   push:
