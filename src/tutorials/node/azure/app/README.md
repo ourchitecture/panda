@@ -118,8 +118,8 @@ In this section, you will clone the tutorial and execute it:
 
 [nodejs]: https://nodejs.org/en/
 [tutorial-base]: https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=platform-linux
-[tutorial-rg]: ../terraform/azure/resource-group/README.md
-[tutorial-appservice-plan]: ../terraform/azure/appservice-plan/README.md
-[git]: ../../../../tools/git/README.md
-[make]: ../../../../tools/make/README.md
-[docker]: ../../../../tools/docker/README.md
+[tutorial-rg]: ../../../terraform/azure/resource-group/#readme
+[tutorial-appservice-plan]: ../../../terraform/azure/appservice-plan/#readme
+[git]: ../../../../tools/git/#readme
+[make]: ../../../../tools/make/#readme
+[docker]: ../../../../tools/docker/#readme

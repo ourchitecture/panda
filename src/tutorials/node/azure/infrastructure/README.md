@@ -10,4 +10,4 @@ Because AppService Plans are shared by other tutorials, see the [Terraform Azure
 
 [az-appservice]: https://azure.microsoft.com/en-us/services/app-service/
 [az-appservice-plan]: https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
-[tutorial-appservice-plan]: ../../../terraform/azure/appservice-plan/README.md
+[tutorial-appservice-plan]: ../../../terraform/azure/appservice-plan/#readme

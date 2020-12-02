@@ -15,7 +15,7 @@ This ["monorepo"][monorepo] repository hopes to serve as a central reference for
 
 ## Projects
 
-- [![oclif CLI][oclif-cli-workflow-badge]][oclif-cli-workflow]
+- [![oclif CLI][oclif-cli-workflow-badge]][oclif-cli]
 
 ## Contributing
 
@@ -30,13 +30,13 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [devops-repo]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3A%22Repo+tests%22
 [badge-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/commitlint/badge.svg
 [devops-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3Acommitlint
-[tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/README.md
+[tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/#readme
 [badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20Resource%20Group/badge.svg
-[tutorials-terraform-azure-appservice-plan]: ./src/tutorials/terraform/azure/appservice-plan/README.md
+[tutorials-terraform-azure-appservice-plan]: ./src/tutorials/terraform/azure/appservice-plan/#readme
 [badge-tutorials-terraform-azure-appservice-plan]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20AppService%20Plan/badge.svg
-[tutorials-terraform-azure-storage-account]: ./src/tutorials/terraform/azure/storage-account/README.md
+[tutorials-terraform-azure-storage-account]: ./src/tutorials/terraform/azure/storage-account/#readme
 [badge-tutorials-terraform-azure-storage-account]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20Storage%20Account/badge.svg
-[tutorials-node-azure]: ./src/tutorials/node/azure/app/README.md
+[tutorials-node-azure]: ./src/tutorials/node/azure/app/#readme
 [badge-tutorials-node-azure]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Node.js%20on%20Azure/badge.svg
 [oclif-cli-workflow-badge]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/CLI/badge.svg
-[oclif-cli-workflow]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3ACLI
+[oclif-cli]: ./src/cli/node/oclif/#readme

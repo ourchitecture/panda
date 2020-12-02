@@ -84,10 +84,10 @@ Checkout all of the coding project tasks in "./package.json" as well as the DevO
 [project-issues]: https://github.com/ourchitecture/patterns-and-tutorials/issues
 [project-issues-docs]: https://github.com/ourchitecture/patterns-and-tutorials/labels/documentation
 [project-fork]: https://github.com/ourchitecture/patterns-and-tutorials/fork
-[git]: ../src/tools/git/README.md
-[nodejs]: ../src/runtimes/node/README.md
-[make]: ../src/tools/make/README.md
-[vscode]: ../src/editors/vscode/README.md
+[git]: ../src/tools/git/#readme
+[nodejs]: ../src/runtimes/node/#readme
+[make]: ../src/tools/make/#readme
+[vscode]: ../src/editors/vscode/#readme
 [conventional-commits]: https://www.conventionalcommits.org/en/v1.0.0/
 [commitlint]: https://commitlint.js.org/
 [husky]: https://github.com/typicode/husky#husky

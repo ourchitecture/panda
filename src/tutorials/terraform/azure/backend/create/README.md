@@ -98,9 +98,9 @@ In this section, you will clone the tutorial and execute it:
 [az-tf-backend]: https://www.terraform.io/docs/backends/types/azurerm.html
 [az-storage-acocunt]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 [azure-account]: https://azure.microsoft.com/en-us/free/
-[tutorials-rg]: ../../resource-group/README.md
-[git]: ../../../../../tools/git/README.md
-[make]: ../../../../../tools/make/README.md
-[docker]: ../../../../../tools/docker/README.md
+[tutorials-rg]: ../../resource-group/#readme
+[git]: ../../../../../tools/git/#readme
+[make]: ../../../../../tools/make/#readme
+[docker]: ../../../../../tools/docker/#readme
 [tf-workflow]: https://www.terraform.io/guides/core-workflow.html
 [azure-geo]: https://azure.microsoft.com/en-us/global-infrastructure/geographies/
