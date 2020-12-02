@@ -1,4 +1,7 @@
 .yarn
+.nyc_output
+.terraform
 
 # Ignore artifacts:
-.nyc_output
+build
+coverage

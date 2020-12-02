@@ -12,7 +12,7 @@ format:
 		yarn prettier --write --ignore-unknown .
 
 .PHONY: lint
-lint:
+lint: node-required-vars
 	@docker run --rm -t \
 		-v $(shell pwd):/app \
 		-w /app \
