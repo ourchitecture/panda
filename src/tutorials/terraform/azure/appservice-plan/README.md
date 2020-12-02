@@ -85,9 +85,9 @@ In this section, you will clone the tutorial and execute it:
 [terraform]: https://www.terraform.io/intro/index.html
 [azure-account]: https://azure.microsoft.com/en-us/free/
 [azure-geo]: https://azure.microsoft.com/en-us/global-infrastructure/geographies/
-[git]: ../../../../tools/git/README.md
-[make]: ../../../../tools/make/README.md
-[docker]: ../../../../tools/docker/README.md
-[tutorial-rg]: ../resource-group/README.md
+[git]: ../../../../tools/git/#readme
+[make]: ../../../../tools/make/#readme
+[docker]: ../../../../tools/docker/#readme
+[tutorial-rg]: ../resource-group/#readme
 [terraform-azurerm]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 [terraform-app_service_plan]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_plan

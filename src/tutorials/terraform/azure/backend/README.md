@@ -11,5 +11,5 @@ To learn how this works, see the tutorials below:
 
 [tf-backend]: https://www.terraform.io/docs/backends/index.html
 [tf-import]: https://www.terraform.io/docs/import/index.html
-[tutorials-create]: ./create/README.md
-[tutorials-maintain]: ./maintain/README.md
+[tutorials-create]: ./create/#readme
+[tutorials-maintain]: ./maintain/#readme
