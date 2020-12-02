@@ -31,7 +31,7 @@ test('package.json devDepencencies', async () => {
     'markdown-it': '^12.0.2',
     mrm: '^2.5.12',
     'parse-gitignore': '^1.0.1',
-    prettier: '^2.1.2',
+    prettier: '^2.2.1',
     yaml: '^1.10.0',
   });
 });
