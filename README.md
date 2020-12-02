@@ -13,6 +13,10 @@ This ["monorepo"][monorepo] repository hopes to serve as a central reference for
 - [![Terraform Azure Storage Account][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
 - [![Node.js on Azure][badge-tutorials-node-azure]][tutorials-node-azure]
 
+## Projects
+
+- [![oclif CLI][oclif-cli-workflow-badge]][oclif-cli-workflow]
+
 ## Contributing
 
 Read more about [how to contribute][contributing]. Also, see our [code of conduct][code-of-conduct].
@@ -34,3 +38,5 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [badge-tutorials-terraform-azure-storage-account]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20Storage%20Account/badge.svg
 [tutorials-node-azure]: ./src/tutorials/node/azure/app/README.md
 [badge-tutorials-node-azure]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Node.js%20on%20Azure/badge.svg
+[oclif-cli-workflow-badge]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/CLI/badge.svg
+[oclif-cli-workflow]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3ACLI

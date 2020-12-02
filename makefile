@@ -20,6 +20,14 @@ commitlint:
 		$(docker_commitlint) \
 		commitlint --from HEAD~${commit-count} --to HEAD
 
+.PHONY: format
+format:
+	@docker run --rm -t \
+		-v $(shell pwd):/app \
+		-w /app \
+		$(docker_node) \
+		yarn prettier --write --ignore-unknown .
+
 .PHONY: lint
 lint:
 	@docker run --rm -t \
