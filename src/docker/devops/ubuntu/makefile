@@ -1,6 +1,6 @@
 docker_name=our-devops-ubuntu
 
-build:
+install:
 	@docker build -t $(docker_name) .
 
 start:
@@ -9,6 +9,6 @@ start:
 stop:
 	@docker stop $(docker_name)
 
-clean:
+uninstall:
 	@docker rm -f $(docker_name)
 	@docker rmi -f $(docker_name)
