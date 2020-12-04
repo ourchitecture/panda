@@ -60,7 +60,7 @@ In this section, you will clone the tutorial and execute it:
 6. Test the terraform setup by typing `make check`. You should see output similar to the below:
 
    ```shell
-   make test
+   make check
      Clearing existing '.terraform' directory (if exists)...
      Initializing terraform without a backend...
 
