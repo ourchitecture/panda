@@ -5,7 +5,10 @@
   "recommendations": [
     "EditorConfig.EditorConfig",
     "gamunu.vscode-yarn",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "hashicorp.terraform",
+    "msazurermtools.azurerm-vscode-tools",
+    "ms-vscode.vscode-node-azure-pack"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

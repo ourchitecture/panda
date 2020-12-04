@@ -6,6 +6,12 @@
 
 This ["monorepo"][monorepo] repository hopes to serve as a central reference for simple, end-to-end examples that you can scale from rapid prototyping out to resilient, multi-cloud, multi-region, autoscaling deployments. This is a big goal. As a result, examples will be kept as simple as possible, like "hello world"; although, we realize simplicity can be subjective.
 
+## Patterns
+
+Many great patterns emerge from implementations and applied experience. In fact, great implementations can be a realization of patterns, like Cloud Platforms, Kubernetes, the Open Container Initiative, HTML, etc. Sometimes, documenting and studying a pattern independently from an implementation can provide an essential summary and an opportunity for innovation free of implementation bias. Patterns can also define an implementation-agnostic solution.
+
+Read more [about patterns][patterns].
+
 ## Tutorials
 
 ### Cloud Applications
@@ -28,6 +34,7 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 
 [contributing]: ./docs/CONTRIBUTING.md
 [code-of-conduct]: ./docs/CODE_OF_CONDUCT.md
+[patterns]: ./docs/patterns/#readme
 [monorepo]: https://en.wikipedia.org/wiki/Monorepo
 [badge-onboarding]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Onboarding/badge.svg
 [devops-onboarding]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3AOnboarding
