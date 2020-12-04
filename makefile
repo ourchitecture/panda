@@ -34,3 +34,11 @@ commit: yarn-commit
 
 .PHONY: clean
 clean: node-clean
+
+.PHONY: pr-feat
+pr-feat:
+	@gh pr create -l enhancement -f -w
+
+.PHONY: pr-bug
+pr-bug:
+	@gh pr create -l bug -f -w
