@@ -8,7 +8,7 @@ Deploy a [Node.js][nodejs] application to Azure using the Azure CLI. This guide 
 
 The following prerequisites are required in order to follow the steps in this tutorial:
 
-- A [Microsoft Azure account][azure-account] with an existing App Service Plan and permission to create and deploy an AppService (this Node.js application) to the plan. _\*See the tutorials to [create a new resource group][tutorial-rg] and [create a new plan][tutorial-appservice-plan]._
+- A [Microsoft Azure account][azure-account] with an existing App Service Plan and permission to create and deploy an AppService (this Node.js application) to the plan. _\*See the tutorials to [create a new resource group][tutorial-rg] and [create a new plan][tutorial-app-service-plan]._
 - [git][git]
 - [make][make]
 - [docker][docker]
@@ -81,7 +81,7 @@ In this section, you will clone the tutorial and execute it:
     Docker image "our-tutorials-node-azure" stopped and removed
    ```
 
-10. Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. The name of the application should be globally unique, since the URL will need to be globally unique (e.g. http://our-tutorials-node-hello.azurewebsites.net). Change the values as needed. The resource group name should already exist. To get a list of existing resource groups type `make list-resource-groups`. The AppService Plan name should already exist. To get a list of existing plans type `make list-appservice-plans ARM_RESOURCE_GROUP=our-tutorials-rg` where "our-tutorials-rg" is the name of the resource group to deploy to.
+10. Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. The name of the application should be globally unique, since the URL will need to be globally unique (e.g. http://our-tutorials-node-hello.azurewebsites.net). Change the values as needed. The resource group name should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. The AppService Plan name should already exist. To get a list of existing plans type `make azure-app-service-plans-list ARM_RESOURCE_GROUP=our-tutorials-rg` where "our-tutorials-rg" is the name of the resource group to deploy to.
 
 11. Deploy the application to Azure by typing `make install ENV_FILE=.env`. You should see output similar to the below:
 
@@ -114,12 +114,12 @@ In this section, you will clone the tutorial and execute it:
 
 13. To remove the new application, type `make uninstall ENV_FILE=.env`.
 
-14. Check the list of deployed Azure "WebApp" instances by typing `make list-webapps ARM_RESOURCE_GROUP=our-tutorials-rg`.
+14. Check the list of deployed Azure "WebApp" instances by typing `make azure-webapps-list ARM_RESOURCE_GROUP=our-tutorials-rg`.
 
 [nodejs]: https://nodejs.org/en/
 [tutorial-base]: https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=platform-linux
 [tutorial-rg]: ../../../terraform/azure/resource-group/#readme
-[tutorial-appservice-plan]: ../../../terraform/azure/appservice-plan/#readme
+[tutorial-app-service-plan]: ../../../terraform/azure/app-service-plan/#readme
 [git]: ../../../../tools/git/#readme
 [make]: ../../../../tools/make/#readme
 [docker]: ../../../../tools/docker/#readme

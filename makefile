@@ -1,69 +1,39 @@
-docker_node=node:lts-alpine3.11
-docker_commitlint=ourchitecture/git-commitlint
+include ./.vars.mk
 
-# the prefix to use on running docker containers
-docker_name_prefix=our-patterns-tutorials
+include $(scripts_dir_path)/prerequisites.mk
 
-# the relative path to "./src/tutorials/scripts"
-scripts_relative_dir=./src/tutorials/scripts/
+include $(scripts_dir_path)/terraform/.vars.mk
+include $(scripts_dir_path)/terraform/check.mk
+include $(scripts_dir_path)/terraform/format.mk
 
-include $(scripts_relative_dir)node.mk
-include $(scripts_relative_dir)yarn.mk
+include $(scripts_dir_path)/node/.vars.mk
+include $(scripts_dir_path)/node/clean.mk
+include $(scripts_dir_path)/node/commitlint/check.mk
+include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/prettier/check.mk
+include $(scripts_dir_path)/node/yarn/prettier/format.mk
+include $(scripts_dir_path)/node/yarn/jest/check.mk
+include $(scripts_dir_path)/node/yarn/commit/commit.mk
 
-all: init commitlint lint test
+.DEFAULT_GOAL := all
 
-.PHONY: commitlint
-commitlint:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_commitlint) \
-		commitlint --from HEAD~${commit-count} --to HEAD
+.PHONY: all
+all: init format check
+
+.PHONY: init
+init: yarn-init
 
 .PHONY: format
-format:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn prettier --write --ignore-unknown .
+format: prettier-format terraform-format
 
-.PHONY: lint
-lint:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn prettier --check --ignore-unknown .
-
-.PHONY: test
-test:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn jest
-
-check: commitlint lint test
+.PHONY: check
+check: prettier-check terraform-check jest-check
 
 .PHONY: commit
-commit:
-	@yarn commit
+commit: yarn-commit
 
-.PHONY: commit-all
-commit-all:
-	@git add .
-	@yarn commit
-
-.PHONY: git-commit-all
-git-commit-all:
-	@git add .
-	@git commit -m "${m}"
-
-.PHONY: sync
-sync:
-	# git-town sync
-	@git sync
+.PHONY: clean
+clean: node-clean
 
 .PHONY: pr-feat
 pr-feat:

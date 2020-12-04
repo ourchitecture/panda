@@ -1,9 +1,5 @@
 provider "azurerm" {
-  # regularly check versions at:
-  # https://github.com/terraform-providers/terraform-provider-azurerm/blob/master/CHANGELOG.md
-  version                    = "=2.37.0"
   skip_provider_registration = true
-
   features {}
 }
 

@@ -1,5 +1,5 @@
 # name of the new resource group
-rg_name = "our-tutorials-rg"
+resource_group_name = "our-tutorials-rg"
 
 # location for the resource group
-rg_location = "East US"
+resource_group_location = "East US"

@@ -1,21 +1,39 @@
-include ../../../../../root.mk
-
-app_docker_name=our-tutorials-node-azure
+include ../../../../../.vars.mk
 
 APP_PORT=3000
 HOST_PORT=3000
 
-# tutorials base
-include $(src_dir_path)/tutorials/common.mk
+include $(scripts_dir_path)/prerequisites.mk
 
-# yarn cli
-include $(scripts_dir_path)/node/yarn/common.mk
+include $(scripts_dir_path)/docker/.vars.mk
 
-# azure cli
-include $(scripts_dir_path)/azure/common.mk
+include $(scripts_dir_path)/node/.vars.mk
+include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/start.mk
+include $(scripts_dir_path)/node/yarn/stop.mk
+
+include $(scripts_dir_path)/azure/.vars.mk
+include $(scripts_dir_path)/azure/app-service-plans/list.mk
+include $(scripts_dir_path)/azure/webapps/list.mk
+include $(scripts_dir_path)/azure/webapps/install.mk
+include $(scripts_dir_path)/azure/webapps/uninstall.mk
+
+.DEFAULT_GOAL := all
+
+.PHONY: all
+all: init
+
+.PHONY: init
+init: yarn-init
+
+.PHONY: start
+start: yarn-start
+
+.PHONY: stop
+stop: yarn-stop
 
 .PHONY: install
-install: deploy-webapp
+install: azure-webapps-install
 
 .PHONY: uninstall
-uninstall: delete-webapp
+uninstall: azure-webapps-uninstall
