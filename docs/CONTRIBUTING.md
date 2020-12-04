@@ -77,9 +77,10 @@ Checkout all of the coding project tasks in "./package.json" as well as the DevO
 ### makefile
 
 - `make init`: initializes the project
-- `make commitlint`: validates commit messages conform to [conventional commit format][conventional-commits]
-- `make lint`: validates file formatting conforms to [prettier configuration][prettier]
-- `make test`: executes project tests
+- `make commit`: will provide an interactive prompt for typing commit messages that conform to [conventional commit format][conventional-commits]
+- `make commitlint-check`: validates commit messages conform to [conventional commit format][conventional-commits]
+- `make check`: validates file formatting conforms to [prettier configuration][prettier], [terraform standards][terraform-format] and executes project tests with [jest][jest]
+- `make format`: automatically formats files that conforms to [prettier configuration][prettier] and [terraform standards][terraform-format]
 
 [project-issues]: https://github.com/ourchitecture/patterns-and-tutorials/issues
 [project-issues-docs]: https://github.com/ourchitecture/patterns-and-tutorials/labels/documentation
@@ -94,3 +95,4 @@ Checkout all of the coding project tasks in "./package.json" as well as the DevO
 [git-hooks]: https://git-scm.com/docs/githooks
 [jest]: https://jestjs.io/
 [prettier]: https://prettier.io/
+[terraform-format]: https://www.terraform.io/docs/commands/fmt.html

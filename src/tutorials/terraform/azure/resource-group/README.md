@@ -51,10 +51,10 @@ In this section, you will clone the tutorial and execute it:
        Docker version 19.03.13, build 4484c46d9d
    ```
 
-6. Test the terraform setup by typing `make test`. You should see output similar to the below:
+6. Test the terraform setup by typing `make check`. You should see output similar to the below:
 
    ```shell
-   make test
+   make check
      Clearing existing '.terraform' directory (if exists)...
      Initializing terraform without a backend...
 
