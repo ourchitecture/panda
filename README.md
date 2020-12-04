@@ -8,14 +8,19 @@ This ["monorepo"][monorepo] repository hopes to serve as a central reference for
 
 ## Tutorials
 
-- [![Terraform Azure Resource Group][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
-- [![Terraform Azure AppService Plan][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
-- [![Terraform Azure Storage Account][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
-- [![Node.js on Azure][badge-tutorials-node-azure]][tutorials-node-azure]
+### Cloud Applications
+
+[![Node.js on Azure][badge-tutorials-node-azure]][tutorials-node-azure]
+
+### Cloud Infrastructure
+
+[![Terraform Azure Resource Group][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
+[![Terraform Azure AppService Plan][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
+[![Terraform Azure Storage Account][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
 
 ## Projects
 
-- [![oclif CLI][oclif-cli-workflow-badge]][oclif-cli]
+[![oclif CLI][oclif-cli-workflow-badge]][oclif-cli]
 
 ## Contributing
 
