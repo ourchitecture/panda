@@ -19,6 +19,7 @@ include $(scripts_dir_path)/azure/locations/list.mk
 include $(scripts_dir_path)/azure/app-service-plans/list.mk
 include $(scripts_dir_path)/azure/resource-groups/list.mk
 include $(scripts_dir_path)/azure/storage-accounts/list.mk
+include $(scripts_dir_path)/azure/webapps/list.mk
 
 .DEFAULT_GOAL := all
 
