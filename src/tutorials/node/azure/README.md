@@ -1,5 +1,11 @@
 # Tutorials: Node.js on Azure
 
+## Design
+
+![diagram](./design/app-service_node.png "Node.js on Azure diagram")
+
+## Steps
+
 1. [Create a new AppService][tutorials-infrastructure] in Azure using Terraform.
 2. [Deploy a Node.js application][tutorials-app] to Azure using the Azure CLI.
 
