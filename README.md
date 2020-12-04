@@ -1,5 +1,7 @@
 # Patterns and Tutorials
 
+![tutorials-banner](./media/tutorial-banner.png)
+
 [![Onboarding][badge-onboarding]][devops-onboarding] [![Repo tests][badge-repo]][devops-repo] [![commitlint][badge-commitlint]][devops-commitlint]
 
 👋 Hello and welcome to a collaborative architecture workspace on patterns and tutorials.
@@ -16,7 +18,7 @@ Read more [about patterns][patterns].
 
 ### Cloud Applications
 
-- **[Node.js on Azure][tutorials-node-azure]**: [![Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure]][tutorials-node-azure] [![Node.js on Azure][badge-tutorials-node-azure-app]][tutorials-node-azure]
+**[Node.js on Azure][tutorials-node-azure]**: [![Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure]][tutorials-node-azure] [![Node.js on Azure][badge-tutorials-node-azure-app]][tutorials-node-azure]
 
 ### Cloud Infrastructure
 
