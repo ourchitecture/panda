@@ -49,5 +49,14 @@ RUN curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - \
     && rm -rf /var/lib/apt/lists/* \
     && npm install -g npm@latest
 
+# install yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive \
+        apt-get install -y --no-install-recommends \
+            yarn \
+    && rm -rf /var/lib/apt/lists/*
+
 # return to previous working directory
 WORKDIR /

@@ -73,11 +73,11 @@ In this section, you will clone the tutorial and execute it:
      Success! The configuration is valid.
    ```
 
-7. Review the target name and location that will be used to create the resource group by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should not already be used in your Azure account. To get a list of existing resource groups type `make list-resource-groups`. Refer to the [Azure geographies][azure-geo] or type `make list-locations` for a list of possible locations.
+7. Review the target name and location that will be used to create the resource group by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should not already be used in your Azure account. To get a list of existing resource groups type `make azure-resource-groups-list`. Refer to the [Azure geographies][azure-geo] or type `make azure-list-locations` for a list of possible locations.
 
 8. Create the resource group by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`. If you receive output containing the error "AuthorizationFailed", please contact your Azure administrator to check the permissions for your account.
 
-9. Verify the resource has been created by typing `make list-resource-groups` and checking if the name you assigned to the variable "rg_name" in the "tutorial.tfvars" file exists in the list.
+9. Verify the resource has been created by typing `make azure-resource-groups-list` and checking if the name you assigned to the variable "rg_name" in the "tutorial.tfvars" file exists in the list.
 
 10. To remove the new resource group, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 

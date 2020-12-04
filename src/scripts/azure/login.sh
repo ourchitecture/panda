@@ -22,6 +22,10 @@ if [[ -z "${ARM_CLIENT_ID}" ]]; then
     az login --allow-no-subscriptions --tenant $ARM_TENANT_ID > /dev/null
   fi
 else
+  [ -z "$ARM_CLIENT_ID" ] && echo "Need to set ARM_CLIENT_ID" && exit 1;
+  [ -z "$ARM_CLIENT_SECRET" ] && echo "Need to set ARM_CLIENT_SECRET" && exit 1;
+  [ -z "$ARM_TENANT_ID" ] && echo "Need to set ARM_TENANT_ID" && exit 1;
+
   echo ""
   echo "Initiating service principal login..."
 
