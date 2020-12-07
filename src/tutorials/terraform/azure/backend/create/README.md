@@ -89,11 +89,13 @@ In this section, you will clone the tutorial and execute it:
       Success! The configuration is valid.
    ```
 
-7. The [terraform workflow][tf-workflow] encourages us to plan our changes and then to apply them. Consider the name and location for your new Resource Group. Then, create a plan by typing `make plan resource-group=our-tutorials-rg location="East US"`, where "our-tutorials-rg" can be any name for your Resource Group and "East US" can be any valid [Azure geography][azure-geo].
+7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name should not exist. To get a list of existing resource groups type `make azure-resource-groups-list`.
 
-8. Create the resource group by typing `make create`. If you want to see what will be created prior to executing this command, type `make plan-create`. If you receive output containing the error "AuthorizationFailed", please contact your Azure administrator to check the permissions for your account.
+8. Create the backend by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
-9. Review the target name and location that will be used to create the resource group by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should not already be used in your Azure account. To get a list of existing resource groups type `make list-resource-groups`. Refer to the [Azure geographies][azure-geo] or type `make list-locations` for a list of possible locations.
+9. Verify the resources have been created by typing `make azure-resource-groups-list` to check the resource groups. Check for the new storage account by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="our-tutorials-rg"` where "our-tutorials-rg" is the name of the resource group.
+
+10. To remove the new resource group and resources, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
 [az-tf-backend]: https://www.terraform.io/docs/backends/types/azurerm.html
 [az-storage-acocunt]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
