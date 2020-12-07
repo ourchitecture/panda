@@ -1,0 +1,46 @@
+name: "Tutorial: Maintain Terraform Azure Backend"
+
+on:
+  push:
+    paths:
+      # run this build when this file changes
+      - ".github/workflows/tutorials-terraform-azure-backend-maintain.yml"
+      # run this build when the source code changes
+      - "src/tutorials/terraform/azure/backend/maintain/**"
+
+jobs:
+  test:
+    name: Test Terraform
+
+    env:
+      CI: true
+      PROJECT_PATH: ./src/tutorials/terraform/azure/backend/maintain
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Test
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        run: make prerequisites check
+
+      - name: Build
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        env:
+          ENV_FILE: .env
+        run: |
+          cat >./${{env.ENV_FILE}} <<EOF
+          ARM_SUBSCRIPTION_ID=${{secrets.ARM_SUBSCRIPTION_ID}}
+          ARM_TENANT_ID=${{secrets.ARM_TENANT_ID}}
+          ARM_CLIENT_ID=${{secrets.ARM_CLIENT_ID}}
+          ARM_CLIENT_SECRET=${{secrets.ARM_CLIENT_SECRET}}
+          ARM_TERRAFORM_BACKEND_RESOURCE_GROUP=${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}
+          ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}
+          ARM_TERRAFORM_BACKEND_CONTAINER=${{secrets.ARM_TERRAFORM_BACKEND_CONTAINER}}
+          ARM_TERRAFORM_BACKEND_KEY=${{secrets.ARM_TERRAFORM_BACKEND_KEY}}
+          EOF
+          make install

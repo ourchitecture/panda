@@ -3,7 +3,7 @@ variable "tags" {
   description = "Resource tags"
 
   default = {
-    created-by = "ourchitecture-admin"
+    created-by = "ourchitecture-tutorials"
     managed-by = "terraform"
   }
 }
@@ -20,8 +20,14 @@ variable "resource_group_location" {
 
 variable "storage_name_prefix" {
   type        = string
-  description = "Prefix to be used in naming the Storage Account"
-  default     = "tfstate"
+  description = "Prefix to be used in creating a random name for the Storage Account. If storage_name is provided, this will be ignored."
+  default     = ""
+}
+
+variable "storage_name" {
+  type        = string
+  description = "Name of the Storage Account. For a randomly unique storage account name, instead provide a value for storage_name_prefix."
+  default     = ""
 }
 
 variable "storage_tier" {
@@ -39,11 +45,9 @@ variable "storage_replication" {
 variable "storage_id_tag_value" {
   type        = string
   description = "Unique identifier to tag the Storge Account with. Because storage accounts are named with randomized numbers, this enables automation to easily lookup the storage account using the unique id tag."
-  default     = "tfstate-storage"
 }
 
 variable "storage_container_name" {
   type        = string
   description = "The name of the storage account container (like a directory)"
-  default     = "tfstate"
 }
