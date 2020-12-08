@@ -99,7 +99,7 @@ In this section, you will clone the tutorial and execute it:
    make import \
     ARM_SUBSCRIPTION_ID=123-456-789 \
     ARM_TERRAFORM_BACKEND_RESOURCE_GROUP=rg-our-tutorials \
-    ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=sttfstate19931 \
+    ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=st??? \
     ARM_TERRAFORM_BACKEND_CONTAINER=tutorials \
     ARM_TERRAFORM_BACKEND_KEY=backend.tfstate \
    ```
