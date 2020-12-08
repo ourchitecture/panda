@@ -2,13 +2,13 @@
 
 ## What you will build
 
-Create an [Azure terraform backend][az-tf-backend] with a new resource group and a new storage account.
+Import and update an [Azure terraform backend][az-tf-backend] with an existing resource group and an existing new storage account.
 
 ## What you will need
 
 The following prerequisites are required in order to follow the steps in this tutorial:
 
-- A [Microsoft Azure account][azure-account] with permission to [create a new resource group][tutorials-rg] and an [Azure Storage Account][az-storage-acocunt].
+- A [Microsoft Azure account][azure-account] with [existing Terraform backend resources][tutorials-backend-create].
 - [git][git]
 - [make][make]
 - [docker][docker]
@@ -27,7 +27,7 @@ In this section, you will clone the tutorial and execute it:
      git clone https://github.com/ourchitecture/patterns-and-tutorials --depth=1
    ```
 
-4. Change to the directory of this tutorial project by typing `cd ./src/tutorials/terraform/azure/backend/create`.
+4. Change to the directory of this tutorial project by typing `cd ./src/tutorials/terraform/azure/backend/maintain`.
 
 5. Type `make prerequisites` and read the output to verify you have the right tools. Output should look similar to:
 
@@ -89,20 +89,23 @@ In this section, you will clone the tutorial and execute it:
       Success! The configuration is valid.
    ```
 
-7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name should not exist. To get a list of existing resource groups type `make azure-resource-groups-list`.
+7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name and storage account should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. Check for existing storage accounts by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="our-tutorials-rg"`, where "our-tutorials-rg" is the name of the resource group.
 
-8. Create the backend by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
+8. In order to maintain the Terraform backend resources in Azure, we first need to import the existing Azure resource group, storage account, and storage container into a remote ".tfstate" file that can be shared across machines (engineers and automation). Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
 
-9. Verify the resources have been created by typing `make azure-resource-groups-list` to check the resource groups. Check for the new storage account by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="our-tutorials-rg"` where "our-tutorials-rg" is the name of the resource group.
+9. Import the existing backend resources into managed state by typing `make import ENV_FILE=.env`.
 
-10. To remove the new resource group and resources, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
+10. Now, the backend resources can also be maintained by Terraform (`terraform inception`? 🤣). Update the backend with any changes made to the terraform code by executing `make install ENV_FILE=.env`.
+
+11. Verify the resources are configured properly by reviewing the output or using either the `az` CLI or Azure web portal.
+
+12. Review the file "./.github/workflows/tutorials-terraform-azure-backend-maintain.yml" for a DevOps automation example of how to automate the maintenance of your Terraform backend by using a service principle login.
 
 [az-tf-backend]: https://www.terraform.io/docs/backends/types/azurerm.html
 [az-storage-acocunt]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 [azure-account]: https://azure.microsoft.com/en-us/free/
-[tutorials-rg]: ../../resource-group/#readme
+[tutorials-backend-create]: ../create/#readme
 [git]: ../../../../../tools/git/#readme
 [make]: ../../../../../tools/make/#readme
 [docker]: ../../../../../tools/docker/#readme
-[tf-workflow]: https://www.terraform.io/guides/core-workflow.html
-[azure-geo]: https://azure.microsoft.com/en-us/global-infrastructure/geographies/
+[tutorials-backend-devops]: ../../../../../../.github/workflows/tutorials-terraform-azure-backend-maintain.yml

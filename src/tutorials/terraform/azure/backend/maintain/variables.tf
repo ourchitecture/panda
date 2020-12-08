@@ -18,10 +18,9 @@ variable "resource_group_location" {
   description = "Location for the Resource Group"
 }
 
-variable "storage_name_prefix" {
+variable "storage_name" {
   type        = string
-  description = "Prefix to be used in naming the Storage Account"
-  default     = "tfstate"
+  description = "Name of the Storage Account. For a randomly unique storage account name, instead provide a value for storage_name_prefix."
 }
 
 variable "storage_tier" {

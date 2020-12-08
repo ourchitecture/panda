@@ -259,3 +259,6 @@ terraform.rc
 # allow tutorial terraform variables
 # they should never have sensitive data in them
 !tutorial.tfvars
+
+# do not commit personal shell scripts in any directory
+my.sh

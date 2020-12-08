@@ -8,6 +8,8 @@ if [[ "${DEBUG}" = true ]]; then
   set -x
 fi
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 tf_exec_plan=false
 tf_exec_apply=false
 
@@ -39,11 +41,8 @@ if [[ ! -z "${TF_VAR_FILE}" ]]; then
   tf_arg_var_file="-var-file=${TF_VAR_FILE}"
 fi
 
-echo ""
-echo "Initializing terraform..."
-
 # initialize terraform
-terraform init
+source ${DIR}/init.sh
 
 if [[ "$tf_exec_plan" = true ]]; then
 

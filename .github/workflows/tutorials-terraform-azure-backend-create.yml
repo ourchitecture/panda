@@ -1,4 +1,4 @@
-name: "Tutorial: Node.js on Azure"
+name: "Tutorial: Create Terraform Azure Backend"
 
 on:
   push:
@@ -6,9 +6,9 @@ on:
       # trigger build when shared scripts change
       - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/tutorials-node-azure-app.yml"
+      - ".github/workflows/tutorials-terraform-azure-backend-create.yml"
       # run this build when the source code changes
-      - "src/tutorials/node/azure/app/**"
+      - "src/tutorials/terraform/azure/backend/create/**"
 
 jobs:
   test:
@@ -16,7 +16,7 @@ jobs:
 
     env:
       CI: true
-      PROJECT_PATH: ./src/tutorials/node/azure/app
+      PROJECT_PATH: ./src/tutorials/terraform/azure/backend/create
 
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Test
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
-        run: make prerequisites init
+        run: make prerequisites check

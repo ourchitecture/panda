@@ -22,9 +22,12 @@ Read more [about patterns][patterns].
 
 ### Cloud Infrastructure
 
-- **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![Terraform Azure Resource Group][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
-- **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![Terraform Azure AppService Plan][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
-- **[Terraform Azure Storage Account][tutorials-terraform-azure-storage-account]:** [![Terraform Azure Storage Account][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
+- **[Create a Terraform Azure Backend][tutorials-terraform-azure-backend-create]**: [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend-create]
+- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend-maintain]**: [![badge][badge-tutorials-terraform-azure-backend-maintain]][tutorials-terraform-azure-backend-maintain]
+
+- **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
+- **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![badge][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
+- **[Terraform Azure Storage Account][tutorials-terraform-azure-storage-account]:** [![badge][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
 
 ## Projects
 
@@ -44,6 +47,10 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [devops-repo]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3A%22Repo+tests%22
 [badge-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/commitlint/badge.svg
 [devops-commitlint]: https://github.com/ourchitecture/patterns-and-tutorials/actions?query=workflow%3Acommitlint
+[tutorials-terraform-azure-backend-create]: ./src/tutorials/terraform/azure/backend/create/#readme
+[badge-tutorials-terraform-azure-backend-create]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Create%20Terraform%20Azure%20Backend/badge.svg
+[tutorials-terraform-azure-backend-maintain]: ./src/tutorials/terraform/azure/backend/maintain/#readme
+[badge-tutorials-terraform-azure-backend-maintain]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Maintain%20Terraform%20Azure%20Backend/badge.svg
 [tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/#readme
 [badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/patterns-and-tutorials/workflows/Tutorial:%20Terraform%20Azure%20Resource%20Group/badge.svg
 [tutorials-terraform-azure-app-service-plan]: ./src/tutorials/terraform/azure/app-service-plan/#readme
