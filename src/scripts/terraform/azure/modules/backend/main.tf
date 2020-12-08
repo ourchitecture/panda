@@ -44,7 +44,8 @@ resource "azurerm_storage_container" "instance" {
 }
 
 output "azurerm_storage_account-output" {
-  value = azurerm_storage_account.instance
+  value     = azurerm_storage_account.instance
+  sensitive = true
 }
 
 output "azurerm_storage_container-output" {

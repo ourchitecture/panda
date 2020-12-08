@@ -3,6 +3,8 @@ name: "Tutorial: Node.js on Azure"
 on:
   push:
     paths:
+      # trigger build when shared scripts change
+      - "src/scripts/**"
       # run this build when this file changes
       - ".github/workflows/tutorials-node-azure-app.yml"
       # run this build when the source code changes

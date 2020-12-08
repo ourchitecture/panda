@@ -3,6 +3,8 @@ name: "Tutorial: Maintain Terraform Azure Backend"
 on:
   push:
     paths:
+      # trigger build when shared scripts change
+      - "src/scripts/**"
       # run this build when this file changes
       - ".github/workflows/tutorials-terraform-azure-backend-maintain.yml"
       # run this build when the source code changes
