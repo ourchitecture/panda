@@ -35,5 +35,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Check
         run: make all

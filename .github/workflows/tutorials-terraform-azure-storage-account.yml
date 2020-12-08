@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Test
+      - name: Check
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
         run: make prerequisites check

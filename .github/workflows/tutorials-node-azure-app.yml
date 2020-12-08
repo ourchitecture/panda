@@ -24,7 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Check
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
         run: make prerequisites init
+
+      - name: Install
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        run: make install

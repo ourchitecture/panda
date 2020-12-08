@@ -18,7 +18,7 @@ jobs:
           #  for all branches and tags."
           fetch-depth: 0
 
-      - name: commitlint
+      - name: Check
         env:
           COMMIT_COUNT: ${{ github.event.pull_request.commits }}
         run: make commitlint-check

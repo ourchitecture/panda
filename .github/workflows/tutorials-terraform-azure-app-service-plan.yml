@@ -39,7 +39,12 @@ jobs:
           ARM_TERRAFORM_BACKEND_KEY=app-service-plan.tfstate
           EOF
 
-      - name: Test
+      - name: Check
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
         run: make prerequisites check
+
+      - name: Install
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        run: make install
