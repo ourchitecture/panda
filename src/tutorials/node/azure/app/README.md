@@ -76,7 +76,7 @@ In this section, you will clone the tutorial and execute it:
 9. Stop the application by typing `make stop`. You should see output similar to the below:
 
    ```shell
-   make start
+   make stop
     our-tutorials-node-azure
     Docker image "our-tutorials-node-azure" stopped and removed
    ```

@@ -1,51 +1,48 @@
-include ../../../../root.mk
+include ../../../../.vars.mk
 
-# yarn cli
-include $(scripts_dir_path)/node/yarn/common.mk
+include $(scripts_dir_path)/prerequisites.mk
 
-.PHONY: format
-format:
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn prettier --write --ignore-unknown .
+include $(scripts_dir_path)/docker/.vars.mk
 
-.PHONY: lint
-lint: node-required-vars
-	@docker run --rm -t \
-		-v $(shell pwd):/app \
-		-w /app \
-		$(docker_node) \
-		yarn prettier --check --ignore-unknown .
+include $(scripts_dir_path)/node/.vars.mk
 
-.PHONY: test
-test: node-required-vars
+include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/prettier/format.mk
+include $(scripts_dir_path)/node/yarn/prettier/check.mk
+
+.DEFAULT_GOAL := all
+
+.PHONY: all
+all: check
+
+.PHONY: init
+check: yarn-init
+
+.PHONY: nyc-check
+nyc-check: require-root require-node init
 	@docker run --rm -t \
 		--name $(node_docker_name_prefix)-$@ \
-		-v $(scripts_dir_path):/our \
 		-v $(my_dir_path):/app \
 		-w /app \
-		$(docker_arg_env_file) \
-		$(docker_node) \
+		$(node_docker) \
 		yarn nyc --extension .ts mocha --forbid-only "test/**/*.test.ts"
 
 .PHONY: check
-check: lint test
+check: init prettier-check nyc-check
 
 .PHONY: readme
-readme: node-required-vars
+readme: require-root require-node init
 	@docker run --rm -t \
 		--name $(node_docker_name_prefix)-$@ \
-		-v $(scripts_dir_path):/our \
 		-v $(my_dir_path):/app \
 		-w /app \
-		$(docker_arg_env_file) \
-		$(docker_node) \
+		$(node_docker) \
 		yarn oclif-dev readme
 
-install:
+.PHONY: install
+install: init
 	docker build -t our-oclif-cli .
 
-uninstall:
+.PHONY: uninstall
+uninstall: init
 	docker rmi -f our-oclif-cli
