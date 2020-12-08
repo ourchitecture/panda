@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "license": "Unlicense",
   "author": "Eric Swanson @ericis",
-  "homepage": "https://github.com/ourchitecture/patterns-and-tutorials",
-  "bugs": "https://github.com/ourchitecture/patterns-and-tutorials/issues",
-  "repository": "ourchitecture/patterns-and-tutorials",
+  "homepage": "https://github.com/ourchitecture/panda",
+  "bugs": "https://github.com/ourchitecture/panda/issues",
+  "repository": "ourchitecture/panda",
   "keywords": [
     "oclif"
   ],

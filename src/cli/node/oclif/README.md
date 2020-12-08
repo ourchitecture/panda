@@ -5,7 +5,7 @@ Ourchitecture CLI
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@ourchitecture/oclif-cli.svg)](https://npmjs.org/package/@ourchitecture/oclif-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@ourchitecture/oclif-cli.svg)](https://npmjs.org/package/@ourchitecture/oclif-cli)
-[![License](https://img.shields.io/npm/l/@ourchitecture/oclif-cli.svg)](https://github.com/ourchitecture/patterns-and-tutorials/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/@ourchitecture/oclif-cli.svg)](https://github.com/ourchitecture/panda/blob/master/package.json)
 
 <!-- toc -->
 
@@ -57,7 +57,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/ourchitecture/patterns-and-tutorials/blob/v0.0.1/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/ourchitecture/panda/blob/v0.0.1/src/commands/hello.ts)_
 
 ## `our help [COMMAND]`
 

@@ -21,14 +21,14 @@ test('github settings: repository', async () => {
 
   expect(settings.repository).toBeTruthy();
 
-  expect(settings.repository.name).toBe('patterns-and-tutorials');
+  expect(settings.repository.name).toBe('panda');
 
   expect(settings.repository.description).toBe(
     'Simple, end-to-end examples that can scale.'
   );
 
   expect(settings.repository.homepage).toBe(
-    'https://github.com/ourchitecture/patterns-and-tutorials'
+    'https://github.com/ourchitecture/panda'
   );
 
   expect(settings.repository.topics).toBe('patterns, tutorials');
