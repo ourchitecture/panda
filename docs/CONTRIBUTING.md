@@ -45,7 +45,7 @@ In addition to the Slack channel, Wiki, and GitHub Issues mentioned above, you m
 
 ##### Maintainers
 
-1. Clone this repo: `git clone https://github.com/ourchitecture/patterns-and-tutorials/`
+1. Clone this repo: `git clone https://github.com/ourchitecture/panda/`
 2. Run `make` to install dependencies and test the project
 3. Create a new feature branch (e.g. using "git town" with `git town hack [user-name]/[feature-name]`), where `[user-name]` is your username and `[feature-name]` is the feature
 4. Make your edits and commit your changes locally
@@ -59,7 +59,7 @@ In addition to the Slack channel, Wiki, and GitHub Issues mentioned above, you m
 ##### External Contributors
 
 1. [_Fork_ this repo][project-fork] to your personal space
-2. Clone your personal fork of repo: e.g. `git clone https://github.com/[user-name]/patterns-and-tutorials/`, where `[user-name]` is your username
+2. Clone your personal fork of repo: e.g. `git clone https://github.com/[user-name]/panda/`, where `[user-name]` is your username
 3. Run `make` to install dependencies and test the project
 4. Create a new feature branch in your personal fork (e.g. using "git town" with `git town hack [feature-name]`), where `[feature-name]` is the feature
 5. Make your edits and commit your changes locally
@@ -82,9 +82,9 @@ Checkout all of the coding project tasks in "./package.json" as well as the DevO
 - `make check`: validates file formatting conforms to [prettier configuration][prettier], [terraform standards][terraform-format] and executes project tests with [jest][jest]
 - `make format`: automatically formats files that conforms to [prettier configuration][prettier] and [terraform standards][terraform-format]
 
-[project-issues]: https://github.com/ourchitecture/patterns-and-tutorials/issues
-[project-issues-docs]: https://github.com/ourchitecture/patterns-and-tutorials/labels/documentation
-[project-fork]: https://github.com/ourchitecture/patterns-and-tutorials/fork
+[project-issues]: https://github.com/ourchitecture/panda/issues
+[project-issues-docs]: https://github.com/ourchitecture/panda/labels/documentation
+[project-fork]: https://github.com/ourchitecture/panda/fork
 [git]: ../src/tools/git/#readme
 [nodejs]: ../src/runtimes/node/#readme
 [make]: ../src/tools/make/#readme
