@@ -1,8 +1,8 @@
-resource_group_name = "our-tutorials-rg"
+resource_group_name = "rg-our-tutorials"
 
-app_service_plan_name = "our-tutorials-linux-app-plan"
+app_service_plan_name = "plan-our-tutorials-linux-apps"
 
 # name of the deployed application
 # IMPORTANT: must be a globally unique name.
 # Consider scripting this environment variable with a random number.
-app_service_name = "our-tutorials-node-hello"
+app_service_name = "my-tutorials-node-hello-123"

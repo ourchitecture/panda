@@ -75,11 +75,13 @@ In this section, you will clone the tutorial and execute it:
 
 7. Review the variable values used to create the plan by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should already exist and the plan name should not already be used in the group. To get a list of existing resource groups type `make azure-resource-groups-list`. Choose "Linux" or "Windows" for the "plan_kind". SKU tier examples include Free, Shared, Basic, Premium, and Isolated and SKU size examples include F1 (Free), D1 (Shared), B1 (Basic Small), B2 (Basic Medium), B3 (Basic Large), S1 (Standard Small), P1V2 (Premium V2 Small), P1V3 (Premium V3 Small), P2V3 (Premium V3 Medium), P3V3 (Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
 
-8. Create the plan by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
+8. Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The terraform backend resources should already exist. Learn how to [create a terraform backend][tutorials-tf-backend].
 
-9. Verify the resource has been created by typing `make azure-app-service-plans-list ARM_RESOURCE_GROUP="our-tutorials-rg"` and checking if the name you assigned to the variable "plan_name" in the "tutorial.tfvars" file exists in the list.
+9. Create the plan by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
-10. To remove the new plan, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
+10. Verify the resource has been created by typing `make azure-app-service-plans-list` and checking if the name you assigned to the variable "plan_name" in the "tutorial.tfvars" file exists in the list.
+
+11. To remove the new plan, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
 [az-app-service-plan]: https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
 [terraform]: https://www.terraform.io/intro/index.html
@@ -91,3 +93,4 @@ In this section, you will clone the tutorial and execute it:
 [tutorial-rg]: ../resource-group/#readme
 [terraform-azurerm]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 [terraform-app_service_plan]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_plan
+[tutorials-tf-backend]: ../backend/#readme

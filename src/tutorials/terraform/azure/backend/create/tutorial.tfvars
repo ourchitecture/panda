@@ -1,10 +1,10 @@
 # name of an existing resource group
-resource_group_name     = "our-tutorials-rg"
+resource_group_name     = "rg-our-tutorials"
 resource_group_location = "East US"
 
 # prefix for the storage account name
 # (a random number will be added to the end)
-storage_name_prefix = "ourtutorials"
+storage_name_prefix = "sttfstate"
 
 # since the name is randomized, a unique tag
 # makes it possible to consistently lookup this

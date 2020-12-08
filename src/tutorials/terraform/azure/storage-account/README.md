@@ -93,7 +93,7 @@ In this section, you will clone the tutorial and execute it:
 
 8. Create the storage account by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
-9. Verify the resource has been created by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="our-tutorials-rg"` where "our-tutorials-rg" is the name of the resource group and checking if the new storage account exists in the list.
+9. Verify the resource has been created by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="rg-our-tutorials"` where "rg-our-tutorials" is the name of the resource group and checking if the new storage account exists in the list.
 
 10. To remove the new storage account, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 

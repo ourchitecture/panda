@@ -3,12 +3,15 @@ provider "azurerm" {
   features {}
 }
 
-locals {
-  tutorial_tags = var.tags
-}
-
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
+terraform {
+  backend "azurerm" {
+    # values should be passed as command-line arguments
+    # https://www.terraform.io/docs/backends/config.html#backend-configuration-file
+    resource_group_name  = "[value from command-line arg]"
+    storage_account_name = "[value from command-line arg]"
+    container_name       = "[value from command-line arg]"
+    key                  = "[value from command-line arg]"
+  }
 }
 
 module "app-service-plan" {

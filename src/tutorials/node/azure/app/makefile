@@ -1,13 +1,15 @@
 include ../../../../../.vars.mk
 
-APP_PORT=3000
-HOST_PORT=3000
+ENV_FILE?=.env
+APP_PORT?=3000
+HOST_PORT?=3000
 
 include $(scripts_dir_path)/prerequisites.mk
 
 include $(scripts_dir_path)/docker/.vars.mk
 
 include $(scripts_dir_path)/node/.vars.mk
+include $(scripts_dir_path)/node/clean.mk
 include $(scripts_dir_path)/node/yarn/init.mk
 include $(scripts_dir_path)/node/yarn/start.mk
 include $(scripts_dir_path)/node/yarn/stop.mk
@@ -22,6 +24,9 @@ include $(scripts_dir_path)/azure/webapps/uninstall.mk
 
 .PHONY: all
 all: init
+
+.PHONY: clean
+clean: node-clean
 
 .PHONY: init
 init: yarn-init

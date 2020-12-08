@@ -23,7 +23,7 @@ source ${DIR}/init.sh
 [ -z "$RESOURCE_ID" ] && echo "Need to set RESOURCE_ID" && exit 1;
 
 echo ""
-echo "Importing resource..."
+echo "Importing resource ${RESOURCE_ADDRESS}..."
 
 terraform import \
   $tf_arg_var_file \

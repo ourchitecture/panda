@@ -1,5 +1,5 @@
 # name of an existing resource group
-rg_name = "our-tutorials-rg"
+rg_name = "rg-our-tutorials"
 
 # name of the new identity
-identity_name = "our-tutorials-managed-identity"
+identity_name = "id-our-tutorials"
