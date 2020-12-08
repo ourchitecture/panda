@@ -76,7 +76,7 @@ Community Impact Guidelines were inspired by Mozilla’s code of conduct enforce
 
 For answers to common questions about the original version of this adapted code of conduct, see the [FAQ][template-faq]. [Translations][template-translations] of the original are also available.
 
-[github-issues]: https://github.com/ourchitecture/patterns-and-tutorials/issues
+[github-issues]: https://github.com/ourchitecture/panda/issues
 [template-url]: https://www.contributor-covenant.org/version/2/0/code_of_conduct.html
 [template-faq]: https://www.contributor-covenant.org/faq
 [template-translations]: https://www.contributor-covenant.org/translations

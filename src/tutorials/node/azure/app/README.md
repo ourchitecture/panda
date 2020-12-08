@@ -24,7 +24,7 @@ In this section, you will clone the tutorial and execute it:
 3. Clone the tutorial into the directory you created by typing:
 
    ```shell
-     git clone https://github.com/ourchitecture/patterns-and-tutorials --depth=1
+     git clone https://github.com/ourchitecture/panda --depth=1
    ```
 
 4. Change to the directory of this tutorial project by typing `cd ./src/tutorials/node/azure/app`.
@@ -76,7 +76,7 @@ In this section, you will clone the tutorial and execute it:
 9. Stop the application by typing `make stop`. You should see output similar to the below:
 
    ```shell
-   make start
+   make stop
     our-tutorials-node-azure
     Docker image "our-tutorials-node-azure" stopped and removed
    ```
@@ -123,3 +123,4 @@ In this section, you will clone the tutorial and execute it:
 [git]: ../../../../tools/git/#readme
 [make]: ../../../../tools/make/#readme
 [docker]: ../../../../tools/docker/#readme
+[azure-account]: https://azure.microsoft.com/en-us/free/

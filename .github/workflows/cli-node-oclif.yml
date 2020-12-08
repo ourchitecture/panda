@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Test Terraform
+    name: Build CLI
 
     env:
       CI: true
@@ -25,7 +25,7 @@ jobs:
       - name: Test
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
-        run: make init check
+        run: make check
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1

@@ -24,13 +24,13 @@ all: init format check
 init: yarn-init
 
 .PHONY: format
-format: prettier-format terraform-format
+format: init prettier-format terraform-format
 
 .PHONY: check
-check: prettier-check terraform-check jest-check
+check: init prettier-check terraform-check jest-check
 
 .PHONY: commit
-commit: yarn-commit
+commit: init yarn-commit
 
 .PHONY: clean
 clean: node-clean
