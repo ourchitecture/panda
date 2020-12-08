@@ -28,5 +28,6 @@ module "backend" {
 }
 
 output "backend" {
-  value = module.backend
+  value     = module.backend
+  sensitive = true
 }
