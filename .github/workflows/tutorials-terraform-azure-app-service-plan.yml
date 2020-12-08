@@ -24,6 +24,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: .env
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        run: |
+          cat >./.env <<EOF
+          ARM_SUBSCRIPTION_ID=${{secrets.ARM_SUBSCRIPTION_ID}}
+          ARM_TENANT_ID=${{secrets.ARM_TENANT_ID}}
+          ARM_CLIENT_ID=${{secrets.ARM_CLIENT_ID}}
+          ARM_CLIENT_SECRET=${{secrets.ARM_CLIENT_SECRET}}
+          ARM_TERRAFORM_BACKEND_RESOURCE_GROUP=${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}
+          ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}
+          ARM_TERRAFORM_BACKEND_CONTAINER=${{secrets.ARM_TERRAFORM_BACKEND_CONTAINER}}
+          ARM_TERRAFORM_BACKEND_KEY=app-service-plan.tfstate
+          EOF
+
       - name: Test
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
