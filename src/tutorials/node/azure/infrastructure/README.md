@@ -96,3 +96,5 @@ In this section, you will clone the tutorial and execute it:
 [git]: ../../../../tools/git/#readme
 [make]: ../../../../tools/make/#readme
 [docker]: ../../../../tools/docker/#readme
+[terraform]: https://www.terraform.io/intro/index.html
+[azure-account]: https://azure.microsoft.com/en-us/free/

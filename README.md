@@ -1,12 +1,12 @@
-# Patterns and Tutorials
+# Patterns and applications
 
 ![tutorials-banner](./media/tutorial-banner.png)
 
 [![Onboarding][badge-onboarding]][devops-onboarding] [![Repo tests][badge-repo]][devops-repo] [![commitlint][badge-commitlint]][devops-commitlint]
 
-👋 Hello and welcome to a collaborative architecture workspace on patterns and tutorials.
+👋 Hello and welcome to a collaborative and applied workspace on patterns.
 
-This ["monorepo"][monorepo] repository hopes to serve as a central reference for simple, end-to-end examples that you can scale from rapid prototyping out to resilient, multi-cloud, multi-region, autoscaling deployments. This is a big goal. As a result, examples will be kept as simple as possible, like "hello world"; although, we realize simplicity can be subjective.
+This ["monorepo"][monorepo] hopes to serve as a central reference for simple, end-to-end examples that you can scale from rapid prototyping out to resilient, multi-cloud, multi-region, autoscaling deployments. This is a big goal. As a result, examples will be kept as simple as possible, like "hello world"; although, we realize simplicity can be subjective.
 
 ## Patterns
 
@@ -22,8 +22,8 @@ Read more [about patterns][patterns].
 
 ### Cloud Infrastructure
 
-- **[Create a Terraform Azure Backend][tutorials-terraform-azure-backend-create]**: [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend-create]
-- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend-maintain]**: [![badge][badge-tutorials-terraform-azure-backend-maintain]][tutorials-terraform-azure-backend-maintain]
+- **[Create a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend]
+- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![badge][badge-tutorials-terraform-azure-backend-maintain]][tutorials-terraform-azure-backend]
 
 - **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
 - **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![badge][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
@@ -47,9 +47,8 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [devops-repo]: https://github.com/ourchitecture/panda/actions?query=workflow%3A%22Repo+tests%22
 [badge-commitlint]: https://github.com/ourchitecture/panda/workflows/commitlint/badge.svg
 [devops-commitlint]: https://github.com/ourchitecture/panda/actions?query=workflow%3Acommitlint
-[tutorials-terraform-azure-backend-create]: ./src/tutorials/terraform/azure/backend/create/#readme
+[tutorials-terraform-azure-backend]: ./src/tutorials/terraform/azure/backend/#readme
 [badge-tutorials-terraform-azure-backend-create]: https://github.com/ourchitecture/panda/workflows/Tutorial:%20Create%20Terraform%20Azure%20Backend/badge.svg
-[tutorials-terraform-azure-backend-maintain]: ./src/tutorials/terraform/azure/backend/maintain/#readme
 [badge-tutorials-terraform-azure-backend-maintain]: https://github.com/ourchitecture/panda/workflows/Tutorial:%20Maintain%20Terraform%20Azure%20Backend/badge.svg
 [tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/#readme
 [badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/panda/workflows/Tutorial:%20Terraform%20Azure%20Resource%20Group/badge.svg

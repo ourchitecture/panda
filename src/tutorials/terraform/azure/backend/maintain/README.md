@@ -1,4 +1,4 @@
-# Tutorials: Create the Azure Terraform Backend
+# Tutorials: Maintain the Azure Terraform Backend
 
 ## What you will build
 
