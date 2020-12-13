@@ -1,6 +1,6 @@
-# @ourchitecture/oclif-cli
+# @ourchitecture/panda-cli
 
-Ourchitecture CLI
+Ourchitecture Panda CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@ourchitecture/oclif-cli.svg)](https://npmjs.org/package/@ourchitecture/oclif-cli)
@@ -8,44 +8,40 @@ Ourchitecture CLI
 [![License](https://img.shields.io/npm/l/@ourchitecture/oclif-cli.svg)](https://github.com/ourchitecture/panda/blob/master/package.json)
 
 <!-- toc -->
-
-- [@ourchitecture/oclif-cli](#ourchitectureoclif-cli)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
-$ npm install -g @ourchitecture/oclif-cli
-$ our COMMAND
+$ npm install -g @ourchitecture/panda-cli
+$ panda COMMAND
 running command...
-$ our (-v|--version|version)
-@ourchitecture/oclif-cli/0.0.1 linux-x64 node-v14.15.1
-$ our --help [COMMAND]
+$ panda (-v|--version|version)
+@ourchitecture/panda-cli/0.0.1 linux-x64 node-v14.15.1
+$ panda --help [COMMAND]
 USAGE
-  $ our COMMAND
+  $ panda COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
+* [`panda hello [FILE]`](#panda-hello-file)
+* [`panda help [COMMAND]`](#panda-help-command)
 
-- [`our hello [FILE]`](#our-hello-file)
-- [`our help [COMMAND]`](#our-help-command)
-
-## `our hello [FILE]`
+## `panda hello [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ our hello [FILE]
+  $ panda hello [FILE]
 
 OPTIONS
   -f, --force
@@ -53,19 +49,19 @@ OPTIONS
   -n, --name=name  name to print
 
 EXAMPLE
-  $ our hello
+  $ panda hello
   hello world from ./src/hello.ts!
 ```
 
 _See code: [src/commands/hello.ts](https://github.com/ourchitecture/panda/blob/v0.0.1/src/commands/hello.ts)_
 
-## `our help [COMMAND]`
+## `panda help [COMMAND]`
 
-display help for our
+display help for panda
 
 ```
 USAGE
-  $ our help [COMMAND]
+  $ panda help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -75,5 +71,4 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
-
 <!-- commandsstop -->

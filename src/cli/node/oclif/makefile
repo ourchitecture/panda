@@ -41,8 +41,8 @@ readme: require-root require-node init
 
 .PHONY: install
 install: init
-	docker build -t our-oclif-cli .
+	docker build -t our-panda-cli .
 
 .PHONY: uninstall
 uninstall: init
-	docker rmi -f our-oclif-cli
+	docker rmi -f our-panda-cli

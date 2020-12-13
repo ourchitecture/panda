@@ -6,6 +6,6 @@ WORKDIR /app
 
 RUN npm link
 
-ENTRYPOINT [ "our" ]
+ENTRYPOINT [ "panda" ]
 
 CMD [ "--help" ]
