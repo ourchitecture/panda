@@ -15,6 +15,8 @@ jobs:
     env:
       CI: true
       PROJECT_PATH: ./src/cli/node/oclif
+      NPM_REGISTRY_URL: https://registry.npmjs.org/
+      YARN_REGISTRY_URL: https://registry.yarnpkg.com
 
     runs-on: ubuntu-latest
 
@@ -24,8 +26,8 @@ jobs:
       - name: Setup registries
         working-directory: ${{env.PROJECT_PATH}}
         run: |
-          echo 'registry=https://registry.npmjs.org/' >> .npmrc
-          echo 'registry "https://registry.yarnpkg.com"' >> .yarnrc
+          echo 'registry=${{env.NPM_REGISTRY_URL}}' >> .npmrc
+          echo 'registry "${{env.YARN_REGISTRY_URL}}"' >> .yarnrc
 
       - name: Test
         # change to the tutorial directory
