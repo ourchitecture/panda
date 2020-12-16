@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup registries
+        working-directory: ${{env.PROJECT_PATH}}
+        run: |
+          echo 'registry=https://registry.npmjs.org/' >> .npmrc
+          echo 'registry "https://registry.yarnpkg.com"' >> .yarnrc
 
       - name: Test
         # change to the tutorial directory
