@@ -8,14 +8,16 @@ Ourchitecture Panda CLI
 [![License](https://img.shields.io/npm/l/@ourchitecture/oclif-cli.svg)](https://github.com/ourchitecture/panda/blob/master/package.json)
 
 <!-- toc -->
-* [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @ourchitecture/panda-cli
 $ panda COMMAND
@@ -27,13 +29,15 @@ USAGE
   $ panda COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`panda hello [FILE]`](#panda-hello-file)
-* [`panda help [COMMAND]`](#panda-help-command)
+
+- [`panda hello [FILE]`](#panda-hello-file)
+- [`panda help [COMMAND]`](#panda-help-command)
 
 ## `panda hello [FILE]`
 
@@ -71,4 +75,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+
 <!-- commandsstop -->

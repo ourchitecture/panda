@@ -10,7 +10,7 @@ include $(scripts_dir_path)/node/yarn/init.mk
 include $(scripts_dir_path)/node/yarn/prettier/format.mk
 include $(scripts_dir_path)/node/yarn/prettier/check.mk
 
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := run
 
 .PHONY: all
 all: check
@@ -41,8 +41,17 @@ readme: require-root require-node init
 
 .PHONY: install
 install: init
-	docker build -t our-panda-cli .
+	docker build --network="host" -t ourchitecture/panda-cli:local .
+
+cmd?=help
+
+.PHONY: run
+run:
+ifndef cmd
+	$(error cmd is not set)
+endif
+	@docker run --rm -t ourchitecture/panda-cli:local $(cmd)
 
 .PHONY: uninstall
 uninstall: init
-	docker rmi -f our-panda-cli
+	docker rmi -f ourchitecture/panda-cli:local
