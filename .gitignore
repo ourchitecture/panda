@@ -262,3 +262,9 @@ terraform.rc
 
 # do not commit personal shell scripts in any directory
 my.sh
+
+# registry proxies are stored in the "yarn.lock" file
+# as a result, if an engineer uses a custom proxy,
+# it is shared with everyone when it is committed and pushed.
+# https://github.com/yarnpkg/yarn/issues/5892#issuecomment-747111058
+yarn.lock
