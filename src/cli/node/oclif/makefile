@@ -43,7 +43,7 @@ readme: require-root require-node init
 
 .PHONY: install
 install: init
-	docker build --network="host" -t ourchitecture/panda-cli:local .
+	docker build --network="host" -t ourchitecture/our-cli:local .
 
 cmd?=help
 
@@ -54,10 +54,10 @@ ifndef cmd
 endif
 	@docker run --rm \
 		--network host \
-		-t ourchitecture/panda-cli:local \
+		-t ourchitecture/our-cli:local \
 		$(cmd)
 
 .PHONY: uninstall
 uninstall: init
 	docker rmi -f \
-		ourchitecture/panda-cli:local
+		ourchitecture/our-cli:local

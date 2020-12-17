@@ -1,6 +1,7 @@
 import { Command, flags } from '@oclif/command';
 
 import * as path from 'path';
+import * as which from 'which';
 
 import { findFirstFileUp } from '../utils/fs';
 import { execAndRead } from '../utils/exec';
@@ -10,7 +11,7 @@ export default class Prerequisites extends Command {
   static description =
     "checks the project's prerequisite requirements for your local machine";
 
-  static examples = [`$ panda prerequisites`];
+  static examples = [`$ our prerequisites`];
 
   static flags = {
     help: flags.help({ char: 'h' }),
@@ -19,13 +20,13 @@ export default class Prerequisites extends Command {
   static aliases = ['needs'];
 
   async run() {
-    const configFileNames = ['panda.yaml', 'panda.json', 'panda.toml'];
+    const configFileNames = ['our.yaml', 'our.json', 'our.toml'];
 
     const configFileSearchResult = await findFirstFileUp(configFileNames);
 
     if (!configFileSearchResult.exists) {
       this.log(
-        `Missing a required panda configuration file of type:`,
+        `Missing a required "our" configuration file of type:`,
         configFileNames
       );
       return;
@@ -51,6 +52,16 @@ export default class Prerequisites extends Command {
 
     config.prerequisites.forEach((prerequisite: any) => {
       // this.log('pre', prerequisite);
+
+      const commandResolution = which.sync(prerequisite.command, {
+        nothrow: true,
+      });
+
+      if (!commandResolution) {
+        throw new Error(
+          `Unmet prerequisite: command not found "${prerequisite.command}"`
+        );
+      }
 
       const commandResult = execAndRead(
         prerequisite.command,
