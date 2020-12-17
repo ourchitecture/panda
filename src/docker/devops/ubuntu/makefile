@@ -4,7 +4,11 @@ install:
 	@docker build -t $(docker_name) .
 
 start:
-	@docker run --rm -it --name $(docker_name) $(docker_name) /bin/bash
+	@docker run --rm -it \
+		--name $(docker_name) \
+		--network host \
+		$(docker_name) \
+		/bin/bash
 
 stop:
 	@docker stop $(docker_name)

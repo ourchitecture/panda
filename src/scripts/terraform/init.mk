@@ -9,5 +9,6 @@ terraform-init: require-root require-terraform
 		-w /app \
 		-e DEBUG=$(DEBUG) \
 		$(docker_arg_env_file) \
+		--network host \
 		--entrypoint "/our/terraform/init.sh" \
 		$(terraform_docker)

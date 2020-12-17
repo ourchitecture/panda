@@ -8,7 +8,7 @@ include $(scripts_dir_path)/prerequisites.mk
 include $(scripts_dir_path)/docker/.vars.mk
 
 include $(scripts_dir_path)/node/.vars.mk
-include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/install.mk
 include $(scripts_dir_path)/node/yarn/start.mk
 include $(scripts_dir_path)/node/yarn/stop.mk
 
@@ -24,7 +24,7 @@ include $(scripts_dir_path)/azure/webapps/uninstall.mk
 all: init
 
 .PHONY: init
-init: yarn-init
+init: yarn-install
 
 .PHONY: start
 start: yarn-start

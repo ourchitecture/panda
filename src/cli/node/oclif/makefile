@@ -6,7 +6,7 @@ include $(scripts_dir_path)/docker/.vars.mk
 
 include $(scripts_dir_path)/node/.vars.mk
 
-include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/install.mk
 include $(scripts_dir_path)/node/yarn/prettier/format.mk
 include $(scripts_dir_path)/node/yarn/prettier/check.mk
 
@@ -16,7 +16,7 @@ include $(scripts_dir_path)/node/yarn/prettier/check.mk
 all: check
 
 .PHONY: init
-check: yarn-init
+init: yarn-install
 
 .PHONY: nyc-check
 nyc-check: require-root require-node init
@@ -24,6 +24,7 @@ nyc-check: require-root require-node init
 		--name $(node_docker_name_prefix)-$@ \
 		-v $(my_dir_path):/app \
 		-w /app \
+		--network host \
 		$(node_docker) \
 		yarn nyc --extension .ts mocha --forbid-only "test/**/*.test.ts"
 
@@ -36,6 +37,7 @@ readme: require-root require-node init
 		--name $(node_docker_name_prefix)-$@ \
 		-v $(my_dir_path):/app \
 		-w /app \
+		--network host \
 		$(node_docker) \
 		yarn oclif-dev readme
 
@@ -50,8 +52,12 @@ run:
 ifndef cmd
 	$(error cmd is not set)
 endif
-	@docker run --rm -t ourchitecture/panda-cli:local $(cmd)
+	@docker run --rm \
+		--network host \
+		-t ourchitecture/panda-cli:local \
+		$(cmd)
 
 .PHONY: uninstall
 uninstall: init
-	docker rmi -f ourchitecture/panda-cli:local
+	docker rmi -f \
+		ourchitecture/panda-cli:local

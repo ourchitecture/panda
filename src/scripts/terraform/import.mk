@@ -23,5 +23,6 @@ endif
 		-e RESOURCE_ADDRESS="$(RESOURCE_ADDRESS)" \
 		-e RESOURCE_ID="$(RESOURCE_ID)" \
 		-e TF_VAR_FILE="$(TF_VAR_FILE)" \
+		--network host \
 		--entrypoint "$(tf_import_script_path)" \
 		$(terraform_docker)

@@ -19,5 +19,6 @@ endif
 		--name $(commitlint_docker_name_prefix)-$@ \
 		-v $(shell pwd):/app \
 		-w /app \
+		--network host \
 		$(commitlint_docker) \
 		commitlint --from HEAD~${COMMIT_COUNT} --to HEAD
