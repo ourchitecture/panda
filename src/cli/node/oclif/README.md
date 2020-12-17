@@ -1,6 +1,6 @@
-# @ourchitecture/oclif-cli
+# @ourchitecture/panda-cli
 
-Ourchitecture CLI
+Ourchitecture Panda CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@ourchitecture/oclif-cli.svg)](https://npmjs.org/package/@ourchitecture/oclif-cli)
@@ -9,7 +9,7 @@ Ourchitecture CLI
 
 <!-- toc -->
 
-- [@ourchitecture/oclif-cli](#ourchitectureoclif-cli)
+- [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
 - [Usage](#usage)
 - [Commands](#commands)
 <!-- tocstop -->
@@ -19,11 +19,11 @@ Ourchitecture CLI
 <!-- usage -->
 
 ```sh-session
-$ npm install -g @ourchitecture/oclif-cli
+$ npm install -g @ourchitecture/our-cli
 $ our COMMAND
 running command...
 $ our (-v|--version|version)
-@ourchitecture/oclif-cli/0.0.1 linux-x64 node-v14.15.1
+@ourchitecture/our-cli/0.0.1 linux-x64 node-v14.15.1
 $ our --help [COMMAND]
 USAGE
   $ our COMMAND
@@ -36,28 +36,57 @@ USAGE
 
 <!-- commands -->
 
-- [`our hello [FILE]`](#our-hello-file)
+- [`our autocomplete [SHELL]`](#our-autocomplete-shell)
+- [`our commands`](#our-commands)
 - [`our help [COMMAND]`](#our-help-command)
+- [`our prerequisites`](#our-prerequisites)
 
-## `our hello [FILE]`
+## `our autocomplete [SHELL]`
 
-describe the command here
+display autocomplete installation instructions
 
 ```
 USAGE
-  $ our hello [FILE]
+  $ our autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL  shell type
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
 
-EXAMPLE
-  $ our hello
-  hello world from ./src/hello.ts!
+EXAMPLES
+  $ our autocomplete
+  $ our autocomplete bash
+  $ our autocomplete zsh
+  $ our autocomplete --refresh-cache
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/ourchitecture/panda/blob/v0.0.1/src/commands/hello.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.2.1/src/commands/autocomplete/index.ts)_
+
+## `our commands`
+
+list all the commands
+
+```
+USAGE
+  $ our commands
+
+OPTIONS
+  -h, --help              show CLI help
+  -j, --json              display unfiltered api data in json format
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --hidden                show hidden commands
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend '-' for descending)
+```
+
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.3.0/src/commands/commands.ts)_
 
 ## `our help [COMMAND]`
 
@@ -74,6 +103,26 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.1/src/commands/help.ts)_
+
+## `our prerequisites`
+
+checks the project's prerequisite requirements for your local machine
+
+```
+USAGE
+  $ our prerequisites
+
+OPTIONS
+  -h, --help  show CLI help
+
+ALIASES
+  $ our needs
+
+EXAMPLE
+  $ our prerequisites
+```
+
+_See code: [src/commands/prerequisites.ts](https://github.com/ourchitecture/panda/blob/v0.0.1/src/commands/prerequisites.ts)_
 
 <!-- commandsstop -->

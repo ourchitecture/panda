@@ -1,0 +1,17 @@
+version: 0.0.1
+
+prerequisites:
+  - type: command-version
+    command: make
+    argv: [--version]
+    min: 4.0
+    required: true
+  - type: command-version
+    command: git
+    argv: [--version]
+    min: 2.20
+    required: true
+  - type: command-version
+    command: docker
+    argv: [--version]
+    min: 19.03

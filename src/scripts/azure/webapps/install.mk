@@ -10,5 +10,6 @@ endif
 		-w /app \
 		-e DEBUG=$(DEBUG) \
 		$(docker_arg_env_file) \
+		--network host \
 		$(azure_docker) \
 		/our/azure/webapps/install.sh

@@ -9,5 +9,6 @@ endif
 		-e DEBUG=$(DEBUG) \
 		-e ARM_RESOURCE_GROUP=$(ARM_RESOURCE_GROUP) \
 		$(docker_arg_env_file) \
+		--network host \
 		$(azure_docker) \
 		/our/azure/storage-accounts/list.sh

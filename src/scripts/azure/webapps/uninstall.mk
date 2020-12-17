@@ -8,5 +8,6 @@ endif
 		-v $(scripts_dir_path):/our \
 		-e DEBUG=$(DEBUG) \
 		$(docker_arg_env_file) \
+		--network host \
 		$(azure_docker) \
 		/our/azure/webapps/uninstall.sh

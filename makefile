@@ -9,7 +9,7 @@ include $(scripts_dir_path)/terraform/format.mk
 include $(scripts_dir_path)/node/.vars.mk
 include $(scripts_dir_path)/node/clean.mk
 include $(scripts_dir_path)/node/commitlint/check.mk
-include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/install.mk
 include $(scripts_dir_path)/node/yarn/prettier/check.mk
 include $(scripts_dir_path)/node/yarn/prettier/format.mk
 include $(scripts_dir_path)/node/yarn/jest/check.mk
@@ -21,7 +21,7 @@ include $(scripts_dir_path)/node/yarn/commit/commit.mk
 all: init format check
 
 .PHONY: init
-init: yarn-init
+init: yarn-install
 
 .PHONY: format
 format: init prettier-format terraform-format

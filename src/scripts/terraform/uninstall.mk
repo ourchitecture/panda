@@ -14,5 +14,6 @@ terraform-uninstall: require-root require-terraform
 		-e TF_PLAN_ONLY=$(TF_PLAN_ONLY) \
 		-e TF_DESTROY=true \
 		-e TF_VAR_FILE="$(TF_VAR_FILE)" \
+		--network host \
 		--entrypoint "/our/terraform/run.sh" \
 		$(terraform_docker)

@@ -6,17 +6,17 @@ include $(scripts_dir_path)/docker/.vars.mk
 
 include $(scripts_dir_path)/node/.vars.mk
 
-include $(scripts_dir_path)/node/yarn/init.mk
+include $(scripts_dir_path)/node/yarn/install.mk
 include $(scripts_dir_path)/node/yarn/prettier/format.mk
 include $(scripts_dir_path)/node/yarn/prettier/check.mk
 
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := run
 
 .PHONY: all
 all: check
 
 .PHONY: init
-check: yarn-init
+init: yarn-install
 
 .PHONY: nyc-check
 nyc-check: require-root require-node init
@@ -24,6 +24,7 @@ nyc-check: require-root require-node init
 		--name $(node_docker_name_prefix)-$@ \
 		-v $(my_dir_path):/app \
 		-w /app \
+		--network host \
 		$(node_docker) \
 		yarn nyc --extension .ts mocha --forbid-only "test/**/*.test.ts"
 
@@ -36,13 +37,27 @@ readme: require-root require-node init
 		--name $(node_docker_name_prefix)-$@ \
 		-v $(my_dir_path):/app \
 		-w /app \
+		--network host \
 		$(node_docker) \
 		yarn oclif-dev readme
 
 .PHONY: install
 install: init
-	docker build -t our-oclif-cli .
+	docker build --network="host" -t ourchitecture/our-cli:local .
+
+cmd?=help
+
+.PHONY: run
+run:
+ifndef cmd
+	$(error cmd is not set)
+endif
+	@docker run --rm \
+		--network host \
+		-t ourchitecture/our-cli:local \
+		$(cmd)
 
 .PHONY: uninstall
 uninstall: init
-	docker rmi -f our-oclif-cli
+	docker rmi -f \
+		ourchitecture/our-cli:local

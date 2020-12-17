@@ -6,5 +6,6 @@ terraform-check: require-root require-terraform
 		-v $(my_dir_path):/app \
 		-w /app \
 		$(docker_arg_env_file) \
+		--network host \
 		--entrypoint "/our/terraform/check.sh" \
 		$(terraform_docker)

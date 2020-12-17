@@ -1,8 +1,13 @@
-FROM node:lts-alpine3.11
+FROM ourchitecture/devops-node:latest
 
-COPY . /app
+# update
+RUN apt-get update \
+    # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+COPY . /our-cli
+
+WORKDIR /our-cli
 
 RUN npm link
 

@@ -1,44 +1,32 @@
-name: "CLI"
+name: Docker Node Developer
 
 on:
   schedule:
     # run every day at midnight UST
     - cron: "0 0 * * *"
+  workflow_run:
+    workflows: ["Docker Ubuntu Developer"]
+    branches: ["main"]
+    types: ["completed"]
   push:
     paths:
-      # trigger build when shared scripts change
-      - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/cli-node-oclif.yml"
+      - ".github/workflows/docker-devops-node.yml"
       # run this build when the source code changes
-      - "src/cli/node/oclif/**"
+      - "src/docker/devops/node/**"
 
 jobs:
-  test:
-    name: Build CLI
+  push_to_registry:
+    name: Push Docker image to GitHub Packages
 
     env:
-      CI: true
-      PROJECT_PATH: ./src/cli/node/oclif
-      NPM_REGISTRY_URL: https://registry.npmjs.org/
-      YARN_REGISTRY_URL: https://registry.yarnpkg.com
+      PROJECT_PATH: ./src/docker/devops/node
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Setup registries
-        working-directory: ${{env.PROJECT_PATH}}
-        run: |
-          echo 'registry=${{env.NPM_REGISTRY_URL}}' >> .npmrc
-          echo 'registry "${{env.YARN_REGISTRY_URL}}"' >> .yarnrc
-
-      - name: Test
-        # change to the tutorial directory
-        working-directory: ${{env.PROJECT_PATH}}
-        run: make check
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -55,4 +43,4 @@ jobs:
           context: ${{env.PROJECT_PATH}}
           file: ${{env.PROJECT_PATH}}/Dockerfile
           push: true
-          tags: ourchitecture/cli:latest,ourchitecture/cli-oclif:latest
+          tags: ourchitecture/devops-node:latest

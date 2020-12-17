@@ -17,5 +17,6 @@ terraform-install: require-root require-terraform
 		-e DEBUG=$(DEBUG) \
 		-e TF_PLAN_ONLY=$(TF_PLAN_ONLY) \
 		-e TF_VAR_FILE="$(TF_VAR_FILE)" \
+		--network host \
 		--entrypoint "$(tf_run_script_path)" \
 		$(terraform_docker)

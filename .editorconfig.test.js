@@ -14,7 +14,7 @@ async function readConfigForFile(relativeFilePath) {
 }
 
 test('.editorconfig exists and can be applied to a file', async () => {
-  const fileStyles = await readConfigForFile('yarn.lock');
+  const fileStyles = await readConfigForFile('.yarnrc');
 
   expect(fileStyles.charset).toBe('utf-8');
   expect(fileStyles.trim_trailing_whitespace).toBe(true);

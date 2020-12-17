@@ -1,5 +1,5 @@
-docker_tag=ourchitecture/devops-ubuntu:local
-docker_name=our-devops-ubuntu
+docker_tag=ourchitecture/devops-node:local
+docker_name=our-devops-node
 
 install:
 	@docker build -t $(docker_tag) .

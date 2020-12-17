@@ -5,5 +5,6 @@ azure-resource-groups-list: require-root require-docker require-azure
 		-v $(scripts_dir_path):/our \
 		-e DEBUG=$(DEBUG) \
 		$(docker_arg_env_file) \
+		--network host \
 		$(azure_docker) \
 		/our/azure/resource-groups/list.sh
