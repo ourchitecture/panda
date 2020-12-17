@@ -1,6 +1,9 @@
 name: "CLI"
 
 on:
+  schedule:
+    # run every day at midnight UST
+    - cron: "0 0 * * *"
   push:
     paths:
       # trigger build when shared scripts change

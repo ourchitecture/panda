@@ -1,24 +1,8 @@
-FROM ourchitecture/devops-ubuntu:latest
+FROM ourchitecture/devops-node:latest
 
-ARG NODE_MAJOR_VERSION="14"
-
-# install node
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - \
-    && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive \
-        apt-get install -y --no-install-recommends \
-            nodejs \
+# update
+RUN apt-get update \
     # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
-    && rm -rf /var/lib/apt/lists/* \
-    && npm install -g npm@latest
-
-# install yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-    && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive \
-        apt-get install -y --no-install-recommends \
-            yarn \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /our-cli

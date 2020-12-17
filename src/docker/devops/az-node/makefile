@@ -1,4 +1,4 @@
-docker_tag=ourchitecture/devops-az-node:latest
+docker_tag=ourchitecture/devops-az-node:local
 docker_name=our-devops-az-node
 
 install:

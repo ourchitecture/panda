@@ -1,6 +1,9 @@
 name: Docker Ubuntu Developer
 
 on:
+  schedule:
+    # run every day at midnight UST
+    - cron: "0 0 * * *"
   push:
     paths:
       # run this build when this file changes

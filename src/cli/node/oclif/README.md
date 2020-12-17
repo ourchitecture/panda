@@ -8,14 +8,16 @@ Ourchitecture Panda CLI
 [![License](https://img.shields.io/npm/l/@ourchitecture/oclif-cli.svg)](https://github.com/ourchitecture/panda/blob/master/package.json)
 
 <!-- toc -->
-* [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@ourchitecture/panda-cli](#ourchitecturepanda-cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @ourchitecture/our-cli
 $ our COMMAND
@@ -27,15 +29,17 @@ USAGE
   $ our COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`our autocomplete [SHELL]`](#our-autocomplete-shell)
-* [`our commands`](#our-commands)
-* [`our help [COMMAND]`](#our-help-command)
-* [`our prerequisites`](#our-prerequisites)
+
+- [`our autocomplete [SHELL]`](#our-autocomplete-shell)
+- [`our commands`](#our-commands)
+- [`our help [COMMAND]`](#our-help-command)
+- [`our prerequisites`](#our-prerequisites)
 
 ## `our autocomplete [SHELL]`
 
@@ -120,4 +124,5 @@ EXAMPLE
 ```
 
 _See code: [src/commands/prerequisites.ts](https://github.com/ourchitecture/panda/blob/v0.0.1/src/commands/prerequisites.ts)_
+
 <!-- commandsstop -->

@@ -1,4 +1,4 @@
-docker_tag=ourchitecture/devops-node:latest
+docker_tag=ourchitecture/devops-node:local
 docker_name=our-devops-node
 
 install:
