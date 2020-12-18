@@ -39,6 +39,7 @@ Read more [about patterns][patterns].
 - [Docker Node Developer][docker-node]: [![Docker Node Developer Badge][docker-node-workflow-badge]][docker-node]
 - [Docker Azure Node Developer][docker-az-node]: [![Docker Azure Node Developer Badge][docker-az-node-workflow-badge]][docker-az-node]
 - [Docker Azure Terraform Developer][docker-az-terraform]: [![Docker Azure Terraform Developer Badge][docker-az-terraform-workflow-badge]][docker-az-terraform]
+- [Docker Commitlint][docker-commitlint]: [![Docker Commitlint Badge][docker-commitlint-workflow-badge]][docker-commitlint]
 
 ## Contributing
 
@@ -76,3 +77,5 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [docker-az-node]: ./src/docker/az-node/#readme
 [docker-az-terraform-workflow-badge]: https://github.com/ourchitecture/panda/workflows/Docker%20Azure%20Terraform%20Developer/badge.svg
 [docker-az-terraform]: ./src/docker/az-terraform/#readme
+[docker-commitlint-workflow-badge]: https://github.com/ourchitecture/panda/workflows/Docker%20Commitlint/badge.svg
+[docker-commitlint]: ./src/docker/commitlint/#readme
