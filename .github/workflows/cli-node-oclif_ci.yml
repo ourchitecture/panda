@@ -1,7 +1,11 @@
 name: cli-node-oclif_ci
 
 on:
-  push:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
     paths:
       # trigger build when shared scripts change
       - "src/scripts/**"
@@ -9,11 +13,6 @@ on:
       - ".github/workflows/cli-node-oclif_ci.yml"
       # run this build when the source code changes
       - "src/cli/node/oclif/**"
-  pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
 
 jobs:
   check:
