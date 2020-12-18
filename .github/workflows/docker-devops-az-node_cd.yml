@@ -1,27 +1,27 @@
-name: docker-node_cd
+name: docker-az-node_cd
 
 on:
   schedule:
     # run every day at midnight UST
     - cron: "0 0 * * *"
   workflow_run:
-    workflows: ["Docker Ubuntu Developer"]
+    workflows: ["Docker Node Developer"]
     branches: ["main"]
     types: ["completed"]
   push:
     branches: ["main"]
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-node_*.yml"
+      - ".github/workflows/docker-devops-az-node_*.yml"
       # run this build when the source code changes
-      - "src/docker/devops/node/**"
+      - "src/docker/devops/az-node/**"
 
 jobs:
   install:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_PATH: ./src/docker/devops/node
+      PROJECT_PATH: ./src/docker/devops/az-node
 
     steps:
       - uses: actions/checkout@v2
@@ -35,5 +35,5 @@ jobs:
         with:
           context: ${{env.PROJECT_PATH}}
           file: ${{env.PROJECT_PATH}}/Dockerfile
-          tags: ourchitecture/devops-node:latest
+          tags: ourchitecture/devops-az-node:latest
           push: true
