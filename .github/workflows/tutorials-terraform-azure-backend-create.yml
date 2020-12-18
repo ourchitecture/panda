@@ -1,4 +1,4 @@
-name: "Tutorial: Create Terraform Azure Backend"
+name: tutorials-terraform-azure-backend-create
 
 on:
   push:
@@ -11,20 +11,17 @@ on:
       - "src/tutorials/terraform/azure/backend/create/**"
 
 jobs:
-  test:
-    name: Test Terraform
+  check:
+    runs-on: ubuntu-latest
 
     env:
       CI: true
       PROJECT_PATH: ./src/tutorials/terraform/azure/backend/create
 
-    runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Test
+      - name: check
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
-        run: make prerequisites check
+        run: make check

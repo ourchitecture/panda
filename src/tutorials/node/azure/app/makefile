@@ -30,7 +30,7 @@ all: init
 init: yarn-install
 
 .PHONY: check
-check: init
+check: prerequisites init
 
 .PHONY: start
 start: yarn-start

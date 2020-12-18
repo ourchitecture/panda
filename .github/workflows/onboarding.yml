@@ -1,13 +1,11 @@
-name: "Onboarding"
+name: onboarding
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  nix-build:
-    env:
-      CI: true
+  check:
     strategy:
       matrix:
         # macos-latest: sorry, for now.
@@ -31,9 +29,11 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    env:
+      CI: true
 
-      - name: Build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: check
         run: make all
