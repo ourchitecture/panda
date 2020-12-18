@@ -5,10 +5,12 @@ include $(scripts_dir_path)/prerequisites.mk
 include $(scripts_dir_path)/docker/.vars.mk
 
 include $(scripts_dir_path)/node/.vars.mk
+include $(scripts_dir_path)/node/clean.mk
+include $(scripts_dir_path)/node/interactive.mk
+include $(scripts_dir_path)/node/install.mk
 
-include $(scripts_dir_path)/node/yarn/install.mk
-include $(scripts_dir_path)/node/yarn/prettier/format.mk
-include $(scripts_dir_path)/node/yarn/prettier/check.mk
+include $(scripts_dir_path)/node/npx/prettier/format.mk
+include $(scripts_dir_path)/node/npx/prettier/check.mk
 
 .DEFAULT_GOAL := run
 
@@ -16,7 +18,10 @@ include $(scripts_dir_path)/node/yarn/prettier/check.mk
 all: check
 
 .PHONY: init
-init: yarn-install
+init: node-install
+
+.PHONY: clean
+clean: node-install
 
 .PHONY: nyc-check
 nyc-check: require-root require-node init
@@ -26,7 +31,7 @@ nyc-check: require-root require-node init
 		-w /app \
 		--network host \
 		$(node_docker) \
-		yarn nyc --extension .ts mocha --forbid-only "test/**/*.test.ts"
+		npx nyc --extension .ts mocha --forbid-only "test/**/*.test.ts"
 
 .PHONY: check
 check: init prettier-check nyc-check

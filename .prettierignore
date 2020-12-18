@@ -1,6 +1,7 @@
 .yarn
 .nyc_output
 .terraform
+.pnp.js
 
 # Ignore artifacts:
 build

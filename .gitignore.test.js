@@ -125,9 +125,9 @@ test('.gitignore Node settings', async () => {
   expect(gitignore).toContain('.dynamodb/');
   expect(gitignore).toContain('.tern-port');
   expect(gitignore).toContain('.vscode-test');
-  expect(gitignore).toContain('.yarn/cache');
-  expect(gitignore).toContain('.yarn/unplugged');
-  expect(gitignore).toContain('.yarn/build-state.yml');
-  expect(gitignore).toContain('.yarn/install-state.gz');
+  expect(gitignore).toContain('**/.yarn/cache');
+  expect(gitignore).toContain('**/.yarn/unplugged');
+  expect(gitignore).toContain('**/.yarn/build-state.yml');
+  expect(gitignore).toContain('**/.yarn/install-state.gz');
   expect(gitignore).toContain('.pnp.*');
 });
