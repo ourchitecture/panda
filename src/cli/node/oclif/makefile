@@ -21,7 +21,7 @@ all: check
 init: node-install
 
 .PHONY: clean
-clean: node-install
+clean: node-clean
 
 .PHONY: nyc-check
 nyc-check: require-root require-node init
