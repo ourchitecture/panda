@@ -1,7 +1,11 @@
 name: tutorials-terraform-azure-app_service_plan
 
 on:
-  push:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
     paths:
       # trigger build when shared scripts change
       - "src/scripts/**"
