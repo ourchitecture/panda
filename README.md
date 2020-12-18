@@ -31,15 +31,15 @@ Read more [about patterns][patterns].
 
 ## Projects
 
-- [oclif CLI][oclif-cli]: [![oclif CLI][oclif-cli-workflow-badge]][oclif-cli]
+- [oclif CLI][oclif-cli]: [![oclif CLI CI][oclif-cli-ci-workflow-badge]][oclif-cli] [![oclif CLI CD][oclif-cli-cd-workflow-badge]][oclif-cli]
 
 ## Docker Images
 
-- [Docker Ubuntu Developer][docker-ubuntu]: [![Docker Ubuntu Developer Badge][docker-ubuntu-workflow-badge]][docker-ubuntu]
-- [Docker Node Developer][docker-node]: [![Docker Node Developer Badge][docker-node-workflow-badge]][docker-node]
-- [Docker Azure Node Developer][docker-az-node]: [![Docker Azure Node Developer Badge][docker-az-node-workflow-badge]][docker-az-node]
-- [Docker Azure Terraform Developer][docker-az-terraform]: [![Docker Azure Terraform Developer Badge][docker-az-terraform-workflow-badge]][docker-az-terraform]
-- [Docker Commitlint][docker-commitlint]: [![Docker Commitlint Badge][docker-commitlint-workflow-badge]][docker-commitlint]
+- [Docker Ubuntu Developer][docker-ubuntu]: [![Docker Ubuntu Developer CI Badge][docker-ubuntu-ci-workflow-badge]][docker-ubuntu] [![Docker Ubuntu Developer CD Badge][docker-ubuntu-cd-workflow-badge]][docker-ubuntu]
+- [Docker Node Developer][docker-node]: [![Docker Node Developer CI Badge][docker-node-ci-workflow-badge]][docker-node] [![Docker Node Developer CD Badge][docker-node-cd-workflow-badge]][docker-node]
+- [Docker Azure Node Developer][docker-az-node]: [![Docker Azure Node Developer CI Badge][docker-az-node-ci-workflow-badge]][docker-az-node] [![Docker Azure Node Developer CD Badge][docker-az-node-cd-workflow-badge]][docker-az-node]
+- [Docker Azure Terraform Developer][docker-az-terraform]: [![Docker Azure Terraform Developer CI Badge][docker-az-terraform-ci-workflow-badge]][docker-az-terraform] [![Docker Azure Terraform Developer CD Badge][docker-az-terraform-cd-workflow-badge]][docker-az-terraform]
+- [Docker Commitlint][docker-commitlint]: [![Docker Commitlint CI Badge][docker-commitlint-ci-workflow-badge]][docker-commitlint] [![Docker Commitlint CD Badge][docker-commitlint-cd-workflow-badge]][docker-commitlint]
 
 ## Contributing
 
@@ -67,15 +67,21 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [tutorials-node-azure]: ./src/tutorials/node/azure/#readme
 [badge-tutorials-node-azure-app]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app/badge.svg
 [badge-tutorials-node-azure-infrastructure]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra/badge.svg
-[oclif-cli-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_ci/badge.svg
+[oclif-cli-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_ci/badge.svg
+[oclif-cli-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_cd/badge.svg
 [oclif-cli]: ./src/cli/node/oclif/#readme
-[docker-ubuntu-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-ubuntu_ci/badge.svg
+[docker-ubuntu-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-ubuntu_ci/badge.svg
+[docker-ubuntu-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-ubuntu_cd/badge.svg
 [docker-ubuntu]: ./src/docker/ubuntu/#readme
-[docker-node-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-node_ci/badge.svg
+[docker-node-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-node_ci/badge.svg
+[docker-node-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-node_cd/badge.svg
 [docker-node]: ./src/docker/node/#readme
-[docker-az-node-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-node_ci/badge.svg
+[docker-az-node-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-node_ci/badge.svg
+[docker-az-node-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-node_cd/badge.svg
 [docker-az-node]: ./src/docker/az-node/#readme
-[docker-az-terraform-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-terraform_ci/badge.svg
+[docker-az-terraform-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-terraform_ci/badge.svg
+[docker-az-terraform-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-terraform_cd/badge.svg
 [docker-az-terraform]: ./src/docker/az-terraform/#readme
-[docker-commitlint-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-commitlint_ci/badge.svg
+[docker-commitlint-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-commitlint_ci/badge.svg
+[docker-commitlint-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-commitlint_cd/badge.svg
 [docker-commitlint]: ./src/docker/commitlint/#readme

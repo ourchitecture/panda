@@ -1,4 +1,4 @@
-name: docker-devops-az-commitlint_ci
+name: docker-devops-commitlint_ci
 
 on:
   push:

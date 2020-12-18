@@ -1,4 +1,4 @@
-name: docker-devops-az-commitlint_cd
+name: docker-devops-commitlint_cd
 
 on:
   schedule:
