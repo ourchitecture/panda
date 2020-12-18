@@ -1,12 +1,14 @@
-name: docker-devops-node_ci
+name: cli-node-oclif_ci
 
 on:
   push:
     paths:
+      # trigger build when shared scripts change
+      - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/docker-devops-node_ci.yml"
+      - ".github/workflows/cli-node-oclif_ci.yml"
       # run this build when the source code changes
-      - "src/docker/devops/node/**"
+      - "src/cli/node/oclif/**"
   pull_request_target:
     types:
       - opened
@@ -18,10 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_PATH: ./src/docker/devops/node
+      CI: true
+      PROJECT_PATH: ./src/cli/node/oclif
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: check
+        # change to the tutorial directory
+        working-directory: ${{env.PROJECT_PATH}}
+        run: make check
+
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
       - uses: docker/build-push-action@v2

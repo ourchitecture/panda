@@ -1,4 +1,4 @@
-name: docker-devops-az-node_cd
+name: docker-devops-az-commitlint_cd
 
 on:
   schedule:
@@ -12,16 +12,16 @@ on:
     branches: ["main"]
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-az-node_cd.yml"
+      - ".github/workflows/docker-devops-commitlint_cd.yml"
       # run this build when the source code changes
-      - "src/docker/devops/az-node/**"
+      - "src/docker/devops/commitlint/**"
 
 jobs:
   install:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_PATH: ./src/docker/devops/az-node
+      PROJECT_PATH: ./src/docker/devops/commitlint
 
     steps:
       - uses: actions/checkout@v2
@@ -35,5 +35,5 @@ jobs:
         with:
           context: ${{env.PROJECT_PATH}}
           file: ${{env.PROJECT_PATH}}/Dockerfile
-          tags: ourchitecture/devops-az-node:latest
+          tags: ourchitecture/devops-commitlint:latest
           push: true

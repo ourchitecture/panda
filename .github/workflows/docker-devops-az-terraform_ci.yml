@@ -1,12 +1,12 @@
-name: docker-devops-node_ci
+name: docker-devops-az-terraform_ci
 
 on:
   push:
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-node_ci.yml"
+      - ".github/workflows/docker-devops-az-terraform_ci.yml"
       # run this build when the source code changes
-      - "src/docker/devops/node/**"
+      - "src/docker/devops/az-terraform/**"
   pull_request_target:
     types:
       - opened
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_PATH: ./src/docker/devops/node
+      PROJECT_PATH: ./src/docker/devops/az-terraform
 
     steps:
       - uses: actions/checkout@v2

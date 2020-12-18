@@ -1,27 +1,27 @@
-name: docker-devops-az-node_cd
+name: docker-devops-az-terraform_cd
 
 on:
   schedule:
     # run every day at midnight UST
     - cron: "0 0 * * *"
   workflow_run:
-    workflows: ["docker-devops-node_cd"]
+    workflows: ["docker-devops-ubuntu_cd"]
     branches: ["main"]
     types: ["completed"]
   push:
     branches: ["main"]
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-az-node_cd.yml"
+      - ".github/workflows/docker-devops-az-terraform_cd.yml"
       # run this build when the source code changes
-      - "src/docker/devops/az-node/**"
+      - "src/docker/devops/az-terraform/**"
 
 jobs:
   install:
     runs-on: ubuntu-latest
 
     env:
-      PROJECT_PATH: ./src/docker/devops/az-node
+      PROJECT_PATH: ./src/docker/devops/az-terraform
 
     steps:
       - uses: actions/checkout@v2
@@ -35,5 +35,5 @@ jobs:
         with:
           context: ${{env.PROJECT_PATH}}
           file: ${{env.PROJECT_PATH}}/Dockerfile
-          tags: ourchitecture/devops-az-node:latest
+          tags: ourchitecture/devops-az-terraform:latest
           push: true

@@ -1,10 +1,10 @@
-name: docker-az-node_ci
+name: docker-devops-az-node_ci
 
 on:
   push:
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-node_*.yml"
+      - ".github/workflows/docker-devops-node_ci.yml"
       # run this build when the source code changes
       - "src/docker/devops/az-node/**"
   pull_request_target:

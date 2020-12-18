@@ -1,18 +1,18 @@
-name: docker-node_cd
+name: docker-devops-node_cd
 
 on:
   schedule:
     # run every day at midnight UST
     - cron: "0 0 * * *"
   workflow_run:
-    workflows: ["Docker Ubuntu Developer"]
+    workflows: ["docker-devops-ubuntu_cd"]
     branches: ["main"]
     types: ["completed"]
   push:
     branches: ["main"]
     paths:
       # run this build when this file changes
-      - ".github/workflows/docker-devops-node_*.yml"
+      - ".github/workflows/docker-devops-node_cd.yml"
       # run this build when the source code changes
       - "src/docker/devops/node/**"
 
