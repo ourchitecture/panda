@@ -8,6 +8,7 @@ include $(scripts_dir_path)/terraform/format.mk
 
 include $(scripts_dir_path)/node/.vars.mk
 include $(scripts_dir_path)/node/clean.mk
+include $(scripts_dir_path)/node/interactive.mk
 include $(scripts_dir_path)/node/commitlint/check.mk
 include $(scripts_dir_path)/node/yarn/install.mk
 include $(scripts_dir_path)/node/yarn/prettier/check.mk

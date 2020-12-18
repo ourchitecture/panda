@@ -206,10 +206,10 @@ dist
 .vscode-test
 
 # yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
+**/.yarn/cache
+**/.yarn/unplugged
+**/.yarn/build-state.yml
+**/.yarn/install-state.gz
 .pnp.*
 
 ################################################################################
@@ -263,8 +263,8 @@ terraform.rc
 # do not commit personal shell scripts in any directory
 my.sh
 
-# registry proxies are stored in the "yarn.lock" file
-# as a result, if an engineer uses a custom proxy,
-# it is shared with everyone when it is committed and pushed.
-# https://github.com/yarnpkg/yarn/issues/5892#issuecomment-747111058
-yarn.lock
+# ignore azure cache directory (e.g. `az webapp up ...`)
+.azure
+
+# ignore package lock files (using Yarn)
+package-lock.json

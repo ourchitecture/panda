@@ -32,6 +32,7 @@ test('package.json devDepencencies', async () => {
     mrm: '^2.5.12',
     'parse-gitignore': '^1.0.1',
     prettier: '^2.2.1',
+    typescript: '^4.1.3',
     yaml: '^1.10.0',
   });
 });
