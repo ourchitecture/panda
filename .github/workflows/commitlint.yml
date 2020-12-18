@@ -1,16 +1,16 @@
-name: "commitlint"
+name: commitlint
 
 on: pull_request
 
 jobs:
-  build:
-    env:
-      CI: true
+  check:
     runs-on: ubuntu-latest
 
+    env:
+      CI: true
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           # https://github.com/actions/checkout#checkout-v2
           # "Only a single commit is fetched by default, for the ref/SHA that

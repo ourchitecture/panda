@@ -2,7 +2,7 @@
 # - none
 
 commitlint_docker_name_prefix=our-scripts-commitlint-make-$(now_date_time_tag)
-commitlint_docker=ourchitecture/git-commitlint
+commitlint_docker=ourchitecture/devops-commitlint
 
 .PHONY: commitlint-check
 commitlint-check:
