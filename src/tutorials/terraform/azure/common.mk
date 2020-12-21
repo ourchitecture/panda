@@ -1,4 +1,4 @@
-ARM_RESOURCE_GROUP?="our-tutorials-rg"
+ARM_RESOURCE_GROUP?="rg-our-tutorials"
 TF_VAR_FILE?=tutorial.tfvars
 
 include $(scripts_dir_path)/prerequisites.mk

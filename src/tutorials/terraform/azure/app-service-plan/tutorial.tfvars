@@ -1,5 +1,5 @@
-resource_group_name = "our-tutorials-rg"
-plan_name           = "our-tutorials-linux-app-plan"
+resource_group_name = "rg-our-tutorials"
+plan_name           = "plan-our-tutorials-linux-apps"
 plan_kind           = "Linux"
 
 # must be true for "Linux", can be false for "Windows"
