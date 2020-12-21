@@ -41,9 +41,9 @@ jobs:
           EOF
 
           cat >./${{env.TF_VAR_FILE}} <<EOF
-          resource_group_name = ${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}
+          resource_group_name = "${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}"
           resource_group_location = "East US"
-          storage_name = ${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}
+          storage_name = "${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}"
           storage_id_tag_value = "st-our-tfstate"
           storage_container_name = "tfstate"
           EOF
