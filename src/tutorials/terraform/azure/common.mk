@@ -9,6 +9,7 @@ include $(scripts_dir_path)/terraform/.vars.mk
 include $(scripts_dir_path)/terraform/init.mk
 include $(scripts_dir_path)/terraform/check.mk
 include $(scripts_dir_path)/terraform/clean.mk
+include $(scripts_dir_path)/terraform/format.mk
 
 include $(scripts_dir_path)/terraform/azure/install.mk
 include $(scripts_dir_path)/terraform/azure/uninstall.mk

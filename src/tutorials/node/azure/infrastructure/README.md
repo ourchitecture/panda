@@ -93,8 +93,8 @@ In this section, you will clone the tutorial and execute it:
 [tutorial-app-service-plan]: ../../../terraform/azure/app-service-plan/#readme
 [terraform-azurerm]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 [terraform-app_service]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service
-[git]: ../../../../tools/git/#readme
-[make]: ../../../../tools/make/#readme
-[docker]: ../../../../tools/docker/#readme
+[git]: ../../../../../docs/git.md
+[make]: ../../../../../docs/make.md
+[docker]: ../../../../../docs/docker.md
 [terraform]: https://www.terraform.io/intro/index.html
 [azure-account]: https://azure.microsoft.com/en-us/free/

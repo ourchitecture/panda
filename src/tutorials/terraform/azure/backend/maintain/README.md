@@ -105,7 +105,7 @@ In this section, you will clone the tutorial and execute it:
 [az-storage-acocunt]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 [azure-account]: https://azure.microsoft.com/en-us/free/
 [tutorials-backend-create]: ../create/#readme
-[git]: ../../../../../tools/git/#readme
-[make]: ../../../../../tools/make/#readme
-[docker]: ../../../../../tools/docker/#readme
+[git]: ../../../../../../docs/git.md
+[make]: ../../../../../../docs/make.md
+[docker]: ../../../../../../docs/docker.md
 [tutorials-backend-devops]: ../../../../../../.github/workflows/tutorials-terraform-azure-backend-maintain.yml
