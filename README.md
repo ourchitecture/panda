@@ -18,7 +18,7 @@ Read more [about patterns][patterns].
 
 ### Cloud Applications
 
-**[Node.js on Azure][tutorials-node-azure]**: [![Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure]][tutorials-node-azure] [![Node.js on Azure][badge-tutorials-node-azure-app]][tutorials-node-azure]
+**[Node.js on Azure][tutorials-node-azure]**: [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure] [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure] [![Node.js on Azure][badge-tutorials-node-azure-app]][tutorials-node-azure]
 
 ### Cloud Infrastructure
 
@@ -26,7 +26,7 @@ Read more [about patterns][patterns].
 - **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![ci badge][badge-tutorials-terraform-azure-backend-maintain-ci]][tutorials-terraform-azure-backend] [![cd badge][badge-tutorials-terraform-azure-backend-maintain-cd]][tutorials-terraform-azure-backend]
 
 - **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
-- **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![badge][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
+- **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![ci badge][badge-tutorials-terraform-azure-app-service-plan-ci]][tutorials-terraform-azure-app-service-plan] [![cd badge][badge-tutorials-terraform-azure-app-service-plan-cd]][tutorials-terraform-azure-app-service-plan]
 - **[Terraform Azure Storage Account][tutorials-terraform-azure-storage-account]:** [![badge][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
 
 ## Projects
@@ -62,12 +62,14 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/#readme
 [badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-resource_group/badge.svg
 [tutorials-terraform-azure-app-service-plan]: ./src/tutorials/terraform/azure/app-service-plan/#readme
-[badge-tutorials-terraform-azure-app-service-plan]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-app_service_plan/badge.svg
+[badge-tutorials-terraform-azure-app-service-plan-ci]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-app_service_plan_ci/badge.svg
+[badge-tutorials-terraform-azure-app-service-plan-cd]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-app_service_plan_cd/badge.svg
 [tutorials-terraform-azure-storage-account]: ./src/tutorials/terraform/azure/storage-account/#readme
 [badge-tutorials-terraform-azure-storage-account]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-storage_account/badge.svg
 [tutorials-node-azure]: ./src/tutorials/node/azure/#readme
 [badge-tutorials-node-azure-app]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app/badge.svg
-[badge-tutorials-node-azure-infrastructure]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra/badge.svg
+[badge-tutorials-node-azure-infrastructure-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_ci/badge.svg
+[badge-tutorials-node-azure-infrastructure-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_cd/badge.svg
 [oclif-cli-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_ci/badge.svg
 [oclif-cli-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_cd/badge.svg
 [oclif-cli]: ./src/cli/node/oclif/#readme

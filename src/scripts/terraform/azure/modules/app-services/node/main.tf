@@ -28,5 +28,6 @@ resource "azurerm_app_service" "instance" {
 }
 
 output "azurerm_app_service-output" {
-  value = azurerm_app_service.instance
+  value     = azurerm_app_service.instance
+  sensitive = true
 }
