@@ -29,6 +29,8 @@ jobs:
           ENV_FILE: .env
           TF_VAR_FILE: my.tfvars
         run: |
+          set -e
+
           cat >./${{env.ENV_FILE}} <<EOF
           ARM_SUBSCRIPTION_ID=${{secrets.ARM_SUBSCRIPTION_ID}}
           ARM_TENANT_ID=${{secrets.ARM_TENANT_ID}}
@@ -51,3 +53,5 @@ jobs:
           make clean format install \
             ENV_FILE=${{env.ENV_FILE}} \
             TF_VAR_FILE=${{env.TF_VAR_FILE}}
+
+          rm -f ${{env.ENV_FILE}} ${{env.TF_VAR_FILE}}

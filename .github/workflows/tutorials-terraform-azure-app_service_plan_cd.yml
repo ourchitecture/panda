@@ -28,6 +28,8 @@ jobs:
         env:
           ENV_FILE: .env
         run: |
+          set -e
+
           cat >./${{env.ENV_FILE}} <<EOF
           ARM_SUBSCRIPTION_ID=${{secrets.ARM_SUBSCRIPTION_ID}}
           ARM_TENANT_ID=${{secrets.ARM_TENANT_ID}}
@@ -41,3 +43,5 @@ jobs:
 
           make clean format install \
             ENV_FILE=${{env.ENV_FILE}}
+
+          rm -f ${{env.ENV_FILE}}
