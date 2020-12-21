@@ -23,7 +23,7 @@ Read more [about patterns][patterns].
 ### Cloud Infrastructure
 
 - **[Create a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend]
-- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![badge][badge-tutorials-terraform-azure-backend-maintain]][tutorials-terraform-azure-backend]
+- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![ci badge][badge-tutorials-terraform-azure-backend-maintain-ci]][tutorials-terraform-azure-backend] [![cd badge][badge-tutorials-terraform-azure-backend-maintain-cd]][tutorials-terraform-azure-backend]
 
 - **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
 - **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![badge][badge-tutorials-terraform-azure-app-service-plan]][tutorials-terraform-azure-app-service-plan]
@@ -57,7 +57,8 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [devops-commitlint]: https://github.com/ourchitecture/panda/actions?query=workflow%3Acommitlint
 [tutorials-terraform-azure-backend]: ./src/tutorials/terraform/azure/backend/#readme
 [badge-tutorials-terraform-azure-backend-create]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-backend-create/badge.svg
-[badge-tutorials-terraform-azure-backend-maintain]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-backend-maintain/badge.svg
+[badge-tutorials-terraform-azure-backend-maintain-ci]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-backend-maintain_ci/badge.svg
+[badge-tutorials-terraform-azure-backend-maintain-cd]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-backend-maintain_cd/badge.svg
 [tutorials-terraform-azure-rg]: ./src/tutorials/terraform/azure/resource-group/#readme
 [badge-tutorials-terraform-azure-rg]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-resource_group/badge.svg
 [tutorials-terraform-azure-app-service-plan]: ./src/tutorials/terraform/azure/app-service-plan/#readme

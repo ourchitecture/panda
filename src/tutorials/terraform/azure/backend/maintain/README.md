@@ -89,7 +89,7 @@ In this section, you will clone the tutorial and execute it:
       Success! The configuration is valid.
    ```
 
-7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name and storage account should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. Check for existing storage accounts by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="our-tutorials-rg"`, where "our-tutorials-rg" is the name of the resource group.
+7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name and storage account should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. Check for existing storage accounts by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="rg-our-tutorials"`, where "rg-our-tutorials" is the name of the resource group.
 
 8. In order to maintain the Terraform backend resources in Azure, we first need to import the existing Azure resource group, storage account, and storage container into a remote ".tfstate" file that can be shared across machines (engineers and automation). Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
 
@@ -105,7 +105,7 @@ In this section, you will clone the tutorial and execute it:
 [az-storage-acocunt]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 [azure-account]: https://azure.microsoft.com/en-us/free/
 [tutorials-backend-create]: ../create/#readme
-[git]: ../../../../../tools/git/#readme
-[make]: ../../../../../tools/make/#readme
-[docker]: ../../../../../tools/docker/#readme
+[git]: ../../../../../../docs/git.md
+[make]: ../../../../../../docs/make.md
+[docker]: ../../../../../../docs/docker.md
 [tutorials-backend-devops]: ../../../../../../.github/workflows/tutorials-terraform-azure-backend-maintain.yml

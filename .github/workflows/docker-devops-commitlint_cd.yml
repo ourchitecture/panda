@@ -1,9 +1,6 @@
 name: docker-devops-commitlint_cd
 
 on:
-  schedule:
-    # run every day at midnight UST
-    - cron: "0 0 * * *"
   workflow_run:
     workflows: ["docker-devops-node_cd"]
     branches: ["main"]

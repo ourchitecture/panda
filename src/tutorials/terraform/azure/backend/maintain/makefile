@@ -36,9 +36,12 @@ import-storage-container:
 ifndef ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT
 	$(error ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT is not set)
 endif
+ifndef ARM_TERRAFORM_BACKEND_CONTAINER
+	$(error ARM_TERRAFORM_BACKEND_CONTAINER is not set)
+endif
 	@make terraform-import \
 		RESOURCE_ADDRESS="module.backend.azurerm_storage_container.instance" \
-		RESOURCE_ID="https://$(ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT).blob.core.windows.net/tutorials"
+		RESOURCE_ID="https://$(ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT).blob.core.windows.net/$(ARM_TERRAFORM_BACKEND_CONTAINER)"
 
 .PHONY: import
 import: import-resource-group import-storage-account import-storage-container

@@ -85,10 +85,10 @@ Checkout all of the coding project tasks in "./package.json" as well as the DevO
 [project-issues]: https://github.com/ourchitecture/panda/issues
 [project-issues-docs]: https://github.com/ourchitecture/panda/labels/documentation
 [project-fork]: https://github.com/ourchitecture/panda/fork
-[git]: ../src/tools/git/#readme
-[nodejs]: ../src/runtimes/node/#readme
-[make]: ../src/tools/make/#readme
-[vscode]: ../src/editors/vscode/#readme
+[git]: ./git.md
+[nodejs]: ./node.md
+[make]: ./make.md
+[vscode]: ./vscode.md
 [conventional-commits]: https://www.conventionalcommits.org/en/v1.0.0/
 [commitlint]: https://commitlint.js.org/
 [husky]: https://github.com/typicode/husky#husky

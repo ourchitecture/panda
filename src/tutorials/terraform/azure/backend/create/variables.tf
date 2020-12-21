@@ -39,7 +39,7 @@ variable "storage_replication" {
 variable "storage_id_tag_value" {
   type        = string
   description = "Unique identifier to tag the Storge Account with. Because storage accounts are named with randomized numbers, this enables automation to easily lookup the storage account using the unique id tag."
-  default     = "tfstate-storage"
+  default     = "st-our-tfstate"
 }
 
 variable "storage_container_name" {

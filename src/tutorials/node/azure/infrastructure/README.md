@@ -83,7 +83,7 @@ In this section, you will clone the tutorial and execute it:
 
 8. Create the AppService by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
-9. Verify the resource has been created by typing `make azure-webapps-list ARM_RESOURCE_GROUP="our-tutorials-rg"` and checking if the name you assigned to the variable "app_service_name" in the "tutorial.tfvars" file exists in the list.
+9. Verify the resource has been created by typing `make azure-webapps-list ARM_RESOURCE_GROUP="rg-our-tutorials"` and checking if the name you assigned to the variable "app_service_name" in the "tutorial.tfvars" file exists in the list.
 
 10. To remove the new AppService, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
@@ -93,8 +93,8 @@ In this section, you will clone the tutorial and execute it:
 [tutorial-app-service-plan]: ../../../terraform/azure/app-service-plan/#readme
 [terraform-azurerm]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 [terraform-app_service]: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service
-[git]: ../../../../tools/git/#readme
-[make]: ../../../../tools/make/#readme
-[docker]: ../../../../tools/docker/#readme
+[git]: ../../../../../docs/git.md
+[make]: ../../../../../docs/make.md
+[docker]: ../../../../../docs/docker.md
 [terraform]: https://www.terraform.io/intro/index.html
 [azure-account]: https://azure.microsoft.com/en-us/free/
