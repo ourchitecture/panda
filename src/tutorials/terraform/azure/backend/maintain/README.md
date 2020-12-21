@@ -8,7 +8,7 @@ Import and update an [Azure terraform backend][az-tf-backend] with an existing r
 
 The following prerequisites are required in order to follow the steps in this tutorial:
 
-- A [Microsoft Azure account][azure-account] with [existing Terraform backend resources][tutorials-backend-create].
+- A [Microsoft Azure account][azure-account] with [existing Terraform backend resources][tutorials-backend-create]
 - [git][git]
 - [make][make]
 - [docker][docker]
