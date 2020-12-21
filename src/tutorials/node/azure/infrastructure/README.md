@@ -81,11 +81,13 @@ In this section, you will clone the tutorial and execute it:
 
 7. Review the variable values used to create the AppService by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name and plan name should already exist and the AppService name should be globally unique (yes, globally). If you receive an error that the application exists, but information could not be retrieved, this is usually because the application name already exists somewhere else within Azure. Simply try another name and consider making it more unique. Usually, you won't expose this unique application's Azure URL directly to customers, but will put it behind an Application Gateway, Load Balancer, Firewall, etc. To get a list of existing resource groups type `make azure-resource-groups-list`. To get a list of existing plans type `make azure-app-service-plans-list`.
 
-8. Create the AppService by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
+8. So that Terraform resource state can be maintained and shared across machines (engineers and automation), copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
 
-9. Verify the resource has been created by typing `make azure-webapps-list ARM_RESOURCE_GROUP="rg-our-tutorials"` and checking if the name you assigned to the variable "app_service_name" in the "tutorial.tfvars" file exists in the list.
+9. Create the AppService by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
-10. To remove the new AppService, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
+10. Verify the resource has been created by typing `make azure-webapps-list ARM_RESOURCE_GROUP="rg-our-tutorials"` and checking if the name you assigned to the variable "app_service_name" in the "tutorial.tfvars" file exists in the list.
+
+11. To remove the new AppService, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
 [az-app-service]: https://azure.microsoft.com/en-us/services/app-service/
 [az-app-service-plan]: https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans

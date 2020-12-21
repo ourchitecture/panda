@@ -1,4 +1,4 @@
-name: tutorials-terraform-azure-backend-maintain_cd
+name: tutorials_node-azure_infra_cd
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
       # trigger build when shared scripts change
       - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/tutorials-terraform-azure-backend-maintain_cd.yml"
+      - ".github/workflows/tutorials_node-azure_infra_cd.yml"
       # run this build when the source code changes
-      - "src/tutorials/terraform/azure/backend/maintain/**"
+      - "src/tutorials/node/azure/infrastructure/**"
 
 jobs:
   check:
@@ -17,7 +17,7 @@ jobs:
 
     env:
       CI: true
-      PROJECT_PATH: ./src/tutorials/terraform/azure/backend/maintain
+      PROJECT_PATH: ./src/tutorials/node/azure/infrastructure
 
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,6 @@ jobs:
         working-directory: ${{env.PROJECT_PATH}}
         env:
           ENV_FILE: .env
-          TF_VAR_FILE: my.tfvars
         run: |
           set -e
 
@@ -39,19 +38,10 @@ jobs:
           ARM_TERRAFORM_BACKEND_RESOURCE_GROUP=${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}
           ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}
           ARM_TERRAFORM_BACKEND_CONTAINER=${{secrets.ARM_TERRAFORM_BACKEND_CONTAINER}}
-          ARM_TERRAFORM_BACKEND_KEY=backend.tfstate
-          EOF
-
-          cat >./${{env.TF_VAR_FILE}} <<EOF
-          resource_group_name = "${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}"
-          resource_group_location = "East US"
-          storage_name = "${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}"
-          storage_id_tag_value = "st-our-tfstate"
-          storage_container_name = "tfstate"
+          ARM_TERRAFORM_BACKEND_KEY=app-our-tutorials-node-hello.tfstate
           EOF
 
           make clean format install \
-            ENV_FILE=${{env.ENV_FILE}} \
-            TF_VAR_FILE=${{env.TF_VAR_FILE}}
+            ENV_FILE=${{env.ENV_FILE}}
 
-          rm -f ${{env.ENV_FILE}} ${{env.TF_VAR_FILE}}
+          rm -f ${{env.ENV_FILE}}

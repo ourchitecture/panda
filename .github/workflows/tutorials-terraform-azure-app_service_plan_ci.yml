@@ -1,4 +1,4 @@
-name: tutorials_node-azure_infra
+name: tutorials-terraform-azure-app_service_plan_ci
 
 on:
   pull_request_target:
@@ -10,9 +10,9 @@ on:
       # trigger build when shared scripts change
       - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/tutorials_node-azure_infra.yml"
+      - ".github/workflows/tutorials-terraform-azure-app_service_plan_ci.yml"
       # run this build when the source code changes
-      - "src/tutorials/node/azure/infrastructure/**"
+      - "src/tutorials/terraform/azure/app-service-plan/**"
 
 jobs:
   check:
