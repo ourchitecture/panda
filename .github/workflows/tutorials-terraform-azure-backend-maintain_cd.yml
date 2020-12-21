@@ -48,6 +48,6 @@ jobs:
           storage_container_name = "tfstate"
           EOF
 
-          make format install \
+          make clean format install \
             ENV_FILE=${{env.ENV_FILE}} \
             TF_VAR_FILE=${{env.TF_VAR_FILE}}
