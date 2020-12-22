@@ -83,10 +83,10 @@ In this section, you will clone the tutorial and execute it:
 
 10. Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. The name of the application should be globally unique, since the URL will need to be globally unique (e.g. http://app-our-tutorials-node-hello.azurewebsites.net). Change the values as needed. The resource group name should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. The AppService Plan name should already exist. To get a list of existing plans type `make azure-app-service-plans-list ARM_RESOURCE_GROUP=rg-our-tutorials` where "rg-our-tutorials" is the name of the resource group to deploy to.
 
-11. Deploy the application to Azure by typing `make install ENV_FILE=.env`. You should see output similar to the below:
+11. Deploy the application to Azure by typing `make install`. You should see output similar to the below:
 
     ```shell
-    make install ENV_FILE=.env
+    make install
       Deploying webapp...
       The webapp 'app-our-tutorials-node-hello' doesn't exist
       Creating webapp 'app-our-tutorials-node-hello' ...

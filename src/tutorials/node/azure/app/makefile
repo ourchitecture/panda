@@ -2,6 +2,7 @@ include ../../../../../.vars.mk
 
 APP_PORT=3000
 HOST_PORT=3000
+ENV_FILE?=.env
 
 include $(scripts_dir_path)/prerequisites.mk
 

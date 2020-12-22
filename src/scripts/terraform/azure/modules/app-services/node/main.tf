@@ -23,7 +23,9 @@ resource "azurerm_app_service" "instance" {
   }
 
   app_settings = {
-    "SCM_DO_BUILD_DURING_DEPLOYMENT" = var.scm_do_build_during_deployment == true ? "True" : "False"
+    "SCM_DO_BUILD_DURING_DEPLOYMENT"     = var.scm_do_build_during_deployment == true ? "True" : "False"
+    "WEBSITE_HTTPLOGGING_RETENTION_DAYS" = var.website_httplogging_retention_days
+    "DISABLE_HUGO_BUILD"                 = var.disable_hugo_build
   }
 }
 

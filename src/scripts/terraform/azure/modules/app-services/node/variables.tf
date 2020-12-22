@@ -43,8 +43,8 @@ variable "http2_enabled" {
 
 variable "linux_fx_version" {
   type        = string
-  description = "Linux App Framework and version for the AppService. Defaults to node|10.14."
-  default     = "node|10.14"
+  description = "Linux App Framework and version for the AppService. Defaults to node|12-lts."
+  default     = "node|12-lts"
 }
 
 variable "use_32_bit_worker_process" {
@@ -56,5 +56,19 @@ variable "use_32_bit_worker_process" {
 variable "scm_do_build_during_deployment" {
   type        = bool
   description = "Should Azure build the application during deployment? Defaults to true."
+  default     = true
+}
+
+variable "website_httplogging_retention_days" {
+  type        = number
+  description = "How many days to retain logs for. Defaults to 3"
+  default     = 3
+}
+
+# BUG: known Microsoft bug with Node.js applications during Oryx builds
+# https://github.com/microsoft/Oryx/issues/755
+variable "disable_hugo_build" {
+  type        = bool
+  description = "Set to true to disable Hugo builds; otherwise false. Defaults to true"
   default     = true
 }
