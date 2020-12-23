@@ -12,7 +12,7 @@ on:
       - "src/tutorials/node/azure/app/**"
 
 jobs:
-  check:
+  install:
     runs-on: ubuntu-latest
 
     env:

@@ -12,7 +12,7 @@ on:
       - "src/tutorials/terraform/azure/app-service-plan/**"
 
 jobs:
-  check:
+  install:
     runs-on: ubuntu-latest
 
     env:
