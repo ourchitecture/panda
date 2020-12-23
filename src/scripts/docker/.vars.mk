@@ -1,10 +1,11 @@
 DEBUG?=false
 
 ENV_FILE?=""
-ifeq ($(ENV_FILE),"")
 docker_arg_env_file=
-else
+ifdef ENV_FILE
+ifneq ($(ENV_FILE),"")
 docker_arg_env_file= --env-file="$(ENV_FILE)"
+endif
 endif
 
 APP_PORT?=""

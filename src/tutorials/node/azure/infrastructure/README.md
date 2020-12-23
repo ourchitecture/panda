@@ -57,7 +57,11 @@ In this section, you will clone the tutorial and execute it:
        Docker version 19.03.13, build 4484c46d9d
    ```
 
-6. Test the terraform setup by typing `make check`. You should see output similar to the below:
+6. So that Terraform resource state can be maintained and shared across machines (engineers and automation), copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
+
+7. Review the variable values used to create the AppService by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name and plan name should already exist and the AppService name should be globally unique (yes, globally). If you receive an error that the application exists, but information could not be retrieved, this is usually because the application name already exists somewhere else within Azure. Simply try another name and consider making it more unique. Usually, you won't expose this unique application's Azure URL directly to customers, but will put it behind an Application Gateway, Load Balancer, Firewall, etc. To get a list of existing resource groups type `make azure-resource-groups-list`. To get a list of existing plans type `make azure-app-service-plans-list`.
+
+8. Test the terraform setup by typing `make check`. You should see output similar to the below:
 
    ```shell
    make check
@@ -78,10 +82,6 @@ In this section, you will clone the tutorial and execute it:
      Validating terraform...
      Success! The configuration is valid.
    ```
-
-7. Review the variable values used to create the AppService by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name and plan name should already exist and the AppService name should be globally unique (yes, globally). If you receive an error that the application exists, but information could not be retrieved, this is usually because the application name already exists somewhere else within Azure. Simply try another name and consider making it more unique. Usually, you won't expose this unique application's Azure URL directly to customers, but will put it behind an Application Gateway, Load Balancer, Firewall, etc. To get a list of existing resource groups type `make azure-resource-groups-list`. To get a list of existing plans type `make azure-app-service-plans-list`.
-
-8. So that Terraform resource state can be maintained and shared across machines (engineers and automation), copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
 
 9. Create the AppService by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
