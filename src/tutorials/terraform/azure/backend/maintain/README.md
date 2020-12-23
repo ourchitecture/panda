@@ -93,9 +93,9 @@ In this section, you will clone the tutorial and execute it:
       Success! The configuration is valid.
    ```
 
-9. Import the existing backend resources into managed state by typing `make import`.
+9. Import the existing backend resources into managed state by typing `make import ENV_FILE=.env`.
 
-10. Now, the backend resources can also be maintained by Terraform (`terraform inception`? 🤣). Update the backend with any changes made to the terraform code by executing `make install`.
+10. Now, the backend resources can also be maintained by Terraform. Update the backend with any changes made to the terraform code by executing `make install ENV_FILE=.env`.
 
 11. Verify the resources are configured properly by reviewing the output or using either the `az` CLI or Azure web portal.
 

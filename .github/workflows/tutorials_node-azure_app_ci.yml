@@ -28,7 +28,4 @@ jobs:
       - name: check
         # change to the tutorial directory
         working-directory: ${{env.PROJECT_PATH}}
-        env:
-          # ignore environment variables during check
-          ENV_FILE: ""
         run: make check

@@ -41,7 +41,6 @@ jobs:
           ARM_TERRAFORM_BACKEND_KEY=app-our-tutorials-node-hello.tfstate
           EOF
 
-          make clean format install \
-            ENV_FILE=${{env.ENV_FILE}}
+          make clean format install
 
           rm -f ${{env.ENV_FILE}}
