@@ -51,7 +51,11 @@ In this section, you will clone the tutorial and execute it:
        Docker version 19.03.13, build 4484c46d9d
    ```
 
-6. Test the terraform setup by typing `make check`. You should see output similar to the below:
+6. So that Terraform resource state can be maintained and shared across machines (engineers and automation), copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
+
+7. Review the variable values used to create the plan by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should already exist and the plan name should not already be used in the group. To get a list of existing resource groups type `make azure-resource-groups-list`. Choose "Linux" or "Windows" for the "plan_kind". SKU tier examples include Free, Shared, Basic, Premium, and Isolated and SKU size examples include F1 (Free), D1 (Shared), B1 (Basic Small), B2 (Basic Medium), B3 (Basic Large), S1 (Standard Small), P1V2 (Premium V2 Small), P1V3 (Premium V3 Small), P2V3 (Premium V3 Medium), P3V3 (Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
+
+8. Test the terraform setup by typing `make check`. You should see output similar to the below:
 
    ```shell
    make check
@@ -72,10 +76,6 @@ In this section, you will clone the tutorial and execute it:
      Validating terraform...
      Success! The configuration is valid.
    ```
-
-7. Review the variable values used to create the plan by opening the file "./tutorial.tfvars". Change the values as needed. The resource group name should already exist and the plan name should not already be used in the group. To get a list of existing resource groups type `make azure-resource-groups-list`. Choose "Linux" or "Windows" for the "plan_kind". SKU tier examples include Free, Shared, Basic, Premium, and Isolated and SKU size examples include F1 (Free), D1 (Shared), B1 (Basic Small), B2 (Basic Medium), B3 (Basic Large), S1 (Standard Small), P1V2 (Premium V2 Small), P1V3 (Premium V3 Small), P2V3 (Premium V3 Medium), P3V3 (Premium V3 Large), PC2 (Premium Container Small), PC3 (Premium Container Medium), PC4 (Premium Container Large), I1 (Isolated Small), I2 (Isolated Medium), I3 (Isolated Large).
-
-8. So that Terraform resource state can be maintained and shared across machines (engineers and automation), copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
 
 9. Create the plan by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 

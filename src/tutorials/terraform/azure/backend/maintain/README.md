@@ -51,7 +51,11 @@ In this section, you will clone the tutorial and execute it:
        Docker version 19.03.13, build 4484c46d9d
    ```
 
-6. Test the terraform setup by typing `make check`. You should see output similar to the below.
+6. In order to maintain the Terraform backend resources in Azure, we first need to import the existing Azure resource group, storage account, and storage container into a remote ".tfstate" file that can be shared across machines (engineers and automation). Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
+
+7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name and storage account should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. Check for existing storage accounts by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="rg-our-tutorials"`, where "rg-our-tutorials" is the name of the resource group.
+
+8. Test the terraform setup by typing `make check`. You should see output similar to the below.
 
    ```shell
    make check
@@ -89,13 +93,9 @@ In this section, you will clone the tutorial and execute it:
       Success! The configuration is valid.
    ```
 
-7. Review the name prefix and other variables in the file "./tutorial.tfvars". Change the values as needed. The resource group name and storage account should already exist. To get a list of existing resource groups type `make azure-resource-groups-list`. Check for existing storage accounts by typing `make azure-storage-accounts-list ARM_RESOURCE_GROUP="rg-our-tutorials"`, where "rg-our-tutorials" is the name of the resource group.
+9. Import the existing backend resources into managed state by typing `make import`.
 
-8. In order to maintain the Terraform backend resources in Azure, we first need to import the existing Azure resource group, storage account, and storage container into a remote ".tfstate" file that can be shared across machines (engineers and automation). Copy the file ".env.example" and rename the copy as simply ".env". Review the variable values in the file. Change the values as needed. The backend resources should already exist.
-
-9. Import the existing backend resources into managed state by typing `make import ENV_FILE=.env`.
-
-10. Now, the backend resources can also be maintained by Terraform (`terraform inception`? 🤣). Update the backend with any changes made to the terraform code by executing `make install ENV_FILE=.env`.
+10. Now, the backend resources can also be maintained by Terraform (`terraform inception`? 🤣). Update the backend with any changes made to the terraform code by executing `make install`.
 
 11. Verify the resources are configured properly by reviewing the output or using either the `az` CLI or Azure web portal.
 

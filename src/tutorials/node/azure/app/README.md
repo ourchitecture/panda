@@ -87,27 +87,45 @@ In this section, you will clone the tutorial and execute it:
 
     ```shell
     make install
+      ...
+
       Deploying webapp...
-      The webapp 'app-our-tutorials-node-hello' doesn't exist
-      Creating webapp 'app-our-tutorials-node-hello' ...
-      Configuring default logging for the app, if not already enabled
-      Creating zip with contents of dir /app ...
+
+      Preparing deployment archive app.deploy.zip...
+
+      Deploying archive to azure using app.deploy.zip...
       Getting scm site credentials for zip deployment
       Starting zip deployment. This operation can take a while to complete ...
       Deployment endpoint responded with status code 202
-      You can launch the app at http://app-our-tutorials-node-hello.azurewebsites.net
       {
-        "URL": "http://app-our-tutorials-node-hello.azurewebsites.net",
-        "appserviceplan": "plan-our-tutorials-linux-apps",
-        "location": "eastus",
-        "name": "app-our-tutorials-node-hello",
-        "os": "Linux",
-        "resourcegroup": "rg-our-tutorials",
-        "runtime_version": "node|10.14",
-        "runtime_version_detected": "0.0",
-        "sku": "FREE",
-        "src_path": "//app"
+        "active": true,
+        "author": "N/A",
+        "author_email": "N/A",
+        "complete": true,
+        "deployer": "Push-Deployer",
+        "end_time": "2020-12-23T17:04:53.5675347Z",
+        "id": "c3117ac9a6034938b5ec0fdf93401a90",
+        "is_readonly": true,
+        "is_temp": false,
+        "last_success_end_time": "2020-12-23T17:04:53.5675347Z",
+        "log_url": "https://app-our-tutorials-node-hello.scm.azurewebsites.net/api/deployments/latest/log",
+        "message": "Created via a push deployment",
+        "progress": "",
+        "received_time": "2020-12-23T17:04:51.3669882Z",
+        "site_name": "app-our-tutorials-node-hello",
+        "start_time": "2020-12-23T17:04:52.7084062Z",
+        "status": 4,
+        "status_text": "",
+        "url": "https://app-our-tutorials-node-hello.scm.azurewebsites.net/api/deployments/latest"
       }
+
+      Removing deployment file app.deploy.zip...
+
+      Successfully deployed.
+
+      Name                          Kind       Location    State    DefaultHostName
+      ----------------------------  ---------  ----------  -------  ----------------------------------------------
+      app-our-tutorials-node-hello  app,linux  East US     Running  app-our-tutorials-node-hello.azurewebsites.net
     ```
 
 12. Lookup the URL in the output of your deployed application. Type `curl ...` with your unique URL or open a web browser and visit the application. You should see a welcome message like "Welcome to Express" in the output. _\*If you check this URL immediately after deploying, it may take several seconds to respond while the application starts._
