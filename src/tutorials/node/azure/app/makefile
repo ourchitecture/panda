@@ -2,6 +2,7 @@ include ../../../../../.vars.mk
 
 APP_PORT=3000
 HOST_PORT=3000
+ENV_FILE?=.env
 
 include $(scripts_dir_path)/prerequisites.mk
 
@@ -30,7 +31,11 @@ all: init
 init: yarn-install
 
 .PHONY: check
-check: prerequisites init
+check: init
+
+.PHONY: clean
+clean: yarn-clean
+	@rm -f app.deploy.zip
 
 .PHONY: start
 start: yarn-start
@@ -39,7 +44,7 @@ start: yarn-start
 stop: yarn-stop
 
 .PHONY: install
-install: azure-webapps-install
+install: check azure-webapps-install
 
 .PHONY: uninstall
 uninstall: azure-webapps-uninstall

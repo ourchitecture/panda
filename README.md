@@ -18,7 +18,7 @@ Read more [about patterns][patterns].
 
 ### Cloud Applications
 
-**[Node.js on Azure][tutorials-node-azure]**: [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure] [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure] [![Node.js on Azure][badge-tutorials-node-azure-app]][tutorials-node-azure]
+**[Node.js on Azure][tutorials-node-azure]**: [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure] [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure] [![CI Node.js on Azure][badge-tutorials-node-azure-app-ci]][tutorials-node-azure] [![CD Node.js on Azure][badge-tutorials-node-azure-app-cd]][tutorials-node-azure]
 
 ### Cloud Infrastructure
 
@@ -67,7 +67,8 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [tutorials-terraform-azure-storage-account]: ./src/tutorials/terraform/azure/storage-account/#readme
 [badge-tutorials-terraform-azure-storage-account]: https://github.com/ourchitecture/panda/workflows/tutorials-terraform-azure-storage_account/badge.svg
 [tutorials-node-azure]: ./src/tutorials/node/azure/#readme
-[badge-tutorials-node-azure-app]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app/badge.svg
+[badge-tutorials-node-azure-app-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app_ci/badge.svg
+[badge-tutorials-node-azure-app-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app_cd/badge.svg
 [badge-tutorials-node-azure-infrastructure-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_ci/badge.svg
 [badge-tutorials-node-azure-infrastructure-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_cd/badge.svg
 [oclif-cli-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_ci/badge.svg

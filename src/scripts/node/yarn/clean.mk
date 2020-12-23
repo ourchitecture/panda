@@ -6,4 +6,4 @@ yarn-clean: node-clean
 		-w /app \
 		--network host \
 		$(node_docker) \
-		rm -rf .pnp.js .yarn/install-state.gz .yarn/cache
+		rm -rf .pnp.js .yarn/build-state.yml .yarn/install-state.gz .yarn/cache .yarn/unplugged

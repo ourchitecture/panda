@@ -2,6 +2,10 @@
   "name": "node-tutorial",
   "version": "0.0.0",
   "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
