@@ -83,11 +83,11 @@ In this section, you will clone the tutorial and execute it:
      Success! The configuration is valid.
    ```
 
-9. Create the AppService by typing `make install`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
+9. Create the AppService by typing `make install ENV_FILE=.env`. If you want to see what will be created prior to executing this command, type `make install TF_PLAN_ONLY=true`.
 
 10. Verify the resource has been created by typing `make azure-webapps-list ARM_RESOURCE_GROUP="rg-our-tutorials"` and checking if the name you assigned to the variable "app_service_name" in the "tutorial.tfvars" file exists in the list.
 
-11. To remove the new AppService, type `make uninstall`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
+11. To remove the new AppService, type `make uninstall ENV_FILE=.env`. If you want to see what will be destroyed prior to executing this command, type `make uninstall TF_PLAN_ONLY=true`.
 
 [az-app-service]: https://azure.microsoft.com/en-us/services/app-service/
 [az-app-service-plan]: https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
