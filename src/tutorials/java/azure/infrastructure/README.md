@@ -1,8 +1,8 @@
-# Tutorials: Terraform Azure for Node.js
+# Tutorials: Terraform Azure for Java
 
 It can be useful to have the cloud infrastructure unique to each application in a localized "./infrastructure" directory like this. However, a large system will usually also share cloud resources across applications. For example, in Azure, an [AppService Plan][az-app-service-plan] can host multiple applications.
 
-Running Node.js on Azure requires a unique [AppService][az-app-service] instance. However, the Azure CLI can dynamically create this instance for us when running the command `az webapp up...`. Alternatively, terraform could create and manage the configuration of this AppService instance to ensure settings are managed explicitly through code and a DevOps lifecycle. We recommend using terraform for enterprise systems.
+Running Java on Azure requires a unique [AppService][az-app-service] instance. However, the Azure CLI can dynamically create this instance for us when running the command `az webapp up...`. Alternatively, terraform could create and manage the configuration of this AppService instance to ensure settings are managed explicitly through code and a DevOps lifecycle. We recommend using terraform for enterprise systems.
 
 Because AppService Plans are shared by other tutorials, see the [Terraform Azure AppService Plan tutorial][tutorial-app-service-plan].
 
@@ -33,7 +33,7 @@ In this section, you will clone the tutorial and execute it:
      git clone https://github.com/ourchitecture/panda --depth=1
    ```
 
-4. Change to the directory of this tutorial project by typing `cd ./src/tutorials/node/azure/infrastructure`.
+4. Change to the directory of this tutorial project by typing `cd ./src/tutorials/java/azure/infrastructure`.
 
 5. Type `make prerequisites` and read the output to verify you have the right tools. Output should look similar to:
 
