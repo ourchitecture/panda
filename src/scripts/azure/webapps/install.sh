@@ -27,9 +27,11 @@ if [[ -f "${deploy_zip_file_name}" ]]; then
   rm -f "${deploy_zip_file_name}"
 fi
 
+# NOTE: optimize in the future by excluding files and folders
+# that can be safely ignored
 echo ""
 echo "Preparing deployment archive ${deploy_zip_file_name}..."
-zip -r "${deploy_zip_file_name}" .
+zip -qr "${deploy_zip_file_name}" .
 
 # IMPORTANT: a bug was found when deploying Yarn 2 Node.js
 # applications using the Oryx build process. This script
@@ -51,3 +53,13 @@ az webapp deployment source config-zip \
 echo ""
 echo "Removing deployment file ${deploy_zip_file_name}..."
 rm -f "${deploy_zip_file_name}"
+
+echo ""
+echo "Successfully deployed."
+
+echo ""
+az webapp show \
+  --resource-group "${ARM_RESOURCE_GROUP}" \
+  --name "${ARM_APP_NAME}" \
+  --query "{name:name, kind:kind, location:location, state:state, defaultHostName:defaultHostName}" \
+  --output table
