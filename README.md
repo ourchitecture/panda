@@ -20,6 +20,7 @@ Read more [about patterns][patterns].
 | -------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Cloud Infrastructure | [Node.js Azure Infrastructure][tutorials-node-azure]                          | [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure]            | [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure]            |
 | Cloud Applications   | [Node.js Application on Azure][tutorials-node-azure]                          | [![CI Node.js on Azure][badge-tutorials-node-azure-app-ci]][tutorials-node-azure]                              | [![CD Node.js on Azure][badge-tutorials-node-azure-app-cd]][tutorials-node-azure]                              |
+| Cloud Infrastructure | [Java Azure Infrastructure][tutorials-java-azure]                             | [![CI Terraform Azure Java][badge-tutorials-java-azure-infrastructure-ci]][tutorials-java-azure]               | [![CD Terraform Azure Java][badge-tutorials-java-azure-infrastructure-cd]][tutorials-java-azure]               |
 | Cloud Infrastructure | [Create a Terraform Azure Backend][tutorials-terraform-azure-backend]         | [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend]                  | _\*a backend is only created once. See "Maintain a Terraform Azure Backend"_                                   |
 | Cloud Infrastructure | [Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]       | [![ci badge][badge-tutorials-terraform-azure-backend-maintain-ci]][tutorials-terraform-azure-backend]          | [![cd badge][badge-tutorials-terraform-azure-backend-maintain-cd]][tutorials-terraform-azure-backend]          |
 | Cloud Infrastructure | [Terraform Azure Resource Group][tutorials-terraform-azure-rg]                | [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]                                   | _\*missing_                                                                                                    |
@@ -72,6 +73,11 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [badge-tutorials-node-azure-app-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_app_cd/badge.svg
 [badge-tutorials-node-azure-infrastructure-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_ci/badge.svg
 [badge-tutorials-node-azure-infrastructure-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_node-azure_infra_cd/badge.svg
+[tutorials-java-azure]: ./src/tutorials/java/azure/#readme
+[badge-tutorials-java-azure-app-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_java-azure_app_ci/badge.svg
+[badge-tutorials-java-azure-app-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_java-azure_app_cd/badge.svg
+[badge-tutorials-java-azure-infrastructure-ci]: https://github.com/ourchitecture/panda/workflows/tutorials_java-azure_infra_ci/badge.svg
+[badge-tutorials-java-azure-infrastructure-cd]: https://github.com/ourchitecture/panda/workflows/tutorials_java-azure_infra_cd/badge.svg
 [oclif-cli-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_ci/badge.svg
 [oclif-cli-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/cli-node-oclif_cd/badge.svg
 [oclif-cli]: ./src/cli/node/oclif/#readme
