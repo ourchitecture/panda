@@ -25,38 +25,44 @@ variable "app_service_name" {
 
 variable "client_affinity_enabled" {
   type        = bool
-  description = "Does the App Service send session affinity cookies, which route client requests in the same session to the same instance? Defaults to true."
+  description = "Does the App Service send session affinity cookies, which route client requests in the same session to the same instance? Defaults to true"
   default     = true
 }
 
 variable "https_only" {
   type        = bool
-  description = "Can the App Service only be accessed via HTTPS? Defaults to true."
+  description = "Can the App Service only be accessed via HTTPS? Defaults to true"
   default     = true
 }
 
 variable "http2_enabled" {
   type        = bool
-  description = "Is HTTP2 Enabled on this App Service? Defaults to true."
+  description = "Is HTTP2 Enabled on this App Service? Defaults to true"
   default     = true
 }
 
 variable "linux_fx_version" {
   type        = string
-  description = "Linux App Framework and version for the AppService. Defaults to node|12-lts."
+  description = "Linux App Framework and version for the AppService. Defaults to node|12-lts"
   default     = "node|12-lts"
 }
 
 variable "use_32_bit_worker_process" {
   type        = bool
-  description = "Does the App Service run in 32 bit mode, rather than 64 bit mode? This must be true for Free and Shared plans. Defaults to true."
+  description = "Does the App Service run in 32 bit mode, rather than 64 bit mode? This must be true for Free and Shared plans. Defaults to true"
+  default     = true
+}
+
+variable "website_run_from_package" {
+  type        = bool
+  description = "Should Azure run the application from a zip archive? This setting should be set in concert with the scm_do_build_during_deployment setting. Defaults to true"
   default     = true
 }
 
 variable "scm_do_build_during_deployment" {
   type        = bool
-  description = "Should Azure build the application during deployment? Defaults to true."
-  default     = true
+  description = "Should Azure build the application during deployment? This setting should be set in concert with the website_run_from_package setting. Defaults to false"
+  default     = false
 }
 
 variable "website_httplogging_retention_days" {
@@ -65,10 +71,8 @@ variable "website_httplogging_retention_days" {
   default     = 3
 }
 
-# BUG: known Microsoft bug with Node.js applications during Oryx builds
-# https://github.com/microsoft/Oryx/issues/755
 variable "disable_hugo_build" {
   type        = bool
-  description = "Set to true to disable Hugo builds; otherwise false. Defaults to true"
+  description = "Set to true to disable Hugo builds; otherwise false. When the setting scm_do_build_during_deployment is true, this setting may lead to errors due to a known bug with the Oryx build process (https://github.com/microsoft/Oryx/issues/755). Defaults to true"
   default     = true
 }

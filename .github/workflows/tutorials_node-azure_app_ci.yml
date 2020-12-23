@@ -1,4 +1,4 @@
-name: tutorials_node-azure_app
+name: tutorials_node-azure_app_ci
 
 on:
   pull_request_target:
@@ -10,7 +10,7 @@ on:
       # trigger build when shared scripts change
       - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/tutorials_node-azure_app.yml"
+      - ".github/workflows/tutorials_node-azure_app_ci.yml"
       # run this build when the source code changes
       - "src/tutorials/node/azure/app/**"
 
