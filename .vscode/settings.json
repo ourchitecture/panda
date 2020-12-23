@@ -17,5 +17,6 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
-  "appService.defaultWebAppToDeploy": "None"
+  "appService.defaultWebAppToDeploy": "None",
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

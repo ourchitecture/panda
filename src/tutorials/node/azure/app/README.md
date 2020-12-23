@@ -8,7 +8,7 @@ Deploy a [Node.js][nodejs] application to Azure using the Azure CLI. This guide 
 
 The following prerequisites are required in order to follow the steps in this tutorial:
 
-- A [Microsoft Azure account][azure-account] with an existing App Service Plan and permission to create and deploy an AppService (this Node.js application) to the plan. _\*See the tutorials to [create a new resource group][tutorial-rg] and [create a new plan][tutorial-app-service-plan]._
+- A [Microsoft Azure account][azure-account] with an existing App Service Plan and permission to create and deploy an AppService (this Node.js application) to the plan. _\*See the tutorials to [create a new resource group][tutorial-rg] and [create a Node.js App Service][tutorial-app-service-plan]._
 - [git][git]
 - [make][make]
 - [docker][docker]
@@ -137,7 +137,7 @@ In this section, you will clone the tutorial and execute it:
 [nodejs]: https://nodejs.org/en/
 [tutorial-base]: https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=platform-linux
 [tutorial-rg]: ../../../terraform/azure/resource-group/#readme
-[tutorial-app-service-plan]: ../../../terraform/azure/app-service-plan/#readme
+[tutorial-app-service-plan]: ../infrastructure/#readme
 [git]: ../../../../../docs/git.md
 [make]: ../../../../../docs/make.md
 [docker]: ../../../../../docs/docker.md

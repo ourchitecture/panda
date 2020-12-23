@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.3.RELEASE</version>
+    <relativePath />
+    <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.ourchitecture.tutorials.java.springboot</groupId>
+  <artifactId>java-spring-boot-hello</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>java-spring-boot-hello</name>
+  <description>Hello world tutorial for Java Spring Boot</description>
+  <properties>
+    <azure-maven-plugin.version>0.2.0</azure-maven-plugin.version>
+    <azure-webapp-maven-plugin.version>1.8.0</azure-webapp-maven-plugin.version>
+    <azure-webapp-maven-plugin.schema.version>V2</azure-webapp-maven-plugin.schema.version>
+    <java.version>11</java.version>
+    <azure.java.version>java11</azure.java.version>
+    <azure.client.id>
+      <!--
+        For CI, Set the Azure service principal identifier via command line:
+        ./mvnw ... "-Dazure.client.id=enter-value-here"
+      -->
+    </azure.client.id>
+    <azure.client.key>
+      <!--
+        For CI, Set the Azure service principal password via command line:
+        ./mvnw ... "-Dazure.client.key=enter-value-here"
+      -->
+    </azure.client.key>
+    <azure.tenant.id>
+      <!--
+        For CI, Set the Azure tenant identifier via command line:
+        ./mvnw ... "-Dazure.tenant.id=enter-value-here"
+      -->
+    </azure.tenant.id>
+    <azure.subscription.id>
+      <!--
+        Set the Azure subscription identifier via command line:
+        ./mvnw ... "-Dazure.subscription.id=enter-value-here"
+      -->
+    </azure.subscription.id>
+    <azure.resourcegroup>
+      <!--
+        Set the Azure resource group via command line:
+        ./mvnw ... "-Dazure.resourcegroup=enter-value-here"
+      -->
+    </azure.resourcegroup>
+    <azure.region>
+      eastus
+      <!--
+        Override the Azure region via command line:
+        ./mvnw ... "-Dazure.region=enter-value-here"
+      -->
+    </azure.region>
+    <azure.appservice.name>
+      <!--
+        Set the Azure App Service name via command line:
+        ./mvnw ... "-Dazure.appservice.name=enter-value-here"
+      -->
+    </azure.appservice.name>
+    <azure.appservice.plan.name>
+      <!--
+        Set the Azure App Service plan name via command line:
+        ./mvnw ... "-Dazure.appservice.plan.name=enter-value-here"
+      -->
+    </azure.appservice.plan.name>
+    <azure.appservice.plan.os>
+      linux
+      <!--
+        Override the Azure App Service plan name via command line:
+        ./mvnw ... "-Dazure.appservice.plan.os=enter-value-here"
+      -->
+    </azure.appservice.plan.os>
+    <azure.appservice.plan.pricingtier>
+      B1
+      <!--
+        Override the Azure App Service plan name via command line:
+        ./mvnw ... "-Dazure.appservice.plan.pricingtier=enter-value-here"
+      -->
+    </azure.appservice.plan.pricingtier>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- tag::actuator[] -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <!-- end::actuator[] -->
+    <!-- tag::tests[] -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- end::tests[] -->
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-webapp-maven-plugin</artifactId>
+        <version>${azure-webapp-maven-plugin.version}</version>
+        <configuration>
+          <schemaVersion>${azure-webapp-maven-plugin.schema.version}</schemaVersion>
+          <allowTelemetry>false</allowTelemetry>
+          <subscriptionId>${azure.subscription.id}</subscriptionId>
+          <resourceGroup>${azure.resourcegroup}</resourceGroup>
+          <appName>${azure.appservice.name}</appName>
+          <appServicePlanName>${azure.appservice.plan.name}</appServicePlanName>
+          <pricingTier>${azure.appservice.plan.pricingtier}</pricingTier>
+          <region>${azure.region}</region>
+          <runtime>
+            <os>${azure.appservice.plan.os}</os>
+            <javaVersion>${azure.java.version}</javaVersion>
+            <webContainer>${azure.java.version}</webContainer>
+          </runtime>
+          <appSettings>
+            <property>
+              <name>JAVA_OPTS</name>
+              <value>-Dserver.port=80</value>
+            </property>
+          </appSettings>
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>deploy-ci</id>
+      <activation>
+        <property>
+          <name>azure.client.id</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-webapp-maven-plugin</artifactId>
+            <version>${azure-webapp-maven-plugin.version}</version>
+            <configuration>
+              <auth>
+                <tenant>${azure.tenant.id}</tenant>
+                <client>${azure.client.id}</client>
+                <key>${azure.client.key}</key>
+                <environment>AZURE</environment>
+              </auth>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

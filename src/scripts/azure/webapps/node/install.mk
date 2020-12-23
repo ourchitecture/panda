@@ -1,5 +1,5 @@
-.PHONY: azure-webapps-install
-azure-webapps-install: require-root require-docker require-azure
+.PHONY: azure-webapps-node-install
+azure-webapps-node-install: require-root require-docker require-azure
 ifeq ($(ENV_FILE),"")
 	$(error ENV_FILE not set)
 endif
@@ -12,4 +12,4 @@ endif
 		$(docker_arg_env_file) \
 		--network host \
 		$(azure_docker) \
-		/our/azure/webapps/install.sh
+		/our/azure/webapps/node/install.sh
