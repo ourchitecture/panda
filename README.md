@@ -16,30 +16,31 @@ Read more [about patterns][patterns].
 
 ## Tutorials
 
-### Cloud Applications
-
-**[Node.js on Azure][tutorials-node-azure]**: [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure] [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure] [![CI Node.js on Azure][badge-tutorials-node-azure-app-ci]][tutorials-node-azure] [![CD Node.js on Azure][badge-tutorials-node-azure-app-cd]][tutorials-node-azure]
-
-### Cloud Infrastructure
-
-- **[Create a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend]
-- **[Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]**: [![ci badge][badge-tutorials-terraform-azure-backend-maintain-ci]][tutorials-terraform-azure-backend] [![cd badge][badge-tutorials-terraform-azure-backend-maintain-cd]][tutorials-terraform-azure-backend]
-
-- **[Terraform Azure Resource Group][tutorials-terraform-azure-rg]**: [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]
-- **[Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan]:** [![ci badge][badge-tutorials-terraform-azure-app-service-plan-ci]][tutorials-terraform-azure-app-service-plan] [![cd badge][badge-tutorials-terraform-azure-app-service-plan-cd]][tutorials-terraform-azure-app-service-plan]
-- **[Terraform Azure Storage Account][tutorials-terraform-azure-storage-account]:** [![badge][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]
+| Type                 | Name                                                                          | CI                                                                                                             | CD                                                                                                             |
+| -------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Cloud Infrastructure | [Node.js Azure Infrastructure][tutorials-node-azure]                          | [![CI Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-ci]][tutorials-node-azure]            | [![CD Terraform Azure Node.js][badge-tutorials-node-azure-infrastructure-cd]][tutorials-node-azure]            |
+| Cloud Applications   | [Node.js Application on Azure][tutorials-node-azure]                          | [![CI Node.js on Azure][badge-tutorials-node-azure-app-ci]][tutorials-node-azure]                              | [![CD Node.js on Azure][badge-tutorials-node-azure-app-cd]][tutorials-node-azure]                              |
+| Cloud Infrastructure | [Create a Terraform Azure Backend][tutorials-terraform-azure-backend]         | [![badge][badge-tutorials-terraform-azure-backend-create]][tutorials-terraform-azure-backend]                  | _\*a backend is only created once. See "Maintain a Terraform Azure Backend"_                                   |
+| Cloud Infrastructure | [Maintain a Terraform Azure Backend][tutorials-terraform-azure-backend]       | [![ci badge][badge-tutorials-terraform-azure-backend-maintain-ci]][tutorials-terraform-azure-backend]          | [![cd badge][badge-tutorials-terraform-azure-backend-maintain-cd]][tutorials-terraform-azure-backend]          |
+| Cloud Infrastructure | [Terraform Azure Resource Group][tutorials-terraform-azure-rg]                | [![badge][badge-tutorials-terraform-azure-rg]][tutorials-terraform-azure-rg]                                   | _\*missing_                                                                                                    |
+| Cloud Infrastructure | [Terraform Azure Storage Account][tutorials-terraform-azure-storage-account]  | [![badge][badge-tutorials-terraform-azure-storage-account]][tutorials-terraform-azure-storage-account]         | _\*missing_                                                                                                    |
+| Cloud Infrastructure | [Terraform Azure AppService Plan][tutorials-terraform-azure-app-service-plan] | [![ci badge][badge-tutorials-terraform-azure-app-service-plan-ci]][tutorials-terraform-azure-app-service-plan] | [![cd badge][badge-tutorials-terraform-azure-app-service-plan-cd]][tutorials-terraform-azure-app-service-plan] |
 
 ## Projects
 
-- [oclif CLI][oclif-cli]: [![oclif CLI CI][oclif-cli-ci-workflow-badge]][oclif-cli] [![oclif CLI CD][oclif-cli-cd-workflow-badge]][oclif-cli]
+| Name                   | CI                                                        | CD                                                        |
+| ---------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| [oclif CLI][oclif-cli] | [![oclif CLI CI][oclif-cli-ci-workflow-badge]][oclif-cli] | [![oclif CLI CD][oclif-cli-cd-workflow-badge]][oclif-cli] |
 
 ## Docker Images
 
-- [Docker Ubuntu Developer][docker-ubuntu]: [![Docker Ubuntu Developer CI Badge][docker-ubuntu-ci-workflow-badge]][docker-ubuntu] [![Docker Ubuntu Developer CD Badge][docker-ubuntu-cd-workflow-badge]][docker-ubuntu]
-- [Docker Node Developer][docker-node]: [![Docker Node Developer CI Badge][docker-node-ci-workflow-badge]][docker-node] [![Docker Node Developer CD Badge][docker-node-cd-workflow-badge]][docker-node]
-- [Docker Azure Node Developer][docker-az-node]: [![Docker Azure Node Developer CI Badge][docker-az-node-ci-workflow-badge]][docker-az-node] [![Docker Azure Node Developer CD Badge][docker-az-node-cd-workflow-badge]][docker-az-node]
-- [Docker Azure Terraform Developer][docker-az-terraform]: [![Docker Azure Terraform Developer CI Badge][docker-az-terraform-ci-workflow-badge]][docker-az-terraform] [![Docker Azure Terraform Developer CD Badge][docker-az-terraform-cd-workflow-badge]][docker-az-terraform]
-- [Docker Commitlint][docker-commitlint]: [![Docker Commitlint CI Badge][docker-commitlint-ci-workflow-badge]][docker-commitlint] [![Docker Commitlint CD Badge][docker-commitlint-cd-workflow-badge]][docker-commitlint]
+| Name                                                    | CI                                                                                                         | CD                                                                                                         |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [Docker Ubuntu Developer][docker-ubuntu]                | [![Docker Ubuntu Developer CI Badge][docker-ubuntu-ci-workflow-badge]][docker-ubuntu]                      | [![Docker Ubuntu Developer CD Badge][docker-ubuntu-cd-workflow-badge]][docker-ubuntu]                      |
+| [Docker Node Developer][docker-node]                    | [![Docker Node Developer CI Badge][docker-node-ci-workflow-badge]][docker-node]                            | [![Docker Node Developer CD Badge][docker-node-cd-workflow-badge]][docker-node]                            |
+| [Docker Azure Node Developer][docker-az-node]           | [![Docker Azure Node Developer CI Badge][docker-az-node-ci-workflow-badge]][docker-az-node]                | [![Docker Azure Node Developer CD Badge][docker-az-node-cd-workflow-badge]][docker-az-node]                |
+| [Docker Azure Terraform Developer][docker-az-terraform] | [![Docker Azure Terraform Developer CI Badge][docker-az-terraform-ci-workflow-badge]][docker-az-terraform] | [![Docker Azure Terraform Developer CD Badge][docker-az-terraform-cd-workflow-badge]][docker-az-terraform] |
+| [Docker Commitlint][docker-commitlint]                  | [![Docker Commitlint CI Badge][docker-commitlint-ci-workflow-badge]][docker-commitlint]                    | [![Docker Commitlint CD Badge][docker-commitlint-cd-workflow-badge]][docker-commitlint]                    |
 
 ## Contributing
 
