@@ -112,7 +112,7 @@ In this section, you will clone the tutorial and execute it:
 
 12. Lookup the URL in the output of your deployed application. Type `curl ...` with your unique URL or open a web browser and visit the application. You should see a welcome message like "Welcome to Express" in the output. _\*If you check this URL immediately after deploying, it may take several seconds to respond while the application starts._
 
-13. To remove the new application, type `make uninstall ENV_FILE=.env`.
+13. To remove the new application, type `make uninstall`.
 
 14. Check the list of deployed Azure "WebApp" instances by typing `make azure-webapps-list ARM_RESOURCE_GROUP=rg-our-tutorials`.
 
