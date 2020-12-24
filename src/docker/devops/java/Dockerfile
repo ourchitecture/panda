@@ -6,7 +6,9 @@ ENV PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
 WORKDIR /tmp
 
 # update packages
-RUN apt-get update
+RUN apt-get update \
+    # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
+    && rm -rf /var/lib/apt/lists/*
 
 # install java
 RUN mkdir -p /usr/java/openjdk \

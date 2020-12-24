@@ -1,0 +1,12 @@
+{
+  "git.enableCommitSigning": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "[markdown]": {
+    // duplicated, see: https://jmarcher.io/vs-code-markdown-and-word-wrap/
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80
+  },
+  "maven.executable.preferMavenWrapper": true
+}

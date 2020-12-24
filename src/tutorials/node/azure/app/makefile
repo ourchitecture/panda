@@ -19,13 +19,13 @@ include $(scripts_dir_path)/node/yarn/clean.mk
 include $(scripts_dir_path)/azure/.vars.mk
 include $(scripts_dir_path)/azure/app-service-plans/list.mk
 include $(scripts_dir_path)/azure/webapps/list.mk
-include $(scripts_dir_path)/azure/webapps/install.mk
+include $(scripts_dir_path)/azure/webapps/node/install.mk
 include $(scripts_dir_path)/azure/webapps/uninstall.mk
 
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: init
+all: check
 
 .PHONY: init
 init: yarn-install
@@ -44,7 +44,7 @@ start: yarn-start
 stop: yarn-stop
 
 .PHONY: install
-install: check azure-webapps-install
+install: check azure-webapps-node-install
 
 .PHONY: uninstall
 uninstall: azure-webapps-uninstall

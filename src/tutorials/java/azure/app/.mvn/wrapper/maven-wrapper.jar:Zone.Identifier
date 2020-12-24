@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/takari/maven-wrapper/blob/master/.mvn/wrapper/maven-wrapper.jar
+HostUrl=https://raw.githubusercontent.com/takari/maven-wrapper/master/.mvn/wrapper/maven-wrapper.jar

@@ -1,7 +1,5 @@
-
 node_docker_name_prefix=our-scripts-node-make-$(now_date_time_tag)
 
-# https://hub.docker.com/_/node/?tab=tags
 node_docker=ourchitecture/devops-node:latest
 
 .PHONY: require-node

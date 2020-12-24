@@ -1,5 +1,5 @@
-docker_tag=ourchitecture/devops-az-node:local
-docker_name=our-devops-az-node
+docker_tag=ourchitecture/devops-az-java:local
+docker_name=our-devops-az-java
 
 install:
 	@docker build -t $(docker_tag) .
