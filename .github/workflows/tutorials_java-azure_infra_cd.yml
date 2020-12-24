@@ -38,7 +38,7 @@ jobs:
           ARM_TERRAFORM_BACKEND_RESOURCE_GROUP=${{secrets.ARM_TERRAFORM_BACKEND_RESOURCE_GROUP}}
           ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT=${{secrets.ARM_TERRAFORM_BACKEND_STORAGE_ACCOUNT}}
           ARM_TERRAFORM_BACKEND_CONTAINER=${{secrets.ARM_TERRAFORM_BACKEND_CONTAINER}}
-          ARM_TERRAFORM_BACKEND_KEY=app-our-tutorials-node-hello.tfstate
+          ARM_TERRAFORM_BACKEND_KEY=app-our-tutorials-java-hello.tfstate
           EOF
 
           make clean format install

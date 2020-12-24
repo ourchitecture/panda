@@ -5,7 +5,7 @@
 ## Steps
 
 1. [Create a new AppService][tutorials-infrastructure] in Azure using Terraform.
-2. [Deploy a Java application][tutorials-app] to Azure using the Azure CLI.
+2. [Deploy a Java application][tutorials-app] to Azure using the Azure Maven plug-in and Azure CLI.
 
 [tutorials-infrastructure]: ./infrastructure/#readme
 [tutorials-app]: ./app/#readme

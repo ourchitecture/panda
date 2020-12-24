@@ -36,6 +36,9 @@ check: maven-check
 .PHONY: install
 install: azure-webapps-java-install
 
+.PHONY: uninstall
+uninstall: azure-webapps-uninstall
+
 .PHONY: start
 start: spring-boot-start
 
