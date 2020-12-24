@@ -1,4 +1,4 @@
-name: tutorials_node-azure_app_cd
+name: tutorials_java-azure_app_cd
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
       # trigger build when shared scripts change
       - "src/scripts/**"
       # run this build when this file changes
-      - ".github/workflows/tutorials_node-azure_app_cd.yml"
+      - ".github/workflows/tutorials_java-azure_app_cd.yml"
       # run this build when the source code changes
-      - "src/tutorials/node/azure/app/**"
+      - "src/tutorials/java/azure/app/**"
 
 jobs:
   install:
@@ -17,7 +17,7 @@ jobs:
 
     env:
       CI: true
-      PROJECT_PATH: ./src/tutorials/node/azure/app
+      PROJECT_PATH: ./src/tutorials/java/azure/app
 
     steps:
       - uses: actions/checkout@v2
@@ -36,7 +36,11 @@ jobs:
           ARM_CLIENT_ID=${{secrets.ARM_CLIENT_ID}}
           ARM_CLIENT_SECRET=${{secrets.ARM_CLIENT_SECRET}}
           ARM_RESOURCE_GROUP=${{secrets.ARM_RESOURCE_GROUP}}
-          ARM_APP_NAME=${{secrets.ARM_APP_NAME_NODE}}
+          ARM_APP_PLAN_NAME=${{secrets.ARM_APP_PLAN_NAME}}
+          ARM_APP_NAME=${{secrets.ARM_APP_NAME_JAVA}}
+          ARM_REGION=eastus
+          ARM_APP_PLAN_OS=linux
+          ARM_APP_PLAN_TIER=F1
           EOF
 
           make install

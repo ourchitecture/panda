@@ -1,4 +1,4 @@
-commit_docker=ourchitecture/devops-az-node
+commit_docker=ourchitecture/devops-node
 
 .PHONY: yarn-commit
 yarn-commit: require-root require-node

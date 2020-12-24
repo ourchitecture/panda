@@ -8,7 +8,9 @@ ENV YARN_ENABLE_TELEMETRY false
 WORKDIR /tmp
 
 # update packages
-RUN apt-get update
+RUN apt-get update \
+    # clean up layer: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run
+    && rm -rf /var/lib/apt/lists/*
 
 # install node
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - \
