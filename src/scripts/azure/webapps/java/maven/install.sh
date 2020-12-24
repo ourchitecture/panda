@@ -31,6 +31,7 @@ eval $mvn -B \
   clean \
   package \
   azure-webapp:deploy \
+  -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
   -Dazure.tenant.id="$ARM_TENANT_ID" \
   -Dazure.client.id="$ARM_CLIENT_ID" \
   -Dazure.client.key="$ARM_CLIENT_SECRET" \
