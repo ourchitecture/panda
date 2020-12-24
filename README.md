@@ -40,6 +40,8 @@ Read more [about patterns][patterns].
 | [Docker Ubuntu Developer][docker-ubuntu]                | [![Docker Ubuntu Developer CI Badge][docker-ubuntu-ci-workflow-badge]][docker-ubuntu]                      | [![Docker Ubuntu Developer CD Badge][docker-ubuntu-cd-workflow-badge]][docker-ubuntu]                      |
 | [Docker Node Developer][docker-node]                    | [![Docker Node Developer CI Badge][docker-node-ci-workflow-badge]][docker-node]                            | [![Docker Node Developer CD Badge][docker-node-cd-workflow-badge]][docker-node]                            |
 | [Docker Azure Node Developer][docker-az-node]           | [![Docker Azure Node Developer CI Badge][docker-az-node-ci-workflow-badge]][docker-az-node]                | [![Docker Azure Node Developer CD Badge][docker-az-node-cd-workflow-badge]][docker-az-node]                |
+| [Docker Java Developer][docker-java]                    | [![Docker Java Developer CI Badge][docker-java-ci-workflow-badge]][docker-java]                            | [![Docker Java Developer CD Badge][docker-java-cd-workflow-badge]][docker-java]                            |
+| [Docker Azure Java Developer][docker-az-java]           | [![Docker Azure Java Developer CI Badge][docker-az-java-ci-workflow-badge]][docker-az-java]                | [![Docker Azure Java Developer CD Badge][docker-az-java-cd-workflow-badge]][docker-az-java]                |
 | [Docker Azure Terraform Developer][docker-az-terraform] | [![Docker Azure Terraform Developer CI Badge][docker-az-terraform-ci-workflow-badge]][docker-az-terraform] | [![Docker Azure Terraform Developer CD Badge][docker-az-terraform-cd-workflow-badge]][docker-az-terraform] |
 | [Docker Commitlint][docker-commitlint]                  | [![Docker Commitlint CI Badge][docker-commitlint-ci-workflow-badge]][docker-commitlint]                    | [![Docker Commitlint CD Badge][docker-commitlint-cd-workflow-badge]][docker-commitlint]                    |
 
@@ -84,12 +86,18 @@ Read more about [how to contribute][contributing]. Also, see our [code of conduc
 [docker-ubuntu-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-ubuntu_ci/badge.svg
 [docker-ubuntu-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-ubuntu_cd/badge.svg
 [docker-ubuntu]: ./src/docker/devops/ubuntu/#readme
+[docker-node]: ./src/docker/devops/node/#readme
 [docker-node-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-node_ci/badge.svg
 [docker-node-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-node_cd/badge.svg
-[docker-node]: ./src/docker/devops/node/#readme
+[docker-az-node]: ./src/docker/devops/az-node/#readme
 [docker-az-node-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-node_ci/badge.svg
 [docker-az-node-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-node_cd/badge.svg
-[docker-az-node]: ./src/docker/devops/az-node/#readme
+[docker-java]: ./src/docker/devops/java/#readme
+[docker-java-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-java_ci/badge.svg
+[docker-java-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-java_cd/badge.svg
+[docker-az-java]: ./src/docker/devops/az-java/#readme
+[docker-az-java-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-java_ci/badge.svg
+[docker-az-java-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-java_cd/badge.svg
 [docker-az-terraform-ci-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-terraform_ci/badge.svg
 [docker-az-terraform-cd-workflow-badge]: https://github.com/ourchitecture/panda/workflows/docker-devops-az-terraform_cd/badge.svg
 [docker-az-terraform]: ./src/docker/devops/az-terraform/#readme
