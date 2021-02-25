@@ -7,4 +7,4 @@ node-interactive: require-node
 		--network host \
 		--entrypoint "" \
 		$(node_docker) \
-		/bin/ash
+		/bin/bash

@@ -1,3 +1,11 @@
+###############################################################
+# Notes:
+#   - This project explicitly uses node over yarn, for
+#     command `npm link` and to keep the tooling consistent.
+#     While it's still possible to use `yarn ...` commands,
+#     it's recommended to use `npm run ...` instead.
+###############################################################
+
 include ../../../../.vars.mk
 
 include $(scripts_dir_path)/prerequisites.mk

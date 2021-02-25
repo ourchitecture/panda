@@ -15,6 +15,7 @@ include $(scripts_dir_path)/terraform/azure/install.mk
 include $(scripts_dir_path)/terraform/azure/uninstall.mk
 
 include $(scripts_dir_path)/azure/.vars.mk
+include $(scripts_dir_path)/azure/interactive.mk
 include $(scripts_dir_path)/azure/locations/list.mk
 include $(scripts_dir_path)/azure/app-service-plans/list.mk
 include $(scripts_dir_path)/azure/resource-groups/list.mk

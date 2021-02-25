@@ -7,4 +7,4 @@ terraform-clean: require-root require-terraform
 		--network host \
 		--entrypoint "" \
 		$(terraform_docker) \
-		/bin/sh -c "rm -rf .terraform *.tfplan *.tfstate *.tfstate.backup .terraform.tfstate.lock.info .tfstate.lock.hcl"
+		/bin/sh -c "rm -rf .terraform *.tfplan *.tfstate *.tfstate.backup .terraform.tfstate.lock.info .tfstate.lock.hcl .terraform.lock.hcl"

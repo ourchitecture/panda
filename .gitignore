@@ -268,3 +268,9 @@ my.sh
 
 # ignore package lock files (using Yarn)
 package-lock.json
+
+# ignore terraform plans
+*.tfplan
+
+# ignore terraform lock files
+.terraform.lock.hcl
